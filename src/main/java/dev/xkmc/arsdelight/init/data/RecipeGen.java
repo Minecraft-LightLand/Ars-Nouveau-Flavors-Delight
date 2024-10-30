@@ -6,10 +6,12 @@ import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
@@ -59,6 +61,26 @@ public class RecipeGen {
 							ADItems.SPIKE_POWDER, 1)
 					.build(pvd);
 
+		}
+
+		// misc
+		{
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(ItemsRegistry.SOURCE_BERRY_PIE),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
+							ADFood.SOURCE_BERRY_PIE_SLICE, 4)
+					.build(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
+					ItemsRegistry.SOURCE_BERRY_PIE, 1)::unlockedBy, ADFood.SOURCE_BERRY_PIE_SLICE.get())
+					.requires(ADFood.SOURCE_BERRY_PIE_SLICE, 4)
+					.save(pvd, ArsDelight.loc("source_berry_pie"));
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.FOOD,
+					ADFood.SOURCE_BERRY_COOKIE, 8)::unlockedBy, BlockRegistry.SOURCEBERRY_BUSH.asItem())
+					.pattern("ABA")
+					.define('A', Items.WHEAT)
+					.define('B', BlockRegistry.SOURCEBERRY_BUSH);
 		}
 
 		// dish

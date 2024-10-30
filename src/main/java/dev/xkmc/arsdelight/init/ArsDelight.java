@@ -55,6 +55,7 @@ public class ArsDelight {
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			ADFood.CHIMERA_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(ModEntities.WILDEN_BOSS.get().getDescription()));
+			ADFood.WILDEN_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(ModEntities.WILDEN_HUNTER.get().getDescription()));
 			ADItems.CHIMERA_HORN.get().withTooltip(ADLangData.AXE_KILL.get(ModEntities.WILDEN_BOSS.get().getDescription()));
 			if (ADModConfig.COMMON.enableThirstCompat.get() && ModList.get().isLoaded(Thirst.ID))
 				ThirstCompat.init();

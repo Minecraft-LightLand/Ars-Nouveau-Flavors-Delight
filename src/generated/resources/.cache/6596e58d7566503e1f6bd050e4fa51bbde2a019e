@@ -1,6 +1,6 @@
-// 1.20.1	2024-10-30T21:19:17.246635	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
-65c2fad582632225f0f122f4510536b0e04d4ddf assets/arsdelight/lang/en_ud.json
-94cdc44f0a764e6c3a62235e62b660787a302e72 assets/arsdelight/lang/en_us.json
+// 1.20.1	2024-10-30T22:09:24.483155	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+55aeb66d54cd94dd958eb075003d8a6fd99d8782 assets/arsdelight/lang/en_ud.json
+9cf7231d63c1036275d52408ebf56d11ffb62afe assets/arsdelight/lang/en_us.json
 e793a9b2a46b02fe6cbb7151b9f25c64545a36b5 assets/arsdelight/models/item/activated_bastion_jam.json
 ce981b9e34c08f49c24ec8abd3154a50ac2334e4 assets/arsdelight/models/item/activated_mendosteen_jam.json
 296974ecb9c1ed42e0e2a0e2ddb5445d5843ecf9 assets/arsdelight/models/item/arch_sauce.json
@@ -32,6 +32,8 @@ a07165c0d7bdc53132ec41b8b0ed43162677b74a assets/arsdelight/models/item/mendostee
 a3746444b3604ffdc8f8c9dd0ca165be0b47fd6e assets/arsdelight/models/item/mendosteen_tea.json
 f0394bf30f57e4ffe78cca64afac947ad5398b07 assets/arsdelight/models/item/neutralized_bombegrante_jam.json
 b858b0ea7c4cca330aab509687eb78db428c35fc assets/arsdelight/models/item/neutralized_frostaya_jam.json
+42874fe20133360c22d75de05411a8902160ea45 assets/arsdelight/models/item/source_berry_cookie.json
+71972291631f96e8b8837e98ff41d45bbe27f29d assets/arsdelight/models/item/source_berry_pie_slice.json
 21e8f258d562944ff813b6af84360a18aec4dfb2 assets/arsdelight/models/item/vexing_bark.json
 4e77d7117e6b0fc971731cca4942e847ab0a13e1 assets/arsdelight/models/item/wilden_horn_powder.json
 71033b039e3a83f031e6a0d733387e16777e3f30 assets/arsdelight/models/item/wilden_meat.json
@@ -46,6 +48,7 @@ bb49676aa851c29af8eb12468aa85fba68a310e4 data/arsdelight/advancements/recipes/fo
 09bb759c6d55ea437e746f15f94dd72392c4518a data/arsdelight/advancements/recipes/food/grilled_wilden_meat_from_wilden_meat_smoking.json
 a1fc4324ef12f1e9f6aa6e111a04cc7b8da57dba data/arsdelight/advancements/recipes/food/grilled_wilden_meat_slice_from_wilden_meat_slice_campfire.json
 c06efa66c6500ef9a9dfcdba6bf2fcc01af3ceb0 data/arsdelight/advancements/recipes/food/grilled_wilden_meat_slice_from_wilden_meat_slice_smoking.json
+8ab23056dbf7e0624787116d5303dd05758bf3f2 data/arsdelight/advancements/recipes/food/source_berry_pie.json
 f81065e3a834b9647cfc226f8ac39fe598840b02 data/arsdelight/recipes/grilled_chimera_meat_from_chimera_meat_campfire.json
 6a31b714adacbba7eae9494a181ec92805beb191 data/arsdelight/recipes/grilled_chimera_meat_from_chimera_meat_smoking.json
 51f9a6044bd8fefb8157124430f33de3d921d756 data/arsdelight/recipes/grilled_chimera_meat_slice_from_chimera_meat_slice_campfire.json
@@ -54,13 +57,14 @@ f81065e3a834b9647cfc226f8ac39fe598840b02 data/arsdelight/recipes/grilled_chimera
 29c6e73e97cf3977736f60077a6c2a6d2014ac6e data/arsdelight/recipes/grilled_wilden_meat_from_wilden_meat_smoking.json
 9eb3701ef9604c18bfaa5b706091c469b7d2cc14 data/arsdelight/recipes/grilled_wilden_meat_slice_from_wilden_meat_slice_campfire.json
 e010fcd50b2ff92b10ca46089d6cbe48bf415c07 data/arsdelight/recipes/grilled_wilden_meat_slice_from_wilden_meat_slice_smoking.json
+1edd34c08348cb1758c6a8233e5322d9562c556a data/arsdelight/recipes/source_berry_pie.json
 1e4fd257fa5070ffd7c3387bb324bc0019a599e3 data/arsdelight/tags/items/cooked_chimera.json
 b203752c057f6cbd5834c1c4407dbb12b5894fbc data/arsdelight/tags/items/cooked_wilden_meat.json
 6c81b787ad4c456ce0e8d892fa3f0ec94ee4d514 data/arsdelight/tags/items/raw_chimera.json
 b1267529d7f92edea753e45422b45080006057f2 data/arsdelight/tags/items/raw_wilden_meat.json
 fba60d4a2a37112da86890cb2cd426a59a811a15 data/diet/tags/items/fruits.json
 6c29a79e2a6cc093f646e2f03831ec5892dc0cfe data/diet/tags/items/proteins.json
-c03ba6dff4855cbdd726195aa3f1b364b6236dd8 data/diet/tags/items/sugars.json
+1ad8b0640106e44bfc71b816b54c32dbbf58531f data/diet/tags/items/sugars.json
 5521c4d04df9dc59c3cc991d05eed7dc059d387d data/diet/tags/items/vegetables.json
 3c0739a819260104f28143350414f29da8b0ad38 data/farmersdelight/recipes/cooking/activated_bastion_jam.json
 9adbd2f4cf997bd27a0e6ff2b3691f2cc1e14c16 data/farmersdelight/recipes/cooking/activated_mendosteen_jam.json
@@ -90,6 +94,7 @@ b833977f793102129438e89da9e2324d6e898d6a data/farmersdelight/recipes/cutting/blu
 ea22fe481a54a3d55c0e7385e66d70cf561134ba data/farmersdelight/recipes/cutting/purple_archwood_wood.json
 e9881d7d0f8e8c43b8c567905e872209059f1000 data/farmersdelight/recipes/cutting/red_archwood_log.json
 31d0da52df5317ec34f013f940ae11205669ae8a data/farmersdelight/recipes/cutting/red_archwood_wood.json
+2269c821dc7b80aa667bcfdc8f87557a9923ad04 data/farmersdelight/recipes/cutting/source_berry_pie.json
 70d19c800e845a2c4d2c1e79ab1d8b37f0c54257 data/farmersdelight/recipes/cutting/wilden_horn.json
 e7c85b286a12e07db66a8179365d8c575867ec00 data/farmersdelight/recipes/cutting/wilden_meat.json
 49f31416192368fcafac987bf01e442a9a842bd5 data/farmersdelight/recipes/cutting/wilden_spike.json

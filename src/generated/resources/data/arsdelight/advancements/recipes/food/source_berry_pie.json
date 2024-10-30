@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_source_berry_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arsdelight:source_berry_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "arsdelight:source_berry_pie"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_source_berry_pie_slice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "arsdelight:source_berry_pie"
+    ]
+  },
+  "sends_telemetry_event": false
+}

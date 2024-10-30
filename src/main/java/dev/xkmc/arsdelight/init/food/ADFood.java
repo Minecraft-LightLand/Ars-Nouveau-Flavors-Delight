@@ -24,13 +24,13 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ADEffects.WILDEN::get, 600, 0, 0.25f)
 	), TagGen.RAW_WILDEN_MEAT, DietTagGen.PROTEINS.tag),
 	GRILLED_WILDEN_MEAT(FoodType.MEAT, 10, 0.7f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 600,0,0.5f)
+			new EffectEntry(ADEffects.WILDEN::get, 600, 0, 0.5f)
 	), TagGen.COOKED_WILDEN_MEAT, DietTagGen.PROTEINS.tag),
 	WILDEN_MEAT_SLICE(FoodType.FAST_MEAT, 3, 0.4f, List.of(
 			new EffectEntry(ADEffects.WILDEN::get, 300, 0, 0.25f)
 	), TagGen.RAW_WILDEN_MEAT, DietTagGen.PROTEINS.tag),
 	GRILLED_WILDEN_MEAT_SLICE(FoodType.FAST_MEAT, 5, 0.7f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 300,0,0.5f)
+			new EffectEntry(ADEffects.WILDEN::get, 300, 0, 0.5f)
 	), TagGen.COOKED_WILDEN_MEAT, DietTagGen.PROTEINS.tag),
 
 	CHIMERA_MEAT(FoodType.MEAT, 12, 0.4f, List.of(
@@ -46,7 +46,15 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ADEffects.WILDEN::get, 300, 1)
 	), TagGen.COOKED_CHIMERA, DietTagGen.PROTEINS.tag),
 
-	ARCH_SAUCE(FoodType.BOWL, 4, 0.4f, List.of(), DietTagGen.FRUITS.tag),
+	SOURCE_BERRY_COOKIE(FoodType.FAST, 2, 0.8f, List.of(
+			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 200, 0)
+	), DietTagGen.SUGARS.tag),
+	SOURCE_BERRY_PIE_SLICE(FoodType.FAST, 3, 0.8f, List.of(
+			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 300, 1)
+	), DietTagGen.SUGARS.tag),
+	ARCH_SAUCE(FoodType.BOWL, 4, 0.4f, List.of(
+			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200, 1)
+	), DietTagGen.FRUITS.tag),
 	WILDEN_SAUCE(FoodType.MEAT_PLATE, 6, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN::get, 600)
 	), DietTagGen.PROTEINS.tag),

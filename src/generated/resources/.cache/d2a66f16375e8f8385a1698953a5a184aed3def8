@@ -1,4 +1,5 @@
-// 1.20.1	2024-10-30T21:19:17.246207	Global Loot Modifiers : arsdelight
+// 1.20.1	2024-10-30T22:12:55.139295	Global Loot Modifiers : arsdelight
 1c2339663b8b8813bf180b6288bbad83946eec64 data/arsdelight/loot_modifiers/scavenge_chimera_horn.json
 1aed5298453ecf1a0b1cb1ca672c16dd55bdc071 data/arsdelight/loot_modifiers/scavenge_chimera_meat.json
-5688b3d3cbf70417b7d5996f0b252e71af942e59 data/forge/loot_modifiers/global_loot_modifiers.json
+9010701db683e5140817dfc7ea3bbd595b4107b6 data/arsdelight/loot_modifiers/scavenge_wilden_hunter_meat.json
+4cccee5a096f61820037b91d19175153cc090f02 data/forge/loot_modifiers/global_loot_modifiers.json

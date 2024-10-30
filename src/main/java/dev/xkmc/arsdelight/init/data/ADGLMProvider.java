@@ -36,6 +36,10 @@ public class ADGLMProvider extends GlobalLootModifierProvider {
 				killTarget(ModEntities.WILDEN_BOSS.get()),
 				killedByItem(ForgeTags.TOOLS_KNIVES)
 		));
+		add("scavenge_wilden_hunter_meat", create(ADFood.WILDEN_MEAT.asItem(), 1,
+				killTarget(ModEntities.WILDEN_HUNTER.get()),
+				killedByItem(ForgeTags.TOOLS_KNIVES)
+		));
 		add("scavenge_chimera_horn", create(ADItems.CHIMERA_HORN.asItem(), 1,
 				killTarget(ModEntities.WILDEN_BOSS.get()),
 				killedByItem(ForgeTags.TOOLS_AXES)

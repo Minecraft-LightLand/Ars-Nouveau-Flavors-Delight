@@ -21,7 +21,7 @@ public class ADEffects {
 			() -> new FreezingSpellEffect(MobEffectCategory.BENEFICIAL, 0xffffffff),
 			"Spell damage also inflict freezing effect");
 
-	public static final RegistryEntry<ShieldingEffect> SHIELDING = genEffect("shielding",
+	public static final RegistryEntry<ShieldingEffect> SHIELDING = genEffect("synchronized_shield",
 			() -> new ShieldingEffect(MobEffectCategory.BENEFICIAL, 0xffffffff),
 			"When player heals, gain absorption as well");
 
