@@ -31,12 +31,18 @@ public class RecipeGen {
 
 		// simple
 		{
-			smoking(pvd, ADFood.CHIMERA_MEAT, ADFood.GRILLED_CHIMERA_MEAT);
-			smoking(pvd, ADFood.CHIMERA_MEAT_SLICE, ADFood.GRILLED_CHIMERA_MEAT_SLICE);
-			strip(pvd, ADItems.BLAZING_BARK, BlockRegistry.BLAZING_LOG, BlockRegistry.STRIPPED_AWLOG_RED, BlockRegistry.BLAZING_WOOD, BlockRegistry.STRIPPED_AWWOOD_RED);
-			strip(pvd, ADItems.CASCADING_BARK, BlockRegistry.CASCADING_LOG, BlockRegistry.STRIPPED_AWLOG_BLUE, BlockRegistry.CASCADING_WOOD, BlockRegistry.STRIPPED_AWWOOD_BLUE);
-			strip(pvd, ADItems.FLOURISHING_BARK, BlockRegistry.FLOURISHING_LOG, BlockRegistry.STRIPPED_AWLOG_GREEN, BlockRegistry.FLOURISHING_WOOD, BlockRegistry.STRIPPED_AWWOOD_GREEN);
-			strip(pvd, ADItems.VEXING_BARK, BlockRegistry.VEXING_LOG, BlockRegistry.STRIPPED_AWLOG_PURPLE, BlockRegistry.VEXING_WOOD, BlockRegistry.STRIPPED_AWWOOD_PURPLE);
+			meat(pvd, ADFood.CHIMERA_MEAT, ADFood.GRILLED_CHIMERA_MEAT,
+					ADFood.CHIMERA_MEAT_SLICE, ADFood.GRILLED_CHIMERA_MEAT_SLICE);
+			meat(pvd, ADFood.WILDEN_MEAT, ADFood.GRILLED_WILDEN_MEAT,
+					ADFood.WILDEN_MEAT_SLICE, ADFood.GRILLED_WILDEN_MEAT_SLICE);
+			strip(pvd, ADItems.BLAZING_BARK, BlockRegistry.BLAZING_LOG, BlockRegistry.STRIPPED_AWLOG_RED,
+					BlockRegistry.BLAZING_WOOD, BlockRegistry.STRIPPED_AWWOOD_RED);
+			strip(pvd, ADItems.CASCADING_BARK, BlockRegistry.CASCADING_LOG, BlockRegistry.STRIPPED_AWLOG_BLUE,
+					BlockRegistry.CASCADING_WOOD, BlockRegistry.STRIPPED_AWWOOD_BLUE);
+			strip(pvd, ADItems.FLOURISHING_BARK, BlockRegistry.FLOURISHING_LOG, BlockRegistry.STRIPPED_AWLOG_GREEN,
+					BlockRegistry.FLOURISHING_WOOD, BlockRegistry.STRIPPED_AWWOOD_GREEN);
+			strip(pvd, ADItems.VEXING_BARK, BlockRegistry.VEXING_LOG, BlockRegistry.STRIPPED_AWLOG_PURPLE,
+					BlockRegistry.VEXING_WOOD, BlockRegistry.STRIPPED_AWWOOD_PURPLE);
 		}
 
 		// processing
@@ -51,12 +57,6 @@ public class RecipeGen {
 							Ingredient.of(ItemsRegistry.WILDEN_SPIKE),
 							Ingredient.of(ForgeTags.TOOLS_SHOVELS),
 							ADItems.SPIKE_POWDER, 1)
-					.build(pvd);
-
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(ADFood.CHIMERA_MEAT),
-							Ingredient.of(ForgeTags.TOOLS_KNIVES),
-							ADFood.CHIMERA_MEAT_SLICE, 3)
 					.build(pvd);
 
 		}
@@ -248,9 +248,13 @@ public class RecipeGen {
 				.build(pvd);
 	}
 
-	private static void smoking(RegistrateRecipeProvider pvd, ADFood in, ADFood out) {
+	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {
 		pvd.smoking(DataIngredient.items(in), RecipeCategory.FOOD, out::asItem, 0.1f);
 		pvd.campfire(DataIngredient.items(in), RecipeCategory.FOOD, out::asItem, 0.1f);
+		pvd.smoking(DataIngredient.items(inslice), RecipeCategory.FOOD, outslice::asItem, 0.1f);
+		pvd.campfire(DataIngredient.items(inslice), RecipeCategory.FOOD, outslice::asItem, 0.1f);
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(in), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+				inslice, 3).build(pvd);
 	}
 
 	public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {

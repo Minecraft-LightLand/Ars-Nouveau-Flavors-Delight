@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "ars_nouveau:wilden_spike"
+    }
+  ],
+  "result": [
+    {
+      "item": "arsdelight:wilden_spike_powder"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/shovels"
+  }
+}

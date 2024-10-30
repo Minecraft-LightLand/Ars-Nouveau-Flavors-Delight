@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "ars_nouveau:wilden_boss"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "killer",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "tag": "forge:tools/knives"
+          }
+        }
+      }
+    }
+  ],
+  "count": 4,
+  "item": "arsdelight:chimera_meat"
+}

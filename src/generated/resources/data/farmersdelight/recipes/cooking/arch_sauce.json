@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "arsdelight:neutralized_frostaya_jam"
+    },
+    {
+      "item": "arsdelight:neutralized_bombegrante_jam"
+    },
+    {
+      "item": "arsdelight:activated_bastion_jam"
+    },
+    {
+      "item": "arsdelight:activated_mendosteen_jam"
+    },
+    {
+      "item": "ars_nouveau:sourceberry_bush"
+    }
+  ],
+  "result": {
+    "item": "arsdelight:arch_sauce"
+  }
+}

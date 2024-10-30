@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 @Mod.EventBusSubscriber(modid = ArsDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ArsDelight {
 
-	public static final String MODID = "fruitsdelight";
+	public static final String MODID = "arsdelight";
 	public static final Logger LOGGER = LogUtils.getLogger();
 	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
 
@@ -35,7 +35,7 @@ public class ArsDelight {
 	);
 
 	public static final RegistryEntry<CreativeModeTab> TAB =
-			REGISTRATE.buildModCreativeTab("fruits_delight", "Fruits Delight",
+			REGISTRATE.buildModCreativeTab("arsdelight", "Ars Nouveau's Flavors & Delight",
 					e -> e.icon(ADFood.FROSTAYA_HORNBEER::asStack));
 
 	public ArsDelight() {

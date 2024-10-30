@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "ars_nouveau:wilden_horn"
+    }
+  ],
+  "result": [
+    {
+      "item": "arsdelight:wilden_horn_powder"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/shovels"
+  }
+}

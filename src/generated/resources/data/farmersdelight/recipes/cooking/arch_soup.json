@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "arsdelight:blazing_bark"
+    },
+    {
+      "item": "arsdelight:cascading_bark"
+    },
+    {
+      "item": "arsdelight:flourishing_bark"
+    },
+    {
+      "item": "arsdelight:vexing_bark"
+    }
+  ],
+  "result": {
+    "item": "arsdelight:arch_soup"
+  }
+}
