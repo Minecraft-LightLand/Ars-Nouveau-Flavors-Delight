@@ -2,13 +2,13 @@ package dev.xkmc.arsdelight.compat.thirst;
 
 import dev.ghen.thirst.foundation.common.event.RegisterThirstValueEvent;
 import dev.xkmc.arsdelight.init.food.ADFood;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
 public class ThirstCompat {
 
 	public static void init() {
-		MinecraftForge.EVENT_BUS.register(ThirstCompat.class);
+		NeoForge.EVENT_BUS.register(ThirstCompat.class);
 	}
 
 	@SubscribeEvent
