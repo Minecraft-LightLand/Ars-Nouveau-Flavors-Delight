@@ -10,23 +10,23 @@ import net.minecraft.world.effect.MobEffectCategory;
 public class ADEffects {
 
 	public static final RegistryEntry<BlastResistanceEffect> BLAST_RES = genEffect("blast_resistance",
-			() -> new BlastResistanceEffect(MobEffectCategory.BENEFICIAL, 0xffffffff),
+			() -> new BlastResistanceEffect(MobEffectCategory.BENEFICIAL, 0xffd75525),
 			"Reduce incoming explosion damage");
 
 	public static final RegistryEntry<FlourishingEffect> FLOURISH = genEffect("flourishing",
-			() -> new FlourishingEffect(MobEffectCategory.BENEFICIAL, 0xffffffff),
+			() -> new FlourishingEffect(MobEffectCategory.BENEFICIAL, 0xff860639),
 			"When player heals, recover mana as well");
 
 	public static final RegistryEntry<FreezingSpellEffect> FREEZE = genEffect("freezing_spell",
-			() -> new FreezingSpellEffect(MobEffectCategory.BENEFICIAL, 0xffffffff),
+			() -> new FreezingSpellEffect(MobEffectCategory.BENEFICIAL, 0xff9d8ef4),
 			"Spell damage also inflict freezing effect");
 
 	public static final RegistryEntry<ShieldingEffect> SHIELDING = genEffect("synchronized_shield",
-			() -> new ShieldingEffect(MobEffectCategory.BENEFICIAL, 0xffffffff),
+			() -> new ShieldingEffect(MobEffectCategory.BENEFICIAL, 0xffffbd0c),
 			"When player heals, gain absorption as well");
 
 	public static final RegistryEntry<WildenEffect> WILDEN = genEffect("wilden",
-			() -> new WildenEffect(MobEffectCategory.BENEFICIAL, 0xffffffff),
+			() -> new WildenEffect(MobEffectCategory.BENEFICIAL, 0xff935aab),
 			"Gain max mana, mana restoration, and spell damage");
 
 

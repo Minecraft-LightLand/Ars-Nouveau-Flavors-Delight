@@ -1,5 +1,6 @@
 {
   "arsdelight.tooltip.chance": "%1$s with %2$s%% chance",
+  "arsdelight.tooltip.grab": "Right click [%1$s] with [%2$s] to obtain",
   "arsdelight.tooltip.kill_axe": "Dropped when killing [%s] with axe",
   "arsdelight.tooltip.kill_knife": "Dropped when killing [%s] with knife",
   "arsdelight.tooltip.place": "Shift right click to place down",

@@ -11,8 +11,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.utility.TextUtils;
@@ -21,13 +23,18 @@ import java.util.function.Supplier;
 
 public class SaladFeast extends FeastBlock {
 
+	private static final VoxelShape BASE = Block.box(1, 0, 1, 15, 2, 15);
+	private static final VoxelShape LOW = Shapes.or(BASE, Block.box(2, 0, 2, 14, 4, 14));
+	private static final VoxelShape HIGH = Shapes.or(BASE, Block.box(2, 0, 2, 14, 6, 14));
+
 	public SaladFeast(Properties properties, Supplier<Item> servingItem, boolean hasLeftovers) {
 		super(properties, servingItem, hasLeftovers);
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return super.getShape(state, level, pos, context);
+		int s = state.getValue(SERVINGS);
+		return s == 0 ? BASE : s == 1 ? LOW : HIGH;
 	}
 
 	protected InteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {

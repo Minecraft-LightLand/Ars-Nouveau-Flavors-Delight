@@ -14,6 +14,7 @@ public enum ADLangData {
 	TOOLTIP_PLACE("tooltip.place", "Shift right click to place down", 0, ChatFormatting.GRAY),
 	KNIFE_KILL("tooltip.kill_knife", "Dropped when killing [%s] with knife", 1, ChatFormatting.GRAY),
 	AXE_KILL("tooltip.kill_axe", "Dropped when killing [%s] with axe", 1, ChatFormatting.GRAY),
+	GRAB("tooltip.grab", "Right click [%1$s] with [%2$s] to obtain", 2, ChatFormatting.GRAY),
 	;
 
 	private final String key, def;

@@ -16,6 +16,7 @@ import dev.xkmc.l2library.serial.config.PacketHandler;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -53,9 +54,25 @@ public class ArsDelight {
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			ADFood.CHIMERA_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(ModEntities.WILDEN_BOSS.get().getDescription()));
-			ADFood.WILDEN_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(ModEntities.WILDEN_HUNTER.get().getDescription()));
-			ADItems.CHIMERA_HORN.get().withTooltip(ADLangData.AXE_KILL.get(ModEntities.WILDEN_BOSS.get().getDescription()));
+			ADFood.CHIMERA_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(
+					ModEntities.WILDEN_BOSS.get().getDescription()));
+			ADFood.WILDEN_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(
+					ModEntities.WILDEN_HUNTER.get().getDescription()));
+			ADItems.CHIMERA_HORN.get().withTooltip(ADLangData.AXE_KILL.get(
+					ModEntities.WILDEN_BOSS.get().getDescription()));
+			ADFood.BOWL_OF_WILDEN_SALAD.get().withTooltip(ADLangData.GRAB.get(
+					ADBlocks.SALAD.asStack().getHoverName(),
+					Items.BOWL.asItem().getDefaultInstance().getHoverName()
+			));
+			ADFood.BOWL_OF_HONEY_GLAZED_CHIMERA.get().withTooltip(ADLangData.GRAB.get(
+					ADBlocks.CHIMERA.asStack().getHoverName(),
+					Items.BOWL.asItem().getDefaultInstance().getHoverName()
+			));
+			ADFood.HORN_ROLL.get().withTooltip(ADLangData.GRAB.get(
+					ADBlocks.SALAD.asStack().getHoverName(),
+					ADItems.CHIMERA_HORN.asItem().getDefaultInstance().getHoverName()
+			));
+
 			if (ADModConfig.COMMON.enableThirstCompat.get() && ModList.get().isLoaded(Thirst.ID))
 				ThirstCompat.init();
 
