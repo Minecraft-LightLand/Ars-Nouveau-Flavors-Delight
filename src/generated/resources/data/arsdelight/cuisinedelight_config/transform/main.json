@@ -1,0 +1,40 @@
+{
+  "fluidTransform": {
+    "arsdelight:activated_bastion_jam": {
+      "color": -17140
+    },
+    "arsdelight:activated_mendosteen_jam": {
+      "color": -7993799
+    },
+    "arsdelight:arch_sauce": {
+      "color": -3630528
+    },
+    "arsdelight:neutralized_bombegrante_jam": {
+      "color": -2665179
+    },
+    "arsdelight:neutralized_frostaya_jam": {
+      "color": -6451468
+    },
+    "arsdelight:wilden_sauce": {
+      "color": -7513788
+    }
+  },
+  "itemTransform": {
+    "arsdelight:chimera_meat": {
+      "next": "arsdelight:grilled_chimera_meat",
+      "stage": "COOKED"
+    },
+    "arsdelight:chimera_meat_slice": {
+      "next": "arsdelight:grilled_chimera_meat_slice",
+      "stage": "COOKED"
+    },
+    "arsdelight:wilden_meat": {
+      "next": "arsdelight:grilled_wilden_meat",
+      "stage": "COOKED"
+    },
+    "arsdelight:wilden_meat_slice": {
+      "next": "arsdelight:grilled_wilden_meat_slice",
+      "stage": "COOKED"
+    }
+  }
+}
