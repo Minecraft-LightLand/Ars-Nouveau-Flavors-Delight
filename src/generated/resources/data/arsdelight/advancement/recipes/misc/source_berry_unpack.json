@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "arsdelight:sourceberry_bush_from_source_berry_crate"
+        "recipe": "arsdelight:source_berry_unpack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "arsdelight:sourceberry_bush_from_source_berry_crate"
+      "arsdelight:source_berry_unpack"
     ]
   }
 }

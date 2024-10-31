@@ -51,7 +51,6 @@ public class RecipeGen {
 			strip(pvd, ADItems.VEXING_BARK, BlockRegistry.VEXING_LOG, BlockRegistry.STRIPPED_AWLOG_PURPLE,
 					BlockRegistry.VEXING_WOOD, BlockRegistry.STRIPPED_AWWOOD_PURPLE);
 
-			pvd.storage(BlockRegistry.SOURCEBERRY_BUSH::get, RecipeCategory.MISC, ADBlocks.SOURCE_BERRY_CRATE);
 			pvd.storage(BlockRegistry.MENDOSTEEN_POD::get, RecipeCategory.MISC, ADBlocks.MENDOSTEEN_CRATE);
 			pvd.storage(BlockRegistry.BASTION_POD::get, RecipeCategory.MISC, ADBlocks.BASTION_CRATE);
 			pvd.storage(BlockRegistry.BOMBEGRANTE_POD::get, RecipeCategory.MISC, ADBlocks.BOMBEGRANTE_CRATE);
@@ -71,6 +70,17 @@ public class RecipeGen {
 							Ingredient.of(ItemTags.SHOVELS),
 							ADItems.SPIKE_POWDER, 1)
 					.build(pvd);
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
+					ADBlocks.SOURCE_BERRY_CRATE, 1)::unlockedBy, BlockRegistry.SOURCEBERRY_BUSH.asItem())
+					.pattern("SSS").pattern("SBS").pattern("SSS")
+					.define('S', Items.STICK)
+					.define('B', BlockRegistry.SOURCEBERRY_SACK)
+					.save(pvd);
+
+			pvd.singleItemUnfinished(DataIngredient.items(ADBlocks.SOURCE_BERRY_CRATE.get()),
+							RecipeCategory.MISC, () -> BlockRegistry.SOURCEBERRY_BUSH, 1, 9)
+					.save(pvd, ArsDelight.loc("source_berry_unpack"));
 
 		}
 
