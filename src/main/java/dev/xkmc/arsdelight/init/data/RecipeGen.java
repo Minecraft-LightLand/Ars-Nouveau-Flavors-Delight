@@ -1,8 +1,8 @@
 package dev.xkmc.arsdelight.init.data;
 
-import com.hollingsworth.arsnouveau.common.util.RegistryWrapper;
 import com.hollingsworth.arsnouveau.setup.registry.BlockRegistry;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
+import com.hollingsworth.arsnouveau.setup.registry.RegistryWrapper;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
@@ -10,19 +10,22 @@ import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.ToolActions;
-import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.Tags;
+import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
+import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
@@ -58,13 +61,13 @@ public class RecipeGen {
 		{
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(ItemsRegistry.WILDEN_HORN),
-							Ingredient.of(ForgeTags.TOOLS_SHOVELS),
+							Ingredient.of(ItemTags.SHOVELS),
 							ADItems.HORN_POWDER, 1)
 					.build(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(ItemsRegistry.WILDEN_SPIKE),
-							Ingredient.of(ForgeTags.TOOLS_SHOVELS),
+							Ingredient.of(ItemTags.SHOVELS),
 							ADItems.SPIKE_POWDER, 1)
 					.build(pvd);
 
@@ -74,7 +77,7 @@ public class RecipeGen {
 		{
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(ItemsRegistry.SOURCE_BERRY_PIE),
-							Ingredient.of(ForgeTags.TOOLS_KNIVES),
+							Ingredient.of(CommonTags.TOOLS_KNIFE),
 							ADFood.SOURCE_BERRY_PIE_SLICE, 4)
 					.build(pvd);
 
@@ -93,9 +96,9 @@ public class RecipeGen {
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_CUPCAKE, 2, 200, 0.1f, Items.PAPER)
 					.addIngredient(ADFood.ARCH_SAUCE)
 					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-					.addIngredient(ForgeTags.EGGS)
+					.addIngredient(Tags.Items.EGGS)
 					.addIngredient(Items.WHEAT)
-					.addIngredient(ForgeTags.MILK)
+					.addIngredient(CommonTags.FOODS_MILK)
 					.build(pvd);
 		}
 
@@ -124,7 +127,7 @@ public class RecipeGen {
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADBlocks.CHIMERA, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(TagGen.RAW_CHIMERA)
-					.addIngredient(ForgeTags.GRAIN_RICE)
+					.addIngredient(ModItems.RICE.get())
 					.addIngredient(ADFood.ARCH_SAUCE)
 					.addIngredient(Items.HONEY_BOTTLE)
 					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
@@ -134,7 +137,7 @@ public class RecipeGen {
 			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.FOOD,
 					ADBlocks.SALAD, 1)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
 					.pattern("SAS").pattern("FMF").pattern("CBC")
-					.define('C', ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.define('C', CommonTags.FOODS_CABBAGE)
 					.define('B', Items.BOWL)
 					.define('S', BlockRegistry.SOURCEBERRY_BUSH)
 					.define('M', TagGen.COOKED_WILDEN_MEAT)
@@ -244,32 +247,32 @@ public class RecipeGen {
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.MENDOSTEEN_CHICKEN, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get())
 						.addIngredient(ADFood.ACTIVATED_MENDOSTEEN_JAM.get())
-						.addIngredient(ForgeTags.RAW_CHICKEN)
-						.addIngredient(ForgeTags.CROPS_CABBAGE)
+						.addIngredient(CommonTags.FOODS_RAW_CHICKEN)
+						.addIngredient(CommonTags.FOODS_CABBAGE)
 						.addIngredient(ADFood.WILDEN_SAUCE)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BASTION_PORK, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.BASTION_POD.get())
 						.addIngredient(ADFood.ACTIVATED_BASTION_JAM.get())
-						.addIngredient(ForgeTags.RAW_PORK)
-						.addIngredient(ForgeTags.VEGETABLES_TOMATO)
+						.addIngredient(CommonTags.FOODS_RAW_PORK)
+						.addIngredient(CommonTags.FOODS_TOMATO)
 						.addIngredient(ADFood.WILDEN_SAUCE)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BOMBEGRANTE_STEAK, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get())
 						.addIngredient(ADFood.NEUTRALIZED_BOMBEGRANTE_JAM.get())
-						.addIngredient(ForgeTags.RAW_BEEF)
-						.addIngredient(ForgeTags.VEGETABLES_POTATO)
+						.addIngredient(CommonTags.FOODS_RAW_BEEF)
+						.addIngredient(Items.POTATO)
 						.addIngredient(ADFood.WILDEN_SAUCE)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.FROSTAYA_MUTTON, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get())
 						.addIngredient(ADFood.NEUTRALIZED_FROSTAYA_JAM.get())
-						.addIngredient(ForgeTags.RAW_MUTTON)
-						.addIngredient(ForgeTags.VEGETABLES_ONION)
+						.addIngredient(CommonTags.FOODS_RAW_MUTTON)
+						.addIngredient(CommonTags.FOODS_ONION)
 						.addIngredient(ADFood.WILDEN_SAUCE)
 						.build(pvd);
 
@@ -281,16 +284,16 @@ public class RecipeGen {
 	}
 
 	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,
-							  RegistryWrapper<? extends Block> log,
-							  RegistryWrapper<? extends Block> stripped,
-							  RegistryWrapper<? extends Block> wood,
-							  RegistryWrapper<? extends Block> stwood
+							  RegistryWrapper<Block, ?> log,
+							  RegistryWrapper<Block, ?> stripped,
+							  RegistryWrapper<Block, ?> wood,
+							  RegistryWrapper<Block, ?> stwood
 	) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped)
-				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stripped)
+				.addResult(bark).addSound(SoundEvents.AXE_STRIP)
 				.build(pvd);
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), stwood)
-				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stwood)
+				.addResult(bark).addSound(SoundEvents.AXE_STRIP)
 				.build(pvd);
 	}
 
@@ -299,12 +302,12 @@ public class RecipeGen {
 		pvd.campfire(DataIngredient.items(in), RecipeCategory.FOOD, out::asItem, 0.1f);
 		pvd.smoking(DataIngredient.items(inslice), RecipeCategory.FOOD, outslice::asItem, 0.1f);
 		pvd.campfire(DataIngredient.items(inslice), RecipeCategory.FOOD, outslice::asItem, 0.1f);
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(in), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(in), Ingredient.of(CommonTags.TOOLS_KNIFE),
 				inslice, 3).build(pvd);
 	}
 
-	public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {
-		return func.apply("has_" + pvd.safeName(item), DataIngredient.items(item).getCritereon(pvd));
+	public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, Criterion<InventoryChangeTrigger.TriggerInstance>, T> func, Item item) {
+		return func.apply("has_" + pvd.safeName(item), DataIngredient.items(item).getCriterion(pvd));
 	}
 
 

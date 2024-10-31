@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -37,18 +37,18 @@ public class SaladFeast extends FeastBlock {
 		return s == 0 ? BASE : s == 1 ? LOW : HIGH;
 	}
 
-	protected InteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
+	protected ItemInteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
 		var ans = takeServingImpl(level, pos, state, player, hand, ADFood.HORN_ROLL.asStack(), false);
 		if (ans.consumesAction()) return ans;
 		return takeServingImpl(level, pos, state, player, hand, ADFood.BOWL_OF_WILDEN_SALAD.asStack(), true);
 	}
 
-	protected InteractionResult takeServingImpl(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand, ItemStack serving, boolean fin) {
+	protected ItemInteractionResult takeServingImpl(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand, ItemStack serving, boolean fin) {
 		int servings = (Integer) state.getValue(this.getServingsProperty());
 		if (servings == 0) {
 			level.playSound((Player) null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 			level.destroyBlock(pos, true);
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		} else {
 			//ItemStack serving = this.getServingItem(state); REMOVE
 			ItemStack heldStack = player.getItemInHand(hand);
@@ -67,14 +67,14 @@ public class SaladFeast extends FeastBlock {
 						level.removeBlock(pos, false);
 					}
 
-					level.playSound((Player) null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-					return InteractionResult.SUCCESS;
+					level.playSound((Player) null, pos, SoundEvents.ARMOR_EQUIP_GENERIC.value(), SoundSource.BLOCKS, 1.0F, 1.0F);
+					return ItemInteractionResult.SUCCESS;
 				}
 				if (fin)
 					player.displayClientMessage(TextUtils.getTranslation("block.feast.use_container", new Object[]{serving.getCraftingRemainingItem().getHoverName()}), true);
 			}
 
-			return InteractionResult.PASS;
+			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		}
 	}
 

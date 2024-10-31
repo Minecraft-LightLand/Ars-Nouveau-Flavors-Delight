@@ -18,7 +18,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 
 public class ADBlocks {
@@ -77,7 +77,7 @@ public class ADBlocks {
 	}
 
 	private static BlockEntry<Block> crate(String name) {
-		return ArsDelight.REGISTRATE.block(name, p -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+		return ArsDelight.REGISTRATE.block(name, p -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
 						.strength(2.0F, 3.0F).sound(SoundType.WOOD)))
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().cubeBottomTop(ctx.getName(),
 						pvd.modLoc("block/" + name + "_side"),

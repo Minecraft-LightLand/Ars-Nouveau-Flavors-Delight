@@ -1,25 +1,26 @@
 package dev.xkmc.arsdelight.init.data;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.config.ModConfig;
-import org.apache.commons.lang3.tuple.Pair;
+import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.l2core.util.ConfigInit;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class ADModConfig {
 
-	public static class Client {
+	public static class Client extends ConfigInit {
 
-		Client(ForgeConfigSpec.Builder builder) {
+		Client(Builder builder) {
+			markPlain();
 		}
 
 	}
 
-	public static class Common {
+	public static class Common extends ConfigInit {
 
-		public final ForgeConfigSpec.BooleanValue enableThirstCompat;
-		public final ForgeConfigSpec.DoubleValue maxShieldingAbsorption;
+		public final ModConfigSpec.BooleanValue enableThirstCompat;
+		public final ModConfigSpec.DoubleValue maxShieldingAbsorption;
 
-		Common(ForgeConfigSpec.Builder builder) {
+		Common(Builder builder) {
+			markPlain();
 			enableThirstCompat = builder.define("enableThirstCompat", true);
 			maxShieldingAbsorption = builder.comment("Max absorption allowed for Shielding I effect. Every level doubles the cap")
 					.defineInRange("maxShieldingAbsorption", 8d, 2, 100);
@@ -27,28 +28,10 @@ public class ADModConfig {
 
 	}
 
-	public static final ForgeConfigSpec CLIENT_SPEC;
-	public static final Client CLIENT;
+	public static final Client CLIENT = ArsDelight.REGISTRATE.registerClient(Client::new);
+	public static final Common COMMON = ArsDelight.REGISTRATE.registerSynced(Common::new);
 
-	public static final ForgeConfigSpec COMMON_SPEC;
-	public static final Common COMMON;
-
-	static {
-		final Pair<Client, ForgeConfigSpec> client = new ForgeConfigSpec.Builder().configure(Client::new);
-		CLIENT_SPEC = client.getRight();
-		CLIENT = client.getLeft();
-
-		final Pair<Common, ForgeConfigSpec> common = new ForgeConfigSpec.Builder().configure(Common::new);
-		COMMON_SPEC = common.getRight();
-		COMMON = common.getLeft();
-	}
-
-	/**
-	 * Registers any relevant listeners for config
-	 */
 	public static void init() {
-		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_SPEC);
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC);
 	}
 
 

@@ -9,30 +9,30 @@ import dev.xkmc.arsdelight.init.registrate.ADEffects;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
-import net.minecraftforge.event.entity.living.LivingHealEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingHealEvent;
 
-@Mod.EventBusSubscriber(modid = ArsDelight.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = ArsDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class ArsDelightServerEvents {
 
 	@SubscribeEvent(priority = EventPriority.LOW)
 	public static void onPlayerHeal(LivingHealEvent event) {
 		var e = event.getEntity();
-		var flourish = e.getEffect(ADEffects.FLOURISH.get());
+		var flourish = e.getEffect(ADEffects.FLOURISH);
 		if (flourish != null) {
-			var cap = CapabilityRegistry.getMana(e).resolve();
+			var cap = CapabilityRegistry.getMana(e);
 			int factor = 1 << flourish.getAmplifier();
-			if (cap.isPresent()) {
-				double max = cap.get().getMaxMana();
+			if (cap != null) {
+				double max = cap.getMaxMana();
 				double maxhp = e.getMaxHealth();
 				double gain = event.getAmount() / maxhp * max * factor;
-				cap.get().addMana(gain);
+				cap.addMana(gain);
 			}
 		}
-		var shielding = e.getEffect(ADEffects.SHIELDING.get());
+		var shielding = e.getEffect(ADEffects.SHIELDING);
 		if (shielding != null) {
 			double factor = 1 << shielding.getAmplifier();
 			double max = ADModConfig.COMMON.maxShieldingAbsorption.get() * factor;
@@ -43,21 +43,21 @@ public class ArsDelightServerEvents {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGH)
-	public static void onDamage(LivingDamageEvent event) {
+	public static void onDamage(LivingDamageEvent.Pre event) {
 		if (event.getSource().is(DamageTypeTags.IS_EXPLOSION)) {
-			var ins = event.getEntity().getEffect(ADEffects.BLAST_RES.get());
+			var ins = event.getEntity().getEffect(ADEffects.BLAST_RES);
 			if (ins != null) {
 				float res = Math.max(0, 1 - (ins.getAmplifier() + 1) * 0.2f);
-				event.setAmount(event.getAmount() * res);
+				event.setNewDamage(event.getNewDamage() * res);
 			}
 		}
 	}
 
 	@SubscribeEvent
 	public static void spellDamage(SpellDamageEvent.Post event) {
-		var ins = event.caster.getEffect(ADEffects.FREEZE.get());
+		var ins = event.caster.getEffect(ADEffects.FREEZE);
 		if (ins != null && event.target instanceof LivingEntity le) {
-			le.addEffect(new MobEffectInstance(ModPotions.FREEZING_EFFECT.get(), ins.getDuration(), ins.getAmplifier()));
+			le.addEffect(new MobEffectInstance(ModPotions.FREEZING_EFFECT, ins.getDuration(), ins.getAmplifier()));
 		}
 	}
 

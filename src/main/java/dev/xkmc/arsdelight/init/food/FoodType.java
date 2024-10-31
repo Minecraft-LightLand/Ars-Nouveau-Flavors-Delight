@@ -38,13 +38,13 @@ public enum FoodType {
 
 	ADFoodItem build(Item.Properties prop, FoodProperties.Builder builder) {
 		if (fast) builder.fast();
-		if (always) builder.alwaysEat();
-		if (meat) builder.meat();
-		prop.food(builder.build());
+		if (always) builder.alwaysEdible();
 		if (container != null) {
+			builder.usingConvertsTo(container.get());
 			prop.stacksTo(16);
 			prop.craftRemainder(container.get());
 		}
+		prop.food(builder.build());
 		return factory.apply(prop, this);
 	}
 
