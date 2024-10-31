@@ -224,7 +224,6 @@ jar {
     archiveClassifier.set('slim')
 }
 
-/*TODO
 tasks.register('publishCurseForge', TaskPublishCurseForge) {
     apiToken = secrets.get("curseforge_token")
     def mainFile = upload(project.curseforge_project, new File("./build/libs/${modid}-${ll_version}.jar"))
@@ -232,7 +231,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
     mainFile.addEnvironment("Client", "Server")
     mainFile.addGameVersion("1.20.1")
     mainFile.addModLoader("Forge","NeoForge")
-    mainFile.addRequirement("farmers-delight")
+    mainFile.addRequirement("farmers-delight","ars-nouveau")
     mainFile.addOptional(
             "cuisine-delight",
             "diet",
@@ -253,10 +252,9 @@ modrinth {
     changelog = new File('./changelog.txt').text.split("\n\n")[0]
     dependencies {
         required.project "farmers-delight"
+        required.project "ars-nouveau"
         optional.project "cuisine-delight"
         optional.project "diet"
         optional.project "thirst-was-taken"
     }
 }
-
- */
