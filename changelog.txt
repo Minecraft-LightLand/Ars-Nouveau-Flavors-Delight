@@ -1,2 +1,7 @@
+1.0.4
+- Fix Source Berry Crate recipe
+- Add Cuisine Delight compat
+- Add thirst compat
+
 1.0.3
 - Release 1.20.1
