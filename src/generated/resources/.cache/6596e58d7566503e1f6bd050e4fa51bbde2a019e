@@ -1,4 +1,4 @@
-// 1.20.1	2024-10-31T16:56:08.207712	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2024-10-31T22:30:46.770033	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 ae453e48826ac24ddb9be87d53d905ddf71e6f1b assets/arsdelight/blockstates/bombegrante_crate.json
 26f2ff0c95f974bc3fedb42d2ab196df7000faae assets/arsdelight/blockstates/frostaya_crate.json
@@ -60,6 +60,7 @@ fe20ba6fd0ae18ca56e8776840225bba80281693 assets/arsdelight/models/item/source_be
 e25646ca052f9327f10276053e690ed6306fa011 assets/arsdelight/models/item/wilden_salad.json
 05928a9a1adf03227dc5a43a77f214bff56e3605 assets/arsdelight/models/item/wilden_sauce.json
 59f44b6293e3625a37624f39933b916b0c3fc3ee assets/arsdelight/models/item/wilden_spike_powder.json
+d944ebc63e714221b51b975e18d0c303f20d304c data/ars_nouveau/tags/items/magic_food.json
 a536c64a80a78c1b0d9b0cedbe90328c921b1f5e data/arsdelight/advancements/recipes/food/grilled_chimera_meat_from_chimera_meat_campfire.json
 eb21ee7444f9cfd5ca55ef0265560d3456bf5f9e data/arsdelight/advancements/recipes/food/grilled_chimera_meat_from_chimera_meat_smoking.json
 a0192d99c19dac881462517b61bf5c4877886a2f data/arsdelight/advancements/recipes/food/grilled_chimera_meat_slice_from_chimera_meat_slice_campfire.json
