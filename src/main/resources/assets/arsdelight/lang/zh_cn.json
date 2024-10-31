@@ -37,7 +37,7 @@
 	"item.arsdelight.grilled_chimera_meat_slice": "烤奇美拉肉片",
 	"item.arsdelight.grilled_wilden_meat": "荒野烤肉",
 	"item.arsdelight.grilled_wilden_meat_slice": "荒野烤肉片",
-	"item.arsdelight.honeyglazed_chimera": "蜜汁奇美拉炖肉",
+	"block.arsdelight.honey_glazed_chimera": "蜜汁奇美拉炖肉",
 	"item.arsdelight.horn_roll": "丰饶角卷",
 	"item.arsdelight.mendosteen_chicken": "魔化山竹烤鸡",
 	"item.arsdelight.mendosteen_hornbeer": "魔化山竹果酒",
@@ -52,5 +52,13 @@
 	"item.arsdelight.wilden_spike_powder": "荒野刺粉",
 	"itemGroup.arsdelight.arsdelight": "新生乐事",
 	"item.arsdelight.source_berry_cookie": "魔源浆果曲奇",
-	"item.arsdelight.source_berry_pie_slice": "切片魔源浆果派"
+	"item.arsdelight.source_berry_pie_slice": "切片魔源浆果派",
+	"block.arsdelight.bastion_crate": "箱装堡垒果",
+	"block.arsdelight.bombegrante_crate": "箱装炸弹石榴",
+	"block.arsdelight.frostaya_crate": "箱装霜木瓜",
+	"block.arsdelight.mendosteen_crate": "箱装门多山竹",
+	"block.arsdelight.source_berry_crate": "箱装魔源浆果",
+	"block.arsdelight.wilden_salad": "荒野沙拉",
+	"item.arsdelight.bowl_of_honey_glazed_chimera": "碗装蜜汁奇美拉炖肉",
+	"item.arsdelight.source_berry_cupcake": "魔源浆果蛋糕"
 }

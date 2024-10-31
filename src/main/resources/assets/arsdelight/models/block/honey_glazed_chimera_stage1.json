@@ -1,0 +1,95 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"texture_size": [32, 32],
+	"textures": {
+		"particle": "arsdelight:block/tray_bottom",
+		"ham": "arsdelight:block/honey_glazed_chimera_body",
+		"tray_top": "arsdelight:block/tray_rice_berry_garnish",
+		"tray_side": "arsdelight:block/tray_bottom"
+	},
+	"render_type": "minecraft:cutout",
+	"elements": [
+		{
+			"name": "plate",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"faces": {
+				"north": {"uv": [1, 11, 15, 13], "texture": "#tray_side"},
+				"east": {"uv": [1, 11, 15, 13], "texture": "#tray_side"},
+				"south": {"uv": [1, 11, 15, 13], "texture": "#tray_side"},
+				"west": {"uv": [1, 11, 15, 13], "texture": "#tray_side"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#tray_side", "cullface": "down"}
+			}
+		},
+		{
+			"name": "ham",
+			"from": [3, 2, 7],
+			"to": [13, 10, 13],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 6, 9]},
+			"faces": {
+				"north": {"uv": [0, 4, 5, 8], "texture": "#ham"},
+				"east": {"uv": [9, 4, 6, 8], "texture": "#ham"},
+				"south": {"uv": [0, 8, 5, 12], "texture": "#ham"},
+				"west": {"uv": [6, 0, 9, 4], "texture": "#ham"},
+				"up": {"uv": [0, 1, 5, 4], "texture": "#ham"},
+				"down": {"uv": [0, 1, 5, 4], "texture": "#ham"}
+			}
+		},
+		{
+			"name": "berry",
+			"from": [2, 2, 2],
+			"to": [4, 4, 4],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [3, 3, 3]},
+			"faces": {
+				"north": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"east": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"south": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"west": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"up": {"uv": [9, 1, 10, 2], "texture": "#ham"},
+				"down": {"uv": [9, 0, 10, 1], "texture": "#ham"}
+			}
+		},
+		{
+			"name": "berry",
+			"from": [4, 1, 2],
+			"to": [6, 3, 4],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [5, 2, 3]},
+			"faces": {
+				"north": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"east": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"south": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"west": {"uv": [9, 0, 10, 1], "texture": "#ham"},
+				"up": {"uv": [9, 1, 10, 2], "rotation": 270, "texture": "#ham"},
+				"down": {"uv": [9, 0, 10, 1], "rotation": 90, "texture": "#ham"}
+			}
+		},
+		{
+			"from": [1.5, 4, 3],
+			"to": [3.5, 6, 3],
+			"rotation": {"angle": 45, "axis": "y", "origin": [3, 4, 3]},
+			"faces": {
+				"north": {"uv": [10, 0, 11, 1], "texture": "#ham"},
+				"east": {"uv": [0, 0, 0, 1], "texture": "#missing"},
+				"south": {"uv": [10, 0, 11, 1], "texture": "#ham"},
+				"west": {"uv": [0, 0, 0, 1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 0], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [3.5, 3, 3],
+			"to": [5.5, 5, 3],
+			"rotation": {"angle": -45, "axis": "y", "origin": [5, 3, 3]},
+			"faces": {
+				"north": {"uv": [10, 0, 11, 1], "texture": "#ham"},
+				"east": {"uv": [0, 0, 0, 1], "texture": "#missing"},
+				"south": {"uv": [10, 0, 11, 1], "texture": "#ham"},
+				"west": {"uv": [0, 0, 0, 1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 0], "texture": "#missing"}
+			}
+		}
+	]
+}

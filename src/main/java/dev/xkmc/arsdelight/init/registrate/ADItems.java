@@ -36,6 +36,7 @@ public class ADItems {
 	}
 
 	public static void register() {
+		ADBlocks.register();
 		ADFood.register();
 	}
 

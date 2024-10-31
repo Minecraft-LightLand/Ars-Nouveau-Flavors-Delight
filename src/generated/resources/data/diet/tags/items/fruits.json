@@ -1,10 +1,6 @@
 {
   "values": [
     "arsdelight:arch_sauce",
-    "arsdelight:activated_mendosteen_jam",
-    "arsdelight:activated_bastion_jam",
-    "arsdelight:neutralized_bombegrante_jam",
-    "arsdelight:neutralized_frostaya_jam",
     "arsdelight:mendosteen_tea",
     "arsdelight:bastion_tea",
     "arsdelight:bombegrante_tea",
@@ -13,6 +9,10 @@
     "arsdelight:bastion_hornbeer",
     "arsdelight:bombegrante_hornbeer",
     "arsdelight:frostaya_hornbeer",
+    "arsdelight:activated_mendosteen_jam",
+    "arsdelight:activated_bastion_jam",
+    "arsdelight:neutralized_bombegrante_jam",
+    "arsdelight:neutralized_frostaya_jam",
     "arsdelight:mendosteen_chicken",
     "arsdelight:bastion_pork",
     "arsdelight:bombegrante_steak",

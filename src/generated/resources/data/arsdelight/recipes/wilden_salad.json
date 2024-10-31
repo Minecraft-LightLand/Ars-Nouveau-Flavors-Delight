@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "arsdelight:arch_sauce"
+    },
+    "B": {
+      "item": "minecraft:bowl"
+    },
+    "C": {
+      "tag": "forge:salad_ingredients/cabbage"
+    },
+    "F": {
+      "item": "ars_nouveau:magebloom"
+    },
+    "M": {
+      "tag": "arsdelight:cooked_wilden_meat"
+    },
+    "S": {
+      "item": "ars_nouveau:sourceberry_bush"
+    }
+  },
+  "pattern": [
+    "SAS",
+    "FMF",
+    "CBC"
+  ],
+  "result": {
+    "item": "arsdelight:wilden_salad"
+  },
+  "show_notification": true
+}

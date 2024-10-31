@@ -52,6 +52,9 @@ public enum ADFood implements ItemLike {
 	SOURCE_BERRY_PIE_SLICE(FoodType.FAST, 3, 0.8f, List.of(
 			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 300, 1)
 	), DietTagGen.SUGARS.tag),
+	SOURCE_BERRY_CUPCAKE(FoodType.FAST, 6, 0.8f, List.of(
+			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200, 2)
+	), DietTagGen.SUGARS.tag),
 	ARCH_SAUCE(FoodType.BOWL, 4, 0.4f, List.of(
 			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200, 1)
 	), DietTagGen.FRUITS.tag),
@@ -62,7 +65,7 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200),
 			new EffectEntry(ModEffects.COMFORT, 1200)
 	), DietTagGen.VEGETABLES.tag),
-	BOWL_OF_WILDEN_SALAD(FoodType.HORNED_MEAT, 12, 0.8f, List.of(
+	BOWL_OF_WILDEN_SALAD(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN::get, 2400, 1),
 			new EffectEntry(ModEffects.NOURISHMENT, 2400)
 	), DietTagGen.PROTEINS.tag),
@@ -70,27 +73,11 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ADEffects.WILDEN::get, 2400, 2),
 			new EffectEntry(ModEffects.NOURISHMENT, 2400)
 	), DietTagGen.PROTEINS.tag),
-	HONEYGLAZED_CHIMERA(FoodType.MEAT_PLATE, 18, 0.8f, List.of(
+	BOWL_OF_HONEY_GLAZED_CHIMERA(FoodType.MEAT_PLATE, 18, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN::get, 3600, 2),
 			new EffectEntry(ModEffects.NOURISHMENT, 3600),
 			new EffectEntry(ModEffects.COMFORT, 3600)
 	)),
-
-
-	ACTIVATED_MENDOSTEEN_JAM(FoodType.JELLY, 0, 0, List.of(
-			new EffectEntry(ModPotions.RECOVERY_EFFECT, 1200),
-			new EffectEntry(ADEffects.FLOURISH::get, 600)
-	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
-	ACTIVATED_BASTION_JAM(FoodType.JELLY, 0, 0, List.of(
-			new EffectEntry(ModPotions.DEFENCE_EFFECT, 1200),
-			new EffectEntry(ADEffects.SHIELDING::get, 600)
-	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
-	NEUTRALIZED_BOMBEGRANTE_JAM(FoodType.JELLY, 0, 0, List.of(
-			new EffectEntry(ADEffects.BLAST_RES::get, 1200, 1)
-	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
-	NEUTRALIZED_FROSTAYA_JAM(FoodType.JELLY, 0, 0, List.of(
-			new EffectEntry(ADEffects.FREEZE::get, 2400)
-	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
 
 	MENDOSTEEN_TEA(FoodType.DRINK, 0, 0, List.of(
 			new EffectEntry(ModPotions.RECOVERY_EFFECT, 1800),
@@ -121,6 +108,21 @@ public enum ADFood implements ItemLike {
 	FROSTAYA_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(
 			new EffectEntry(ADEffects.FREEZE::get, 2400, 1)
 	), DietTagGen.FRUITS.tag),
+
+	ACTIVATED_MENDOSTEEN_JAM(FoodType.JELLY, 0, 0, List.of(
+			new EffectEntry(ModPotions.RECOVERY_EFFECT, 1200),
+			new EffectEntry(ADEffects.FLOURISH::get, 600)
+	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
+	ACTIVATED_BASTION_JAM(FoodType.JELLY, 0, 0, List.of(
+			new EffectEntry(ModPotions.DEFENCE_EFFECT, 1200),
+			new EffectEntry(ADEffects.SHIELDING::get, 600)
+	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
+	NEUTRALIZED_BOMBEGRANTE_JAM(FoodType.JELLY, 0, 0, List.of(
+			new EffectEntry(ADEffects.BLAST_RES::get, 1200, 1)
+	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
+	NEUTRALIZED_FROSTAYA_JAM(FoodType.JELLY, 0, 0, List.of(
+			new EffectEntry(ADEffects.FREEZE::get, 2400)
+	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
 
 	MENDOSTEEN_CHICKEN(FoodType.MEAT_PLATE, 10, 0.8f, List.of(
 			new EffectEntry(ModPotions.RECOVERY_EFFECT, 2400),

@@ -36,12 +36,11 @@ public class ArsDelight {
 
 	public static final RegistryEntry<CreativeModeTab> TAB =
 			REGISTRATE.buildModCreativeTab("arsdelight", "Ars Nouveau's Flavors & Delight",
-					e -> e.icon(ADFood.FROSTAYA_HORNBEER::asStack));
+					e -> e.icon(ADFood.SOURCE_BERRY_PIE_SLICE::asStack));
 
 	public ArsDelight() {
 		ADItems.register();
 		ADEffects.register();
-		ADBlocks.register();
 		ADModConfig.init();
 		ADGLMProvider.register();
 

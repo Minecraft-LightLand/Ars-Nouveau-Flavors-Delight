@@ -8,6 +8,7 @@ import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
+import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -45,6 +46,12 @@ public class RecipeGen {
 					BlockRegistry.FLOURISHING_WOOD, BlockRegistry.STRIPPED_AWWOOD_GREEN);
 			strip(pvd, ADItems.VEXING_BARK, BlockRegistry.VEXING_LOG, BlockRegistry.STRIPPED_AWLOG_PURPLE,
 					BlockRegistry.VEXING_WOOD, BlockRegistry.STRIPPED_AWWOOD_PURPLE);
+
+			pvd.storage(BlockRegistry.SOURCEBERRY_BUSH::get, RecipeCategory.MISC, ADBlocks.SOURCE_BERRY_CRATE);
+			pvd.storage(BlockRegistry.MENDOSTEEN_POD::get, RecipeCategory.MISC, ADBlocks.MENDOSTEEN_CRATE);
+			pvd.storage(BlockRegistry.BASTION_POD::get, RecipeCategory.MISC, ADBlocks.BASTION_CRATE);
+			pvd.storage(BlockRegistry.BOMBEGRANTE_POD::get, RecipeCategory.MISC, ADBlocks.BOMBEGRANTE_CRATE);
+			pvd.storage(BlockRegistry.FROSTAYA_POD::get, RecipeCategory.MISC, ADBlocks.FROSTAYA_CRATE);
 		}
 
 		// processing
@@ -80,7 +87,16 @@ public class RecipeGen {
 					ADFood.SOURCE_BERRY_COOKIE, 8)::unlockedBy, BlockRegistry.SOURCEBERRY_BUSH.asItem())
 					.pattern("ABA")
 					.define('A', Items.WHEAT)
-					.define('B', BlockRegistry.SOURCEBERRY_BUSH);
+					.define('B', BlockRegistry.SOURCEBERRY_BUSH)
+					.save(pvd);
+
+			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_CUPCAKE, 2, 200, 0.1f, Items.PAPER)
+					.addIngredient(ADFood.ARCH_SAUCE)
+					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+					.addIngredient(ForgeTags.EGGS)
+					.addIngredient(Items.WHEAT)
+					.addIngredient(ForgeTags.MILK)
+					.build(pvd);
 		}
 
 		// dish
@@ -106,9 +122,29 @@ public class RecipeGen {
 					.addIngredient(ADItems.VEXING_BARK)
 					.build(pvd);
 
+			CookingPotRecipeBuilder.cookingPotRecipe(ADBlocks.CHIMERA, 1, 200, 0.1f, Items.BOWL)
+					.addIngredient(TagGen.RAW_CHIMERA)
+					.addIngredient(ForgeTags.GRAIN_RICE)
+					.addIngredient(ADFood.ARCH_SAUCE)
+					.addIngredient(Items.HONEY_BOTTLE)
+					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+					.addIngredient(Items.GLOW_BERRIES)
+					.build(pvd);
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.FOOD,
+					ADBlocks.SALAD, 1)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
+					.pattern("SAS").pattern("FMF").pattern("CBC")
+					.define('C', ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.define('B', Items.BOWL)
+					.define('S', BlockRegistry.SOURCEBERRY_BUSH)
+					.define('M', TagGen.COOKED_WILDEN_MEAT)
+					.define('F', ItemsRegistry.MAGE_BLOOM)
+					.define('A', ADFood.ARCH_SAUCE)
+					.save(pvd);
+
 		}
 
-		//fruits
+		// fruits
 		{
 
 			// jam
@@ -242,18 +278,6 @@ public class RecipeGen {
 
 		}
 
-
-	}
-
-	private static void storageBlock(RegistrateRecipeProvider pvd, Item item, Block block, Item cont) {
-		unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,
-				block)::unlockedBy, item)
-				.requires(item, 8)
-				.save(pvd);
-		unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,
-				item, 8)::unlockedBy, block.asItem())
-				.requires(block).requires(cont, 8)
-				.save(pvd);
 	}
 
 	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,
