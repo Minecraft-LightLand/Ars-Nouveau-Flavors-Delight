@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "ars_nouveau:mendosteen_pod"
+    },
+    {
+      "item": "ars_nouveau:mendosteen_pod"
+    },
+    {
+      "item": "arsdelight:cascading_bark"
+    },
+    {
+      "item": "ars_nouveau:blue_archwood_leaves"
+    },
+    {
+      "item": "ars_nouveau:sourceberry_bush"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "arsdelight:mendosteen_tea"
+  }
+}

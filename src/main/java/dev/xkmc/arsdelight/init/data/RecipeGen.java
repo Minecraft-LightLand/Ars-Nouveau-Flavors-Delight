@@ -23,6 +23,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -94,6 +95,7 @@ public class RecipeGen {
 					.save(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_CUPCAKE, 2, 200, 0.1f, Items.PAPER)
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(ADFood.ARCH_SAUCE)
 					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
 					.addIngredient(Tags.Items.EGGS)
@@ -105,6 +107,7 @@ public class RecipeGen {
 		// dish
 		{
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.ARCH_SAUCE, 1, 200, 0.1f, Items.BOWL)
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(ADFood.NEUTRALIZED_FROSTAYA_JAM)
 					.addIngredient(ADFood.NEUTRALIZED_BOMBEGRANTE_JAM)
 					.addIngredient(ADFood.ACTIVATED_BASTION_JAM)
@@ -113,12 +116,14 @@ public class RecipeGen {
 					.build(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_SAUCE, 1, 200, 0.1f, Items.BOWL)
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(ADItems.HORN_POWDER)
 					.addIngredient(ADItems.SPIKE_POWDER)
 					.addIngredient(ItemsRegistry.WILDEN_WING)
 					.build(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.ARCH_SOUP, 1, 200, 0.1f, Items.BOWL)
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(ADItems.BLAZING_BARK)
 					.addIngredient(ADItems.CASCADING_BARK)
 					.addIngredient(ADItems.FLOURISHING_BARK)
@@ -126,6 +131,7 @@ public class RecipeGen {
 					.build(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADBlocks.CHIMERA, 1, 200, 0.1f, Items.BOWL)
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(TagGen.RAW_CHIMERA)
 					.addIngredient(ModItems.RICE.get())
 					.addIngredient(ADFood.ARCH_SAUCE)
@@ -153,24 +159,28 @@ public class RecipeGen {
 			// jam
 			{
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.ACTIVATED_MENDOSTEEN_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get(), 2)
 						.addIngredient(ADItems.CASCADING_BARK.get())
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.ACTIVATED_BASTION_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
 						.addIngredient(ADItems.FLOURISHING_BARK.get())
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.NEUTRALIZED_BOMBEGRANTE_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.VEXING_BARK.get())
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.NEUTRALIZED_FROSTAYA_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(Items.SUGAR)
@@ -180,6 +190,7 @@ public class RecipeGen {
 			// tea
 			{
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.MENDOSTEEN_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get(), 2)
 						.addIngredient(ADItems.CASCADING_BARK.get())
 						.addIngredient(BlockRegistry.CASCADING_LEAVE)
@@ -187,6 +198,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BASTION_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
 						.addIngredient(ADItems.FLOURISHING_BARK.get())
 						.addIngredient(BlockRegistry.FLOURISHING_LEAVES)
@@ -194,6 +206,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BOMBEGRANTE_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.VEXING_BARK.get())
 						.addIngredient(BlockRegistry.VEXING_LEAVES)
@@ -201,6 +214,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.FROSTAYA_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(BlockRegistry.BLAZING_LEAVES)
@@ -212,6 +226,7 @@ public class RecipeGen {
 			// hornbeer
 			{
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.MENDOSTEEN_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get(), 2)
 						.addIngredient(ADItems.CASCADING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
@@ -219,6 +234,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BASTION_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
 						.addIngredient(ADItems.FLOURISHING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
@@ -226,6 +242,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BOMBEGRANTE_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.VEXING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
@@ -233,6 +250,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.FROSTAYA_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
@@ -245,6 +263,7 @@ public class RecipeGen {
 			// fruit meat plate
 			{
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.MENDOSTEEN_CHICKEN, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get())
 						.addIngredient(ADFood.ACTIVATED_MENDOSTEEN_JAM.get())
 						.addIngredient(CommonTags.FOODS_RAW_CHICKEN)
@@ -253,6 +272,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BASTION_PORK, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 						.addIngredient(BlockRegistry.BASTION_POD.get())
 						.addIngredient(ADFood.ACTIVATED_BASTION_JAM.get())
 						.addIngredient(CommonTags.FOODS_RAW_PORK)
@@ -261,6 +281,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BOMBEGRANTE_STEAK, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get())
 						.addIngredient(ADFood.NEUTRALIZED_BOMBEGRANTE_JAM.get())
 						.addIngredient(CommonTags.FOODS_RAW_BEEF)
@@ -269,6 +290,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.FROSTAYA_MUTTON, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get())
 						.addIngredient(ADFood.NEUTRALIZED_FROSTAYA_JAM.get())
 						.addIngredient(CommonTags.FOODS_RAW_MUTTON)

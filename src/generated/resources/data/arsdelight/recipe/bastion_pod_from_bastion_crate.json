@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "arsdelight:bastion_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "ars_nouveau:bastion_pod"
+  }
+}

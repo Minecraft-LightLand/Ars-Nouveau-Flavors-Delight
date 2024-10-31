@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "ars_nouveau:wilden_spike"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "arsdelight:wilden_spike_powder"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:shovels"
+  }
+}

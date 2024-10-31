@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "ars_nouveau:frostaya_pod"
+    },
+    {
+      "item": "arsdelight:neutralized_frostaya_jam"
+    },
+    {
+      "tag": "c:foods/raw_mutton"
+    },
+    {
+      "tag": "c:foods/onion"
+    },
+    {
+      "item": "arsdelight:wilden_sauce"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "arsdelight:frostaya_mutton"
+  }
+}

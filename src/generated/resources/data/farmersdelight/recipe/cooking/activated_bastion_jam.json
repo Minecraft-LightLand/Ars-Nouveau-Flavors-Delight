@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "ars_nouveau:bastion_pod"
+    },
+    {
+      "item": "ars_nouveau:bastion_pod"
+    },
+    {
+      "item": "arsdelight:flourishing_bark"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "arsdelight:activated_bastion_jam"
+  }
+}

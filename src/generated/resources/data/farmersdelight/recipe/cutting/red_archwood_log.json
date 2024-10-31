@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "ars_nouveau:red_archwood_log"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "ars_nouveau:stripped_red_archwood_log"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "arsdelight:blazing_bark"
+      }
+    }
+  ],
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  },
+  "tool": {
+    "type": "farmersdelight:item_ability",
+    "action": "axe_strip"
+  }
+}

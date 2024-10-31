@@ -10,11 +10,11 @@
     },
     {
       "condition": "minecraft:entity_properties",
-      "entity": "killer",
+      "entity": "attacker",
       "predicate": {
         "equipment": {
           "mainhand": {
-            "tag": "forge:tools/knives"
+            "items": "#c:tools/knife"
           }
         }
       }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sourceberry_bush": {
+      "conditions": {
+        "items": [
+          {
+            "items": "ars_nouveau:sourceberry_bush"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "arsdelight:source_berry_crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sourceberry_bush"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "arsdelight:source_berry_crate"
+    ]
+  }
+}

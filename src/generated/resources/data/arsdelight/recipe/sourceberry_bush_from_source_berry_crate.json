@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "arsdelight:source_berry_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "ars_nouveau:sourceberry_bush"
+  }
+}

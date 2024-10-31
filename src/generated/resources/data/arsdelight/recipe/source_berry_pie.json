@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "arsdelight:source_berry_pie_slice"
+    },
+    {
+      "item": "arsdelight:source_berry_pie_slice"
+    },
+    {
+      "item": "arsdelight:source_berry_pie_slice"
+    },
+    {
+      "item": "arsdelight:source_berry_pie_slice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ars_nouveau:source_berry_pie"
+  }
+}

@@ -21,8 +21,8 @@ public class ADModConfig {
 
 		Common(Builder builder) {
 			markPlain();
-			enableThirstCompat = builder.define("enableThirstCompat", true);
-			maxShieldingAbsorption = builder.comment("Max absorption allowed for Shielding I effect. Every level doubles the cap")
+			enableThirstCompat = builder.text("Enable Thirst Was Taken compatibility").define("enableThirstCompat", true);
+			maxShieldingAbsorption = builder.text("Max absorption allowed for Shielding I effect. Every level doubles the cap")
 					.defineInRange("maxShieldingAbsorption", 8d, 2, 100);
 		}
 
