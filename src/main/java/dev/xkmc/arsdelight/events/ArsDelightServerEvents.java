@@ -24,7 +24,13 @@ public class ArsDelightServerEvents {
 		var flourish = e.getEffect(ADEffects.FLOURISH.get());
 		if (flourish != null) {
 			var cap = CapabilityRegistry.getMana(e).resolve();
-			cap.ifPresent(mana -> mana.addMana(event.getAmount() * (1 << flourish.getAmplifier())));
+			int factor = 1 << flourish.getAmplifier();
+			if (cap.isPresent()) {
+				double max = cap.get().getMaxMana();
+				double maxhp = e.getMaxHealth();
+				double gain = event.getAmount() / maxhp * max * factor;
+				cap.get().addMana(gain);
+			}
 		}
 		var shielding = e.getEffect(ADEffects.SHIELDING.get());
 		if (shielding != null) {
