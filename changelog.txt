@@ -1,2 +1,8 @@
+2.0.4
+- Fix crash
+
+2.0.3
+- Add magic food tag to all foods
+
 2.0.2
 - Release 1.21.1

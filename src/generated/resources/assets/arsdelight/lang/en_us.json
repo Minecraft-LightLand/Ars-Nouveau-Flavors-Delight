@@ -5,6 +5,8 @@
   "arsdelight.configuration.maxShieldingAbsorption.tooltip": "Range: 2.0 ~ 100.0",
   "arsdelight.configuration.section.arsdelight.client.toml": "Ars Nouveau's Flavors & Delight Client Configuration",
   "arsdelight.configuration.section.arsdelight.client.toml.title": "Ars Nouveau's Flavors & Delight Client Configuration",
+  "arsdelight.configuration.section.arsdelight.common.toml": "Ars Nouveau's Flavors & Delight Common Configuration",
+  "arsdelight.configuration.section.arsdelight.common.toml.title": "Ars Nouveau's Flavors & Delight Common Configuration",
   "arsdelight.configuration.section.arsdelight.server.toml": "Ars Nouveau's Flavors & Delight Server Configuration",
   "arsdelight.configuration.section.arsdelight.server.toml.title": "Ars Nouveau's Flavors & Delight Server Configuration",
   "arsdelight.configuration.title": "Ars Nouveau's Flavors & Delight Configuration",

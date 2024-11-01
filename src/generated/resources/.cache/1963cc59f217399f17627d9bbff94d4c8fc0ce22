@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-31T16:57:28.582002	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute), Tags (enchantment)]
+// 1.21.1	2024-10-31T23:11:24.014098	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute), Tags (enchantment)]
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 ae453e48826ac24ddb9be87d53d905ddf71e6f1b assets/arsdelight/blockstates/bombegrante_crate.json
 26f2ff0c95f974bc3fedb42d2ab196df7000faae assets/arsdelight/blockstates/frostaya_crate.json
@@ -6,8 +6,8 @@ d52eb3c078967fdb538c4a1ad429c18965486d7f assets/arsdelight/blockstates/honey_gla
 b5af141556ea920ae3725cd62a6dc57f4733d9e9 assets/arsdelight/blockstates/mendosteen_crate.json
 a8911068f6ad52fad8fdc8ef425e003584f7566d assets/arsdelight/blockstates/source_berry_crate.json
 88a13424d368e1600330652ec98122395edcfe8c assets/arsdelight/blockstates/wilden_salad.json
-c29260705cdf35f00f92b1c34a48b42e3458e328 assets/arsdelight/lang/en_ud.json
-db9cde06e49cbe68c2c3e9ead8904bee60688828 assets/arsdelight/lang/en_us.json
+0f25ecad476e75fb8826e41f86f86865dc677d21 assets/arsdelight/lang/en_ud.json
+9716fa89858df582806d9245d645926b8385fb80 assets/arsdelight/lang/en_us.json
 e9d47d1c4188884e6651fdd2433f0db64006342d assets/arsdelight/models/block/bastion_crate.json
 9ea2a0598c601f625cd7f4c56f0dfe8fb3ce05ca assets/arsdelight/models/block/bombegrante_crate.json
 aac1bc946e7f283b3ba73008bdea7686bab2d8a4 assets/arsdelight/models/block/frostaya_crate.json
@@ -60,6 +60,7 @@ fe20ba6fd0ae18ca56e8776840225bba80281693 assets/arsdelight/models/item/source_be
 e25646ca052f9327f10276053e690ed6306fa011 assets/arsdelight/models/item/wilden_salad.json
 05928a9a1adf03227dc5a43a77f214bff56e3605 assets/arsdelight/models/item/wilden_sauce.json
 59f44b6293e3625a37624f39933b916b0c3fc3ee assets/arsdelight/models/item/wilden_spike_powder.json
+d944ebc63e714221b51b975e18d0c303f20d304c data/ars_nouveau/tags/item/magic_food.json
 c8c80ea956bdc2e404cce3cd24e62f1bfa22ef80 data/arsdelight/advancement/recipes/food/grilled_chimera_meat_from_chimera_meat_campfire.json
 4ce5365e5d043ec1ccf4135a90f401e1401715fa data/arsdelight/advancement/recipes/food/grilled_chimera_meat_from_chimera_meat_smoking.json
 55242d6d364666ae8106e4aef77c579441f3e410 data/arsdelight/advancement/recipes/food/grilled_chimera_meat_slice_from_chimera_meat_slice_campfire.json

@@ -35,7 +35,7 @@ public class ArsDelightServerEvents {
 		var shielding = e.getEffect(ADEffects.SHIELDING);
 		if (shielding != null) {
 			double factor = 1 << shielding.getAmplifier();
-			double max = ADModConfig.COMMON.maxShieldingAbsorption.get() * factor;
+			double max = ADModConfig.SERVER.maxShieldingAbsorption.get() * factor;
 			double old = e.getAbsorptionAmount();
 			double newAb = Math.min(max, old + event.getAmount() * factor);
 			e.setAbsorptionAmount((float) newAb);
