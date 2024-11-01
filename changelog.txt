@@ -1,3 +1,6 @@
+1.0.5
+- Add magic food tag to all foods
+
 1.0.4
 - Fix Source Berry Crate recipe
 - Add Cuisine Delight compat
