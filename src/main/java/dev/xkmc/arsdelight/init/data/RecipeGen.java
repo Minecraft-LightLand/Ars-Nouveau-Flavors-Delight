@@ -132,8 +132,23 @@ public class RecipeGen {
 					.addIngredient(ADItems.VEXING_BARK)
 					.build(pvd);
 
+			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_STEW, 1, 200, 0.1f, Items.BOWL)
+					.addIngredient(TagGen.RAW_WILDEN_MEAT)
+					.addIngredient(ForgeTags.VEGETABLES_TOMATO)
+					.addIngredient(ForgeTags.VEGETABLES_ONION)
+					.addIngredient(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.addIngredient(ADItems.HORN_POWDER)
+					.build(pvd);
+
+			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_SKEWER, 2, 200, 0.1f, Items.STICK)
+					.addIngredient(TagGen.RAW_WILDEN_MEAT)
+					.addIngredient(ForgeTags.VEGETABLES_TOMATO)
+					.addIngredient(ForgeTags.VEGETABLES_ONION)
+					.addIngredient(ADItems.SPIKE_POWDER)
+					.build(pvd);
+
 			CookingPotRecipeBuilder.cookingPotRecipe(ADBlocks.CHIMERA, 1, 200, 0.1f, Items.BOWL)
-					.addIngredient(TagGen.RAW_CHIMERA)
+					.addIngredient(ADFood.CHIMERA_MEAT)
 					.addIngredient(ForgeTags.GRAIN_RICE)
 					.addIngredient(ADFood.ARCH_SAUCE)
 					.addIngredient(Items.HONEY_BOTTLE)
@@ -147,7 +162,7 @@ public class RecipeGen {
 					.define('C', ForgeTags.SALAD_INGREDIENTS_CABBAGE)
 					.define('B', Items.BOWL)
 					.define('S', BlockRegistry.SOURCEBERRY_BUSH)
-					.define('M', TagGen.COOKED_WILDEN_MEAT)
+					.define('M', ADFood.GRILLED_WILDEN_MEAT)
 					.define('F', ItemsRegistry.MAGE_BLOOM)
 					.define('A', ADFood.ARCH_SAUCE)
 					.save(pvd);
@@ -212,6 +227,14 @@ public class RecipeGen {
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(BlockRegistry.BLAZING_LEAVES)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.UNSTABLE_COCKTAIL, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
+						.addIngredient(ADItems.BLAZING_BARK.get())
+						.addIngredient(Items.GUNPOWDER)
+						.addIngredient(Items.SUGAR)
+						.addIngredient(ItemsRegistry.FIRE_ESSENCE)
 						.build(pvd);
 
 			}

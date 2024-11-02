@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:stick"
+  },
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "tag": "arsdelight:raw_wilden_meat"
+    },
+    {
+      "tag": "forge:vegetables/tomato"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    {
+      "item": "arsdelight:wilden_spike_powder"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "arsdelight:wilden_skewer"
+  }
+}
