@@ -189,7 +189,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
 modrinth {
     token = secrets.get("modrinth_token")
     projectId = project.modrinth_project
-    versionName = "Twilight Delight ${project.mod_version}"
+    versionName = "Ars Delight ${project.mod_version}"
     versionNumber = project.mod_version
     versionType = "release"
     uploadFile = new File("./build/libs/${mod_id}-${mod_version}.jar")
