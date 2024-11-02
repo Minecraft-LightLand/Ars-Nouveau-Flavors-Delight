@@ -1,5 +1,7 @@
 package dev.xkmc.arsdelight.events;
 
+import com.hollingsworth.arsnouveau.api.event.ManaRegenCalcEvent;
+import com.hollingsworth.arsnouveau.api.event.MaxManaCalcEvent;
 import com.hollingsworth.arsnouveau.api.event.SpellDamageEvent;
 import com.hollingsworth.arsnouveau.setup.registry.CapabilityRegistry;
 import com.hollingsworth.arsnouveau.setup.registry.ModPotions;
@@ -67,6 +69,26 @@ public class ArsDelightServerEvents {
 		var ins = event.caster.getEffect(ADEffects.FREEZE.get());
 		if (ins != null && event.target instanceof LivingEntity le) {
 			le.addEffect(new MobEffectInstance(ModPotions.FREEZING_EFFECT.get(), ins.getDuration(), ins.getAmplifier()));
+		}
+	}
+
+	@SubscribeEvent
+	public static void maxManaCalc(MaxManaCalcEvent event) {
+		var ins = event.getEntity().getEffect(ADEffects.WILDEN.get());
+		if (ins != null) {
+			double config = ADModConfig.COMMON.wildenMaxManaBonus.get();
+			double factor = 1 + (ins.getAmplifier() + 1) * config;
+			event.setMax((int) (event.getMax() * factor));
+		}
+	}
+
+	@SubscribeEvent
+	public static void ManaRegenCalc(ManaRegenCalcEvent event) {
+		var ins = event.getEntity().getEffect(ADEffects.WILDEN.get());
+		if (ins != null) {
+			double config = ADModConfig.COMMON.wildenManaRegenBonus.get();
+			double factor = 1 + (ins.getAmplifier() + 1) * config;
+			event.setRegen((int) (event.getRegen() * factor));
 		}
 	}
 

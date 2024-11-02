@@ -19,6 +19,8 @@ public class ADModConfig {
 		public final ForgeConfigSpec.BooleanValue enableThirstCompat;
 		public final ForgeConfigSpec.DoubleValue maxShieldingAbsorption;
 		public final ForgeConfigSpec.DoubleValue wildenSpellDamageBonus;
+		public final ForgeConfigSpec.DoubleValue wildenMaxManaBonus;
+		public final ForgeConfigSpec.DoubleValue wildenManaRegenBonus;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			enableThirstCompat = builder.define("enableThirstCompat", true);
@@ -26,6 +28,10 @@ public class ADModConfig {
 					.defineInRange("maxShieldingAbsorption", 8d, 2, 100);
 			wildenSpellDamageBonus = builder.comment("Wilden effect: spell damage bonus per level")
 					.defineInRange("wildenSpellDamageBonus", 0.2d, 0, 1);
+			wildenMaxManaBonus = builder.comment("Wilden effect: max mana bonus per level")
+					.defineInRange("wildenMaxManaBonus", 0.2d, 0, 1);
+			wildenManaRegenBonus = builder.comment("Wilden effect: mana regen bonus per level")
+					.defineInRange("wildenManaRegenBonus", 0.2d, 0, 1);
 
 		}
 
