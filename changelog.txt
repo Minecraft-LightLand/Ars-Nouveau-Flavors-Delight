@@ -1,3 +1,6 @@
+1.0.6
+- Fix spell damage bonus from wilden effect not being applied
+
 1.0.5
 - Add magic food tag to all foods
 
