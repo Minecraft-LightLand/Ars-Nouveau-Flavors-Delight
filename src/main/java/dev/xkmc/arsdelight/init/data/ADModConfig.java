@@ -30,6 +30,8 @@ public class ADModConfig {
 
 		public final ModConfigSpec.DoubleValue maxShieldingAbsorption;
 		public final ModConfigSpec.DoubleValue wildenSpellDamageBonus;
+		public final ModConfigSpec.DoubleValue wildenMaxManaBonus;
+		public final ModConfigSpec.DoubleValue wildenManaRegenBonus;
 
 		Server(Builder builder) {
 			markPlain();
@@ -37,6 +39,10 @@ public class ADModConfig {
 					.defineInRange("maxShieldingAbsorption", 8d, 2, 100);
 			wildenSpellDamageBonus = builder.text("Wilden effect: spell damage bonus per level")
 					.defineInRange("wildenSpellDamageBonus", 0.2d, 0, 1);
+			wildenMaxManaBonus = builder.text("Wilden effect: max mana bonus per level")
+					.defineInRange("wildenMaxManaBonus", 0.2d, 0, 1);
+			wildenManaRegenBonus = builder.text("Wilden effect: mana regen bonus per level")
+					.defineInRange("wildenManaRegenBonus", 0.2d, 0, 1);
 
 		}
 
