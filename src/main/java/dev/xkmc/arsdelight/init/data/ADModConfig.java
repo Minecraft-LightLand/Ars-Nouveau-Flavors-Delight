@@ -29,11 +29,15 @@ public class ADModConfig {
 	public static class Server extends ConfigInit {
 
 		public final ModConfigSpec.DoubleValue maxShieldingAbsorption;
+		public final ModConfigSpec.DoubleValue wildenSpellDamageBonus;
 
 		Server(Builder builder) {
 			markPlain();
 			maxShieldingAbsorption = builder.text("Max absorption allowed for Shielding I effect. Every level doubles the cap")
 					.defineInRange("maxShieldingAbsorption", 8d, 2, 100);
+			wildenSpellDamageBonus = builder.text("Wilden effect: spell damage bonus per level")
+					.defineInRange("wildenSpellDamageBonus", 0.2d, 0, 1);
+
 		}
 
 	}

@@ -54,6 +54,15 @@ public class ArsDelightServerEvents {
 	}
 
 	@SubscribeEvent
+	public static void spellDamagePre(SpellDamageEvent.Pre event) {
+		var ins = event.caster.getEffect(ADEffects.WILDEN.get());
+		if (ins != null) {
+			double factor = ADModConfig.COMMON.wildenSpellDamageBonus.get();
+			event.damage *= 1 + (ins.getAmplifier() + 1) * (float) factor;
+		}
+	}
+
+	@SubscribeEvent
 	public static void spellDamage(SpellDamageEvent.Post event) {
 		var ins = event.caster.getEffect(ADEffects.FREEZE);
 		if (ins != null && event.target instanceof LivingEntity le) {
