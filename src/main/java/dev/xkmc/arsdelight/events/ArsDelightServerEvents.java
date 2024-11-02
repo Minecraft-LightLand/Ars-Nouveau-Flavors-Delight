@@ -57,9 +57,9 @@ public class ArsDelightServerEvents {
 
 	@SubscribeEvent
 	public static void spellDamagePre(SpellDamageEvent.Pre event) {
-		var ins = event.caster.getEffect(ADEffects.WILDEN.get());
+		var ins = event.caster.getEffect(ADEffects.WILDEN);
 		if (ins != null) {
-			double factor = ADModConfig.COMMON.wildenSpellDamageBonus.get();
+			double factor = ADModConfig.SERVER.wildenSpellDamageBonus.get();
 			event.damage *= 1 + (ins.getAmplifier() + 1) * (float) factor;
 		}
 	}
@@ -74,9 +74,9 @@ public class ArsDelightServerEvents {
 
 	@SubscribeEvent
 	public static void maxManaCalc(MaxManaCalcEvent event) {
-		var ins = event.getEntity().getEffect(ADEffects.WILDEN.get());
+		var ins = event.getEntity().getEffect(ADEffects.WILDEN);
 		if (ins != null) {
-			double config = ADModConfig.COMMON.wildenMaxManaBonus.get();
+			double config = ADModConfig.SERVER.wildenMaxManaBonus.get();
 			double factor = 1 + (ins.getAmplifier() + 1) * config;
 			event.setMax((int) (event.getMax() * factor));
 		}
@@ -84,9 +84,9 @@ public class ArsDelightServerEvents {
 
 	@SubscribeEvent
 	public static void ManaRegenCalc(ManaRegenCalcEvent event) {
-		var ins = event.getEntity().getEffect(ADEffects.WILDEN.get());
+		var ins = event.getEntity().getEffect(ADEffects.WILDEN);
 		if (ins != null) {
-			double config = ADModConfig.COMMON.wildenManaRegenBonus.get();
+			double config = ADModConfig.SERVER.wildenManaRegenBonus.get();
 			double factor = 1 + (ins.getAmplifier() + 1) * config;
 			event.setRegen((int) (event.getRegen() * factor));
 		}
