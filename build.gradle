@@ -159,7 +159,10 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:badpackets-615134:4438956")
     runtimeOnly fg.deobf("curse.maven:wthit-forge-455982:4596739")
 
-    implementation fg.deobf("curse.maven:create-328085:4835191")
+    implementation fg.deobf("curse.maven:create-328085:5838779")
+    implementation fg.deobf("curse.maven:create-enchantment-industry-688768:5331908")
+    implementation fg.deobf("curse.maven:ars-creo-575698:5171755")
+    implementation fg.deobf("curse.maven:create-central-kitchen-820977:5232178")
 
     runtimeOnly fg.deobf("curse.maven:appleskin-248787:4605078")
     runtimeOnly fg.deobf("curse.maven:patchouli-306770:4633797")
