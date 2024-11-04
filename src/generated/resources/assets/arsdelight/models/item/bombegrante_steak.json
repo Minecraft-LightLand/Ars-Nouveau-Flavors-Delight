@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/bombegrante_steak"
+    "layer0": "arsdelight:item/food/bombegrante_steak"
   }
 }

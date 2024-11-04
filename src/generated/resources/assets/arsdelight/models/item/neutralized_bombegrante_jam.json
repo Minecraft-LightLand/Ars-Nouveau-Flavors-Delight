@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/neutralized_bombegrante_jam"
+    "layer0": "arsdelight:item/drink/neutralized_bombegrante_jam"
   }
 }

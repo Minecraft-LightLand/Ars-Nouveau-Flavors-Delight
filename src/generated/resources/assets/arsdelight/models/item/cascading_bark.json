@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/cascading_bark"
+    "layer0": "arsdelight:item/ingredient/cascading_bark"
   }
 }
