@@ -21,6 +21,7 @@ public enum FoodType {
 	BOTTLE(false, false, false, () -> Items.GLASS_BOTTLE, ADFoodItem::new),
 	BOWL(false, false, false, () -> Items.BOWL, ADFoodItem::new),
 	MEAT_PLATE(false, false, true, () -> Items.BOWL, ADFoodItem::new),
+	MEAT_STICK(true, false, true, () -> Items.STICK, ADFoodItem::new),
 	HORNED_MEAT(true, false, true, ADItems.CHIMERA_HORN::get, ADFoodItem::new),
 	;
 
