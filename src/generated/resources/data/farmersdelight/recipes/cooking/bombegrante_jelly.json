@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "ars_nouveau:bombegranate_pod"
+    },
+    {
+      "item": "ars_nouveau:bombegranate_pod"
+    },
+    {
+      "item": "arsdelight:blazing_bark"
+    },
+    {
+      "item": "ars_nouveau:sourceberry_bush"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "arsdelight:bombegrante_jelly"
+  }
+}
