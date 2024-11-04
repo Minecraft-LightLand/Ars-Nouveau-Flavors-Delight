@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.neoforged.neoforge.data.loading.DatagenModLoader;
 
 public class ShieldingEffect extends MobEffect {
 
@@ -17,7 +18,7 @@ public class ShieldingEffect extends MobEffect {
 	}
 
 	private static double getVal(int lv) {
-		double val = Proxy.getLevel() == null ?
+		double val = DatagenModLoader.isRunningDataGen() || Proxy.getLevel() == null ?
 				ADModConfig.SERVER.maxShieldingAbsorption.getDefault() :
 				ADModConfig.SERVER.maxShieldingAbsorption.get();
 		int factor = 1 << lv;

@@ -1,49 +1,52 @@
 package dev.xkmc.arsdelight.content.item;
 
+import com.hollingsworth.arsnouveau.ArsNouveau;
+import com.hollingsworth.arsnouveau.api.registry.SpellCasterRegistry;
+import com.hollingsworth.arsnouveau.api.spell.AbstractCaster;
 import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
-import com.hollingsworth.arsnouveau.client.renderer.item.FixedGeoItemRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import dev.xkmc.arsdelight.init.ArsDelight;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.cache.object.GeoBone;
-import software.bernie.geckolib.core.object.Color;
 import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib.renderer.GeoItemRenderer;
+import software.bernie.geckolib.util.Color;
 
 // Copied from SwordRenderer
-public class KnifeRenderer extends FixedGeoItemRenderer<EnchantersKnife> {
+public class KnifeRenderer extends GeoItemRenderer<EnchantersKnife> {
 	public KnifeRenderer() {
-		super(new GeoModel<EnchantersKnife>() {
+		super(new GeoModel<>() {
 			public ResourceLocation getModelResource(EnchantersKnife wand) {
-				return ArsDelight.loc("geo/knife.geo.json");
+				return ArsNouveau.prefix("geo/sword.geo.json");
 			}
 
 			public ResourceLocation getTextureResource(EnchantersKnife wand) {
-				return ArsDelight.loc("textures/item/enchanters_knife.png");
+				return ArsNouveau.prefix("textures/item/enchanters_sword.png");
 			}
 
 			public ResourceLocation getAnimationResource(EnchantersKnife wand) {
-				return ArsDelight.loc("animations/knife.json");
+				return ArsNouveau.prefix("animations/sword.json");
 			}
 		});
 	}
 
-	public void renderRecursively(PoseStack poseStack, EnchantersKnife animatable, GeoBone bone, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+	public void renderRecursively(PoseStack poseStack, EnchantersKnife animatable, GeoBone bone, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int color) {
 		if (bone.getName().equals("blade")) {
-			super.renderRecursively(poseStack, animatable, bone, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+			super.renderRecursively(poseStack, animatable, bone, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, color);
 		} else {
-			super.renderRecursively(poseStack, animatable, bone, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, (float) Color.WHITE.getRed() / 255.0F, (float) Color.WHITE.getGreen() / 255.0F, (float) Color.WHITE.getBlue() / 255.0F, (float) Color.WHITE.getAlpha() / 255.0F);
+			super.renderRecursively(poseStack, animatable, bone, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, Color.WHITE.argbInt());
 		}
 
 	}
 
 	public Color getRenderColor(EnchantersKnife animatable, float partialTick, int packedLight) {
 		ParticleColor color = ParticleColor.defaultParticleColor();
-		if (this.currentItemStack.hasTag() && this.currentItemStack.getOrCreateTag().contains("ars_nouveau:caster")) {
-			color = animatable.getSpellCaster(this.currentItemStack).getColor();
+		AbstractCaster<? extends AbstractCaster<?>> caster = SpellCasterRegistry.from(this.currentItemStack);
+		if (caster != null) {
+			color = caster.getColor();
 		}
 
 		return Color.ofRGBA(color.getRed(), color.getGreen(), color.getBlue(), 0.75F);
@@ -52,5 +55,4 @@ public class KnifeRenderer extends FixedGeoItemRenderer<EnchantersKnife> {
 	public RenderType getRenderType(EnchantersKnife animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) {
 		return RenderType.entityTranslucent(texture);
 	}
-
 }

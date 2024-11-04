@@ -5,7 +5,7 @@ import com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ADApparatusRecipeGen extends ApparatusRecipeProvider {
@@ -18,7 +18,7 @@ public class ADApparatusRecipeGen extends ApparatusRecipeProvider {
 	public void addEntries() {
 
 		addRecipe(builder().withResult(ADItems.KNIFE)
-				.withReagent(ModItems.DIAMOND_KNIFE)
+				.withReagent(ModItems.DIAMOND_KNIFE.get())
 				.withPedestalItem(1, Ingredient.of(Tags.Items.GEMS_DIAMOND))
 				.withPedestalItem(1, Ingredient.of(Tags.Items.STORAGE_BLOCKS_GOLD))
 				.withPedestalItem(1, RecipeDatagen.SOURCE_GEM_BLOCK)

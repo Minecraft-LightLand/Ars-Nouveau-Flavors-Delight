@@ -1,0 +1,23 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": true,
+  "pedestalItems": [
+    {
+      "tag": "c:gems/diamond"
+    },
+    {
+      "tag": "c:storage_blocks/gold"
+    },
+    {
+      "tag": "c:storage_blocks/source"
+    }
+  ],
+  "reagent": {
+    "item": "farmersdelight:diamond_knife"
+  },
+  "result": {
+    "count": 1,
+    "id": "arsdelight:enchanters_knife"
+  },
+  "sourceCost": 0
+}

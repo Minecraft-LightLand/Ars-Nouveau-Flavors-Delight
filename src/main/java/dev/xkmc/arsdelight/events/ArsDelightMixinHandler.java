@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 
 public class ArsDelightMixinHandler {
@@ -16,13 +17,12 @@ public class ArsDelightMixinHandler {
 			if (level.getBlockEntity(pos.relative(dir)) instanceof ArcanePedestalTile tile) {
 				ItemStack stack = tile.getItem(0);
 				if (!stack.isStackable()) {
-					ItemStack copy = ADModConfig.COMMON.drygmyFarmingToolPlainCopy.get() ?
+					ItemStack copy = ADModConfig.SERVER.drygmyFarmingToolPlainCopy.get() ?
 							stack.getItem().getDefaultInstance() : stack.copy();
 					player.setItemInHand(InteractionHand.MAIN_HAND, copy);
-					int cost = ADModConfig.COMMON.drygmyFarmingDamageTool.get();
+					int cost = ADModConfig.SERVER.drygmyFarmingDamageTool.get();
 					if (cost > 0) {
-						stack.hurtAndBreak(cost, player, e -> {
-						});
+						stack.hurtAndBreak(cost, player, EquipmentSlot.MAINHAND);
 					}
 					return;
 				}
