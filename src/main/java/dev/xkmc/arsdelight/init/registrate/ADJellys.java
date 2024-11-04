@@ -41,9 +41,9 @@ public class ADJellys {
 						.noOcclusion())
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().getBuilder(ctx.getName())
 						.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
-						.texture("particle", "block/jelly/" + ctx.getName())))
+						.texture("particle", "item/jelly/" + ctx.getName())))
 				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, resolve(effs)))
-				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/food/" + ctx.getName())))
+				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/jelly/" + ctx.getName())))
 				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag).build().register();
 	}
 

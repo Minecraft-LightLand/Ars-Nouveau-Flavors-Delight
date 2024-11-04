@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:builtin/entity",
   "textures": {
-    "particle": "arsdelight:block/jelly/bombegrante_jelly"
+    "particle": "arsdelight:item/jelly/bombegrante_jelly"
   }
 }

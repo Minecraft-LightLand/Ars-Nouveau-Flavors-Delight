@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/food/bombegrante_jelly"
+    "layer0": "arsdelight:item/jelly/bombegrante_jelly"
   }
 }

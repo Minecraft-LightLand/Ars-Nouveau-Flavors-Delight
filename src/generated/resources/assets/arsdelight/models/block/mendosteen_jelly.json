@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:builtin/entity",
   "textures": {
-    "particle": "arsdelight:block/jelly/mendosteen_jelly"
+    "particle": "arsdelight:item/jelly/mendosteen_jelly"
   }
 }
