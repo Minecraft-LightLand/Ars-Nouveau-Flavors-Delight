@@ -13,7 +13,7 @@ public class JellyModel extends GeoModel<JellyBlockEntity> {
 
 	@Override
 	public ResourceLocation getTextureResource(JellyBlockEntity be) {
-		return be.getId().withPath(e -> "textures/block/gecko/" + e + ".png");
+		return be.getId().withPath(e -> "textures/block/jelly/" + e + ".png");
 	}
 
 	@Override

@@ -1,15 +1,12 @@
 package dev.xkmc.arsdelight.content.jelly;
 
-import com.hollingsworth.arsnouveau.api.block.IPrismaticBlock;
-import com.hollingsworth.arsnouveau.common.entity.EntityProjectileSpell;
+import com.hollingsworth.arsnouveau.api.util.BlockUtil;
 import dev.xkmc.l2library.base.tile.BaseBlockEntity;
 import dev.xkmc.l2serial.serialization.SerialClass;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -18,38 +15,13 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 @SerialClass
-public class JellyBlockEntity extends BaseBlockEntity implements IPrismaticBlock, GeoBlockEntity {
+public class JellyBlockEntity extends BaseBlockEntity implements GeoBlockEntity {
 
 	private static final RawAnimation WIGGLE = RawAnimation.begin().then("wiggle", Animation.LoopType.PLAY_ONCE);
 	private final AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
 	public JellyBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
 		super(type, pos, state);
-	}
-
-	@Override
-	public void onHit(ServerLevel sl, BlockPos pos, EntityProjectileSpell e) {
-		Vec3 delta = e.getDeltaMovement();
-		Vec3 v;
-		if (delta.y() < -0.03) {
-			var x = delta.add(1, 0, 1).length();
-			if (x < 0.03) {
-				var rx = sl.getRandom().nextGaussian();
-				var rz = sl.getRandom().nextGaussian();
-				var r = new Vec3(rx, 0, rz).normalize().scale(0.03);
-				v = delta.multiply(0, -1, 0).add(r);
-			} else {
-				v = delta.multiply(1, -1, 1);
-			}
-		} else if (delta.y() < 0.03) {
-			v = delta.add(0, 0.06, 0);
-		} else {
-			v = delta;
-		}
-		e.setDeltaMovement(v);
-		e.setGravity(true);
-		e.spellResolver.spellContext.attachments.put(JellyAttachment.ID, new JellyAttachment(getId().toString()));
-		makeWiggle();
 	}
 
 	public ResourceLocation getId() {
@@ -59,6 +31,7 @@ public class JellyBlockEntity extends BaseBlockEntity implements IPrismaticBlock
 	public void makeWiggle() {
 		if (level == null) return;
 		if (level.isClientSide()) return;
+		BlockUtil.updateObservers(level, getBlockPos());
 		level.blockEvent(getBlockPos(), getBlockState().getBlock(), 1, 1);
 	}
 
@@ -85,8 +58,9 @@ public class JellyBlockEntity extends BaseBlockEntity implements IPrismaticBlock
 		if (wiggleOnce) {
 			wiggleOnce = false;
 			state.getController().forceAnimationReset();
+			return state.setAndContinue(WIGGLE);
 		}
-		return state.setAndContinue(WIGGLE);
+		return PlayState.CONTINUE;
 	}
 
 	@Override

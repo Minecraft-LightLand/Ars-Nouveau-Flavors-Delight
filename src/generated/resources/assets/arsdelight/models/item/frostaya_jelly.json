@@ -1,3 +1,6 @@
 {
-  "parent": "arsdelight:block/frostaya_jelly"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "arsdelight:item/food/frostaya_jelly"
+  }
 }

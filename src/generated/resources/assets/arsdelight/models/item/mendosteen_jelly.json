@@ -1,3 +1,6 @@
 {
-  "parent": "arsdelight:block/mendosteen_jelly"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "arsdelight:item/food/mendosteen_jelly"
+  }
 }

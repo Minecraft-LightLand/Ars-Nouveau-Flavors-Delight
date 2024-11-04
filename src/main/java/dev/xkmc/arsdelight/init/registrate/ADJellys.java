@@ -9,7 +9,6 @@ import dev.xkmc.arsdelight.content.jelly.JellyBlockEntity;
 import dev.xkmc.arsdelight.content.jelly.JellyBlockEntityRenderer;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.BlockFoodType;
-import dev.xkmc.l2library.base.effects.EffectBuilder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.DyeColor;
@@ -38,10 +37,13 @@ public class ADJellys {
 
 	private static BlockEntry<JellyBlock> jelly(String name, FoodProperties effs) {
 		return ArsDelight.REGISTRATE.block(name, JellyBlock::new)
-				.properties((p) -> p.instabreak().pushReaction(PushReaction.DESTROY).mapColor(DyeColor.BROWN).sound(SoundType.WOOL))
+				.properties((p) -> p.instabreak().pushReaction(PushReaction.DESTROY).mapColor(DyeColor.BROWN).sound(SoundType.WOOL)
+						.noOcclusion())
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().getBuilder(ctx.getName())
-						.parent(new ModelFile.UncheckedModelFile("builtin/entity"))))
+						.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+						.texture("particle", "block/jelly/" + ctx.getName())))
 				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, resolve(effs)))
+				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/food/" + ctx.getName())))
 				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag).build().register();
 	}
 
@@ -55,7 +57,7 @@ public class ADJellys {
 	}
 
 	private static MobEffectInstance amplify(MobEffectInstance ins) {
-		return new EffectBuilder(ins).setAmplifier(ins.getAmplifier() + 1).ins;
+		return new MobEffectInstance(ins.getEffect(), ins.getDuration(), ins.getAmplifier() + 1);
 	}
 
 	public static void register() {

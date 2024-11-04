@@ -35,7 +35,8 @@ public record JellyAttachment(String jelly) implements IContextAttachment {
 		List<MobEffectInstance> effs = new ArrayList<>();
 		for (var e : food.getEffects()) {
 			if (e.getSecond() > level.getRandom().nextFloat()) {
-				effs.add(e.getFirst());
+				var eff = e.getFirst();
+				effs.add(new MobEffectInstance(eff.getEffect(), eff.getDuration() / 4, eff.getAmplifier()));
 			}
 		}
 		if (effs.isEmpty()) return null;

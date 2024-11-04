@@ -1,3 +1,6 @@
 {
-  "parent": "arsdelight:block/bastion_jelly"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "arsdelight:item/food/bastion_jelly"
+  }
 }
