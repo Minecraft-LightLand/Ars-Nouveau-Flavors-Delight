@@ -45,9 +45,9 @@ public class ADModConfig {
 					.defineInRange("wildenMaxManaBonus", 0.2d, 0, 1);
 			wildenManaRegenBonus = builder.text("Wilden effect: mana regen bonus per level")
 					.defineInRange("wildenManaRegenBonus", 0.2d, 0, 1);
-			drygmyFarmingToolPlainCopy = builder.comment("Drygmy farming: make a plain copy of the tool to prevent enchantments, affixes, and gems from taking effect")
+			drygmyFarmingToolPlainCopy = builder.text("Drygmy farming: make a plain copy of the tool to prevent enchantments, affixes, and gems from taking effect")
 					.define("drygmyFarmingToolPlainCopy", false);
-			drygmyFarmingDamageTool = builder.comment("Drygmy farming: cost durability on the tool used for farming")
+			drygmyFarmingDamageTool = builder.text("Drygmy farming: cost durability on the tool used for farming")
 					.defineInRange("drygmyFarmingDamageTool", 2, 0, 10000);
 		}
 

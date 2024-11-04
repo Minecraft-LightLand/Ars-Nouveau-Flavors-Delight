@@ -1,11 +1,11 @@
 package dev.xkmc.arsdelight.content.item;
 
-import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.registry.SpellCasterRegistry;
 import com.hollingsworth.arsnouveau.api.spell.AbstractCaster;
 import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import dev.xkmc.arsdelight.init.ArsDelight;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
@@ -20,15 +20,15 @@ public class KnifeRenderer extends GeoItemRenderer<EnchantersKnife> {
 	public KnifeRenderer() {
 		super(new GeoModel<>() {
 			public ResourceLocation getModelResource(EnchantersKnife wand) {
-				return ArsNouveau.prefix("geo/sword.geo.json");
+				return ArsDelight.loc("geo/knife.geo.json");
 			}
 
 			public ResourceLocation getTextureResource(EnchantersKnife wand) {
-				return ArsNouveau.prefix("textures/item/enchanters_sword.png");
+				return ArsDelight.loc("textures/item/enchanters_knife.png");
 			}
 
 			public ResourceLocation getAnimationResource(EnchantersKnife wand) {
-				return ArsNouveau.prefix("animations/sword.json");
+				return ArsDelight.loc("animations/knife.json");
 			}
 		});
 	}
