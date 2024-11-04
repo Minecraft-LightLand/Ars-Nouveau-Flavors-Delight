@@ -1,3 +1,9 @@
+1.1.0
+- Add Enchanter's Knife
+- Allow Drygmy to farm loot with weapons
+- Add unstable cocktail
+- Make feasts more expensive by requiring whole meat
+
 1.0.6
 - Fix bonuses from wilden effect not being applied
 
