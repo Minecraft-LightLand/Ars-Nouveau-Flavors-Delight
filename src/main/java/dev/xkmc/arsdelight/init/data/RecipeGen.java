@@ -132,6 +132,7 @@ public class RecipeGen {
 					.addIngredient(ADItems.VEXING_BARK)
 					.build(pvd);
 
+			/* TODO more wilden food
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_STEW, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(TagGen.RAW_WILDEN_MEAT)
 					.addIngredient(ForgeTags.VEGETABLES_TOMATO)
@@ -146,6 +147,7 @@ public class RecipeGen {
 					.addIngredient(ForgeTags.VEGETABLES_ONION)
 					.addIngredient(ADItems.SPIKE_POWDER)
 					.build(pvd);
+			*/
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADBlocks.CHIMERA, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(ADFood.CHIMERA_MEAT)
