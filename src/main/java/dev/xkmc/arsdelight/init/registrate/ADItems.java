@@ -1,12 +1,13 @@
 package dev.xkmc.arsdelight.init.registrate;
 
 import com.hollingsworth.arsnouveau.common.items.ModItem;
+import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.arsdelight.content.item.EnchantersKnife;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
-import dev.xkmc.l2library.base.L2Registrate;
+import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import org.apache.commons.lang3.StringUtils;
