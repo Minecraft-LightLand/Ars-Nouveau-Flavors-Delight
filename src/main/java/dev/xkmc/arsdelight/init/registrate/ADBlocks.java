@@ -80,9 +80,9 @@ public class ADBlocks {
 		return ArsDelight.REGISTRATE.block(name, p -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
 						.strength(2.0F, 3.0F).sound(SoundType.WOOD)))
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().cubeBottomTop(ctx.getName(),
-						pvd.modLoc("block/" + name + "_side"),
-						pvd.modLoc("block/crate_bottom"),
-						pvd.modLoc("block/" + name + "_top"))))
+						pvd.modLoc("block/crate/" + name + "_side"),
+						pvd.modLoc("block/crate/crate_bottom"),
+						pvd.modLoc("block/crate/" + name + "_top"))))
 				.tag(BlockTags.MINEABLE_WITH_AXE)
 				.simpleItem()
 				.register();

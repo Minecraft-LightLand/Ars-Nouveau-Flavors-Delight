@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/source_berry_pie_slice"
+    "layer0": "arsdelight:item/food/source_berry_pie_slice"
   }
 }

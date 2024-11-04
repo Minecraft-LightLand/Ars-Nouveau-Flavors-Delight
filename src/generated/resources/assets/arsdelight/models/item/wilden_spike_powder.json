@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/wilden_spike_powder"
+    "layer0": "arsdelight:item/ingredient/wilden_spike_powder"
   }
 }

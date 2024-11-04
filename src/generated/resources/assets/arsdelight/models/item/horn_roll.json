@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/horn_roll"
+    "layer0": "arsdelight:item/food/horn_roll"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/activated_bastion_jam"
+    "layer0": "arsdelight:item/drink/activated_bastion_jam"
   }
 }

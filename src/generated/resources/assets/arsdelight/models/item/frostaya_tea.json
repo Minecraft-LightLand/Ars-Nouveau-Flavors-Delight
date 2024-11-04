@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/frostaya_tea"
+    "layer0": "arsdelight:item/drink/frostaya_tea"
   }
 }

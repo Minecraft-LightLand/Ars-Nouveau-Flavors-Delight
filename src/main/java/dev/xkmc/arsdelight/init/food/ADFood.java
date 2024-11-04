@@ -165,8 +165,9 @@ public enum ADFood implements ItemLike {
 	ADFood(FoodType type, int nut, float sat, List<EffectEntry> effs, TagKey<Item>... tags) {
 		this.name = name().toLowerCase(Locale.ROOT);
 		this.type = type;
+		String tex = (nut == 0 ? "item/drink/" : "item/food/") + name;
 		this.item = ArsDelight.REGISTRATE.item(name, p -> this.build(p, nut, sat, effs))
-				.model((ctx, pvd) -> pvd.generated(ctx))
+				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc(tex)))
 				.lang(ADItems.toEnglishName(name))
 				.tag(tags)
 				.register();
