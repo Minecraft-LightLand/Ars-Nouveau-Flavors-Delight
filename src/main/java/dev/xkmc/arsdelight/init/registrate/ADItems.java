@@ -7,6 +7,7 @@ import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.arsdelight.content.item.EnchantersKnife;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
+import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
@@ -55,6 +56,7 @@ public class ADItems {
 	public static void register() {
 		ADBlocks.register();
 		ADJellys.register();
+		ADPie.register();
 		ADFood.register();
 	}
 

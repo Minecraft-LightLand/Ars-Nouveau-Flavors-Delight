@@ -1,0 +1,11 @@
+{
+  "parent": "arsdelight:custom/frostaya_pie_slice1",
+  "textures": {
+    "bottom": "arsdelight:block/pie/pie_bottom",
+    "deco": "arsdelight:block/pie/frostaya_pie_deco",
+    "inner": "arsdelight:block/pie/frostaya_pie_inner",
+    "particle": "arsdelight:block/pie/frostaya_pie_top",
+    "side": "arsdelight:block/pie/pie_side",
+    "top": "arsdelight:block/pie/frostaya_pie_top"
+  }
+}
