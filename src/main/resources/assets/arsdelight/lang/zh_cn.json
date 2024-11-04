@@ -61,5 +61,8 @@
 	"block.arsdelight.wilden_salad": "荒野沙拉",
 	"item.arsdelight.bowl_of_honey_glazed_chimera": "盘装蜜汁奇美拉炖肉",
 	"item.arsdelight.source_berry_cupcake": "魔源浆果蛋糕",
-	"arsdelight.tooltip.grab": "拿[%2$s]右键[%1$s]获得"
+	"arsdelight.tooltip.grab": "拿[%2$s]右键[%1$s]获得",
+	"item.arsdelight.enchanters_knife": "巫师小刀",
+	"arsdelight.patchouli.drygmy_weapon.page1": "安装了新生乐事时，德格米可以模拟使用特定工具击杀生物的掉落。德格米会使用德格米石阵相邻的奥术基座上的工具。$(br2)这个功能让德格米收集农夫乐事及其附属的小刀击杀掉落成为可能",
+	"arsdelight.patchouli.drygmy_weapon.title": "德格米使用武器"
 }

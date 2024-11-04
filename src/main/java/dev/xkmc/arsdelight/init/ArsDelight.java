@@ -89,6 +89,7 @@ public class ArsDelight {
 		var helper = event.getExistingFileHelper();
 		gen.addProvider(server, new ADConfigGen(gen, pvd));
 		gen.addProvider(server, new ADGLMProvider(output, pvd));
+		gen.addProvider(server, new ADApparatusRecipeGen(gen));
 	}
 
 	public static ResourceLocation loc(String id) {

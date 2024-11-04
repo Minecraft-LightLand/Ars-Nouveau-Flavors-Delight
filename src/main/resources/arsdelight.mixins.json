@@ -4,7 +4,8 @@
 	"package": "dev.xkmc.arsdelight.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"AddItemModifierAccessor"
+		"AddItemModifierAccessor",
+		"DrygmyTileMixin"
 	],
 	"client": [
 	],

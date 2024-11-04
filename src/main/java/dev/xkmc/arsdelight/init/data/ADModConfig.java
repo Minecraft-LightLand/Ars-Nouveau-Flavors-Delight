@@ -32,6 +32,8 @@ public class ADModConfig {
 		public final ModConfigSpec.DoubleValue wildenSpellDamageBonus;
 		public final ModConfigSpec.DoubleValue wildenMaxManaBonus;
 		public final ModConfigSpec.DoubleValue wildenManaRegenBonus;
+		public final ModConfigSpec.BooleanValue drygmyFarmingToolPlainCopy;
+		public final ModConfigSpec.IntValue drygmyFarmingDamageTool;
 
 		Server(Builder builder) {
 			markPlain();
@@ -43,7 +45,10 @@ public class ADModConfig {
 					.defineInRange("wildenMaxManaBonus", 0.2d, 0, 1);
 			wildenManaRegenBonus = builder.text("Wilden effect: mana regen bonus per level")
 					.defineInRange("wildenManaRegenBonus", 0.2d, 0, 1);
-
+			drygmyFarmingToolPlainCopy = builder.comment("Drygmy farming: make a plain copy of the tool to prevent enchantments, affixes, and gems from taking effect")
+					.define("drygmyFarmingToolPlainCopy", false);
+			drygmyFarmingDamageTool = builder.comment("Drygmy farming: cost durability on the tool used for farming")
+					.defineInRange("drygmyFarmingDamageTool", 2, 0, 10000);
 		}
 
 	}
