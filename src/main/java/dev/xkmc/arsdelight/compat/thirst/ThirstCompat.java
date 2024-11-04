@@ -17,6 +17,7 @@ public class ThirstCompat {
 		event.addDrink(ADFood.BOMBEGRANTE_TEA.asItem(), 8, 13);
 		event.addDrink(ADFood.BASTION_TEA.asItem(), 8, 13);
 		event.addDrink(ADFood.MENDOSTEEN_TEA.asItem(), 8, 13);
+		event.addDrink(ADFood.UNSTABLE_COCKTAIL.asItem(), 8, 13);
 
 		event.addDrink(ADFood.FROSTAYA_HORNBEER.asItem(), 8, 13);
 		event.addDrink(ADFood.BOMBEGRANTE_HORNBEER.asItem(), 8, 13);
