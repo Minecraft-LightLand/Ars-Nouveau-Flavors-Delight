@@ -46,6 +46,10 @@ public enum ADLangData {
 		for (ADLangData lang : ADLangData.values()) {
 			pvd.add(lang.key, lang.def);
 		}
+		pvd.add("arsdelight.patchouli.drygmy_weapon.title", "Drygmy using Weapon");
+		pvd.add("arsdelight.patchouli.drygmy_weapon.page1",
+				"With Ars Delight, Drygmy can simulate entity loot with tools on an Arcane Pedestal right next to Drygmy Henge.$(br2)" +
+						"This feature allows Drygmy to farm scavenging loot from Farmer's Delight and its addons.");
 	}
 
 

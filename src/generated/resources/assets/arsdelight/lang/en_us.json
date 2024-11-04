@@ -1,4 +1,6 @@
 {
+  "arsdelight.patchouli.drygmy_weapon.page1": "With Ars Delight, Drygmy can simulate entity loot with tools on an Arcane Pedestal right next to Drygmy Henge.$(br2)This feature allows Drygmy to farm scavenging loot from Farmer's Delight and its addons.",
+  "arsdelight.patchouli.drygmy_weapon.title": "Drygmy using Weapon",
   "arsdelight.tooltip.chance": "%1$s with %2$s%% chance",
   "arsdelight.tooltip.grab": "Right click [%1$s] with [%2$s] to obtain",
   "arsdelight.tooltip.kill_axe": "Dropped when killing [%s] with axe",
@@ -38,6 +40,7 @@
   "item.arsdelight.chimera_horn": "Chimera Horn",
   "item.arsdelight.chimera_meat": "Chimera Meat",
   "item.arsdelight.chimera_meat_slice": "Chimera Meat Slice",
+  "item.arsdelight.enchanters_knife": "Enchanters Knife",
   "item.arsdelight.flourishing_bark": "Flourishing Bark",
   "item.arsdelight.frostaya_hornbeer": "Frostaya Hornbeer",
   "item.arsdelight.frostaya_mutton": "Frostaya Mutton",
@@ -55,6 +58,7 @@
   "item.arsdelight.source_berry_cookie": "Source Berry Cookie",
   "item.arsdelight.source_berry_cupcake": "Source Berry Cupcake",
   "item.arsdelight.source_berry_pie_slice": "Source Berry Pie Slice",
+  "item.arsdelight.unstable_cocktail": "Unstable Cocktail",
   "item.arsdelight.vexing_bark": "Vexing Bark",
   "item.arsdelight.wilden_horn_powder": "Wilden Horn Powder",
   "item.arsdelight.wilden_meat": "Wilden Meat",

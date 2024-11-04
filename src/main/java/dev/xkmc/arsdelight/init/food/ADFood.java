@@ -65,6 +65,16 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200),
 			new EffectEntry(ModEffects.COMFORT, 1200)
 	), DietTagGen.VEGETABLES.tag),
+	/*
+	WILDEN_STEW(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
+			new EffectEntry(ADEffects.WILDEN::get, 3600, 0),
+			new EffectEntry(ModEffects.COMFORT, 3600),
+			new EffectEntry(ModEffects.NOURISHMENT, 3600)
+	), DietTagGen.PROTEINS.tag),*/
+	/*WILDEN_SKEWER(FoodType.MEAT_STICK, 8, 0.8f, List.of(
+			new EffectEntry(ADEffects.WILDEN::get, 2400, 0),
+			new EffectEntry(ModEffects.NOURISHMENT, 2400)
+	), DietTagGen.PROTEINS.tag),*/
 	BOWL_OF_WILDEN_SALAD(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN::get, 2400, 1),
 			new EffectEntry(ModEffects.NOURISHMENT, 2400)
@@ -92,6 +102,9 @@ public enum ADFood implements ItemLike {
 	), DietTagGen.FRUITS.tag),
 	FROSTAYA_TEA(FoodType.DRINK, 0, 0, List.of(
 			new EffectEntry(ADEffects.FREEZE::get, 4800)
+	), DietTagGen.FRUITS.tag),
+	UNSTABLE_COCKTAIL(FoodType.DRINK, 0, 0, List.of(
+			new EffectEntry(ModPotions.BLAST_EFFECT, 200, 4)
 	), DietTagGen.FRUITS.tag),
 
 	MENDOSTEEN_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(

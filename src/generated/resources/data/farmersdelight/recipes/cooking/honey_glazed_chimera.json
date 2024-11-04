@@ -7,7 +7,7 @@
   "experience": 0.1,
   "ingredients": [
     {
-      "tag": "arsdelight:raw_chimera"
+      "item": "arsdelight:chimera_meat"
     },
     {
       "tag": "forge:grain/rice"
