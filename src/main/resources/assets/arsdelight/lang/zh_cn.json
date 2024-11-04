@@ -5,14 +5,19 @@
 	"arsdelight.tooltip.place": "潜行右键放置",
 	"effect.arsdelight.blast_resistance": "爆炸抗性",
 	"effect.arsdelight.blast_resistance.description": "减少受到的爆炸伤害",
+	"effect.arsdelight.blast_resistance.desc": "减少受到的爆炸伤害",
 	"effect.arsdelight.flourishing": "魔力同步",
 	"effect.arsdelight.flourishing.description": "玩家收到治愈时同步恢复魔力",
+	"effect.arsdelight.flourishing.desc": "玩家收到治愈时同步恢复魔力",
 	"effect.arsdelight.freezing_spell": "凛冽魔源",
 	"effect.arsdelight.freezing_spell.description": "玩家造成的法术伤害同时施加冰冻效果",
+	"effect.arsdelight.freezing_spell.desc": "玩家造成的法术伤害同时施加冰冻效果",
 	"effect.arsdelight.synchronized_shield": "同频护盾",
 	"effect.arsdelight.synchronized_shield.description": "玩家收到治愈时获得伤害吸收",
+	"effect.arsdelight.synchronized_shield.desc": "玩家收到治愈时获得伤害吸收",
 	"effect.arsdelight.wilden": "野化",
 	"effect.arsdelight.wilden.description": "提升最大魔力，魔力恢复速度，以及法术伤害",
+	"effect.arsdelight.wilden.desc": "提升最大魔力，魔力恢复速度，以及法术伤害",
 	"item.arsdelight.activated_bastion_jam": "活化堡垒果酱",
 	"item.arsdelight.activated_mendosteen_jam": "魔化山竹果酱",
 	"item.arsdelight.arch_sauce": "至高酱",
@@ -65,5 +70,6 @@
 	"item.arsdelight.enchanters_knife": "巫师小刀",
 	"arsdelight.patchouli.drygmy_weapon.page1": "安装了新生乐事时，德格米可以模拟使用特定工具击杀生物的掉落。德格米会使用德格米石阵相邻的奥术基座上的工具。$(br2)这个功能让德格米收集农夫乐事及其附属的小刀击杀掉落成为可能",
 	"arsdelight.patchouli.drygmy_weapon.title": "德格米使用武器",
-	"item.arsdelight.unstable_cocktail": "不稳定鸡尾酒"
+	"item.arsdelight.unstable_cocktail": "不稳定鸡尾酒",
+	"arsdelight.title": "新生乐事"
 }

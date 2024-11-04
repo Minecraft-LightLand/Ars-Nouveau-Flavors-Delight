@@ -1,3 +1,9 @@
+2.1.0
+- Add Enchanter's Knife
+- Allow Drygmy to farm loot with weapons
+- Add unstable cocktail
+- Make feasts more expensive by requiring whole meat
+
 2.0.5
 - Fix returning double food container
 - Fix synchronized shield and wilden effect not being effective

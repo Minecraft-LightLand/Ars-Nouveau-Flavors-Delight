@@ -249,6 +249,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.UNSTABLE_COCKTAIL, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(Items.GUNPOWDER)
