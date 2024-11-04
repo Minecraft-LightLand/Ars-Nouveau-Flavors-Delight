@@ -1,5 +1,6 @@
 package dev.xkmc.arsdelight.init.food;
 
+import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
@@ -37,7 +38,7 @@ public enum ADPie {
 		this.deco = deco;
 		String name = name().toLowerCase(Locale.ROOT);
 		slice = ArsDelight.REGISTRATE.item(name + "_slice", p -> FoodType.FAST.build(p, 3, 0.3f, effects))
-				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag)
+				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD)
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/pie/" + ctx.getName())))
 				.defaultLang().register();
 		block = ArsDelight.REGISTRATE.block(name,

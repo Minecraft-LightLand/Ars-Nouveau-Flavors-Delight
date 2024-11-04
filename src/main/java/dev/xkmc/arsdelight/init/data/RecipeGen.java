@@ -8,6 +8,7 @@ import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
+import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.arsdelight.init.registrate.ADJellys;
@@ -19,10 +20,12 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -54,6 +57,10 @@ public class RecipeGen {
 			pvd.storage(BlockRegistry.BASTION_POD::get, RecipeCategory.MISC, ADBlocks.BASTION_CRATE);
 			pvd.storage(BlockRegistry.BOMBEGRANTE_POD::get, RecipeCategory.MISC, ADBlocks.BOMBEGRANTE_CRATE);
 			pvd.storage(BlockRegistry.FROSTAYA_POD::get, RecipeCategory.MISC, ADBlocks.FROSTAYA_CRATE);
+			pie(pvd, ADPie.MENDOSTEEN_PIE, ADFood.ACTIVATED_MENDOSTEEN_JAM, BlockRegistry.MENDOSTEEN_POD.get());
+			pie(pvd, ADPie.BASTION_PIE, ADFood.ACTIVATED_BASTION_JAM, BlockRegistry.BASTION_POD.get());
+			pie(pvd, ADPie.BOMBEGRANTE_PIE, ADFood.NEUTRALIZED_BOMBEGRANTE_JAM, BlockRegistry.BOMBEGRANTE_POD.get());
+			pie(pvd, ADPie.FROSTAYA_PIE, ADFood.NEUTRALIZED_FROSTAYA_JAM, BlockRegistry.FROSTAYA_POD.get());
 		}
 
 		// processing
@@ -128,8 +135,6 @@ public class RecipeGen {
 					.requires(Items.STICK)
 					.requires(ADItems.SPIKE_POWDER)
 					.save(pvd);
-
-			//TODO pie
 
 		}
 
@@ -363,6 +368,30 @@ public class RecipeGen {
 
 		}
 
+	}
+
+
+	private static void pie(RegistrateRecipeProvider pvd, ADPie pie, ADFood jam, ItemLike fruit) {
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, fruit.asItem())
+				.pattern("#f#").pattern("aja").pattern("xOx")
+				.define('#', Items.WHEAT)
+				.define('f', fruit)
+				.define('j', jam)
+				.define('a', BlockRegistry.SOURCEBERRY_BUSH)
+				.define('x', Items.SUGAR)
+				.define('O', ModItems.PIE_CRUST.get())
+				.save(pvd);
+
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, pie.slice.get())
+				.pattern("##").pattern("##")
+				.define('#', pie.slice.get())
+				.save(pvd, pie.block.getId().withSuffix("_from_slices"));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(pie.block.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES),
+						pie.slice.get(), 4)
+				.build(pvd);
 	}
 
 	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,

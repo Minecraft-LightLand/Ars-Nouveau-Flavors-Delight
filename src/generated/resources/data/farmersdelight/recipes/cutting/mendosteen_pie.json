@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "arsdelight:mendosteen_pie"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "arsdelight:mendosteen_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}
