@@ -25,6 +25,7 @@ public class ThirstCompat {
 		event.addDrink(ADFood.MENDOSTEEN_HORNBEER.asItem(), 8, 13);
 
 		event.addDrink(ADFood.ARCH_SOUP.asItem(), 5, 8);
+		event.addDrink(ADFood.WILDEN_STEW.asItem(), 5, 8);
 	}
 
 }

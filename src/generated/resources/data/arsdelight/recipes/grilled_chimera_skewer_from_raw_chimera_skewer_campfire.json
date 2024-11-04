@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "arsdelight:raw_chimera_skewer"
+  },
+  "result": "arsdelight:grilled_chimera_skewer"
+}

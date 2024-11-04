@@ -39,6 +39,8 @@ public class RecipeGen {
 					ADFood.CHIMERA_MEAT_SLICE, ADFood.GRILLED_CHIMERA_MEAT_SLICE);
 			meat(pvd, ADFood.WILDEN_MEAT, ADFood.GRILLED_WILDEN_MEAT,
 					ADFood.WILDEN_MEAT_SLICE, ADFood.GRILLED_WILDEN_MEAT_SLICE);
+			cook(pvd, ADFood.RAW_WILDEN_SKEWER, ADFood.GRILLED_WILDEN_SKEWER);
+			cook(pvd, ADFood.RAW_CHIMERA_SKEWER, ADFood.GRILLED_CHIMERA_SKEWER);
 			strip(pvd, ADItems.BLAZING_BARK, BlockRegistry.BLAZING_LOG, BlockRegistry.STRIPPED_AWLOG_RED,
 					BlockRegistry.BLAZING_WOOD, BlockRegistry.STRIPPED_AWWOOD_RED);
 			strip(pvd, ADItems.CASCADING_BARK, BlockRegistry.CASCADING_LOG, BlockRegistry.STRIPPED_AWLOG_BLUE,
@@ -79,6 +81,8 @@ public class RecipeGen {
 							RecipeCategory.MISC, () -> BlockRegistry.SOURCEBERRY_BUSH, 1, 9)
 					.save(pvd, ArsDelight.loc("source_berry_unpack"));
 
+			// TODO cabinet
+
 		}
 
 		// misc
@@ -108,6 +112,25 @@ public class RecipeGen {
 					.addIngredient(Items.WHEAT)
 					.addIngredient(ForgeTags.MILK)
 					.build(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
+					ADFood.RAW_WILDEN_SKEWER, 8)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
+					.requires(TagGen.RAW_WILDEN_MEAT)
+					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.requires(Items.STICK)
+					.requires(ADItems.SPIKE_POWDER)
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
+					ADFood.RAW_CHIMERA_SKEWER, 8)::unlockedBy, ADFood.CHIMERA_MEAT.asItem())
+					.requires(TagGen.RAW_CHIMERA)
+					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.requires(Items.STICK)
+					.requires(ADItems.SPIKE_POWDER)
+					.save(pvd);
+
+			//TODO pie
+
 		}
 
 		// dish
@@ -133,7 +156,6 @@ public class RecipeGen {
 					.addIngredient(ADItems.VEXING_BARK)
 					.build(pvd);
 
-			/* TODO more wilden food
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_STEW, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(TagGen.RAW_WILDEN_MEAT)
 					.addIngredient(ForgeTags.VEGETABLES_TOMATO)
@@ -141,14 +163,6 @@ public class RecipeGen {
 					.addIngredient(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
 					.addIngredient(ADItems.HORN_POWDER)
 					.build(pvd);
-
-			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_SKEWER, 2, 200, 0.1f, Items.STICK)
-					.addIngredient(TagGen.RAW_WILDEN_MEAT)
-					.addIngredient(ForgeTags.VEGETABLES_TOMATO)
-					.addIngredient(ForgeTags.VEGETABLES_ONION)
-					.addIngredient(ADItems.SPIKE_POWDER)
-					.build(pvd);
-			*/
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADBlocks.CHIMERA, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(ADFood.CHIMERA_MEAT)
@@ -366,12 +380,15 @@ public class RecipeGen {
 	}
 
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {
-		pvd.smoking(DataIngredient.items(in), RecipeCategory.FOOD, out::asItem, 0.1f);
-		pvd.campfire(DataIngredient.items(in), RecipeCategory.FOOD, out::asItem, 0.1f);
-		pvd.smoking(DataIngredient.items(inslice), RecipeCategory.FOOD, outslice::asItem, 0.1f);
-		pvd.campfire(DataIngredient.items(inslice), RecipeCategory.FOOD, outslice::asItem, 0.1f);
+		cook(pvd, in, out);
+		cook(pvd, inslice, outslice);
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(in), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 				inslice, 3).build(pvd);
+	}
+
+	private static void cook(RegistrateRecipeProvider pvd, ADFood in, ADFood out) {
+		pvd.smoking(DataIngredient.items(in), RecipeCategory.FOOD, out::asItem, 0.1f);
+		pvd.campfire(DataIngredient.items(in), RecipeCategory.FOOD, out::asItem, 0.1f);
 	}
 
 	public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {

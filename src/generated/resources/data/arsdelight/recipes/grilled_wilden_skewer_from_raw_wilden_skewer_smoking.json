@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "arsdelight:raw_wilden_skewer"
+  },
+  "result": "arsdelight:grilled_wilden_skewer"
+}
