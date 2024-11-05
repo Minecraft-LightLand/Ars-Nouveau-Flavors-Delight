@@ -7,11 +7,11 @@ import dev.xkmc.l2modularblock.DelegateEntityBlockImpl;
 import dev.xkmc.l2modularblock.impl.BlockEntityBlockMethodImpl;
 import dev.xkmc.l2modularblock.type.BlockMethod;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.Vec3;
@@ -28,7 +28,8 @@ public class JellyBlock extends DelegateEntityBlockImpl implements IPrismaticBlo
 	public void onHit(ServerLevel world, BlockPos pos, EntityProjectileSpell spell) {
 		if (world.getBlockEntity(pos) instanceof JellyBlockEntity be) {
 			spell.spellResolver.spellContext.attachments.put(JellyAttachment.ID, new JellyAttachment(be.getId().toString()));
-			be.makeWiggle();
+			var v = spell.getDeltaMovement().normalize();
+			be.makeWiggle(Direction.getNearest(v.x, v.y, v.z));
 		}
 	}
 

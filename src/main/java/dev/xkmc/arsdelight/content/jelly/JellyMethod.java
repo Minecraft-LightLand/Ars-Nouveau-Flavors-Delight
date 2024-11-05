@@ -6,6 +6,7 @@ import dev.xkmc.l2modularblock.mult.SurviveBlockMethod;
 import dev.xkmc.l2modularblock.one.RenderShapeBlockMethod;
 import dev.xkmc.l2modularblock.one.ShapeBlockMethod;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -39,7 +40,7 @@ public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod
 			entity.causeFallDamage(dist, 0.2f, entity.damageSources().fall());
 		}
 		if (dist > 1 && level.getBlockEntity(pos) instanceof JellyBlockEntity be) {
-			be.makeWiggle();
+			be.makeWiggle(Direction.UP);
 		}
 		return false;
 	}
@@ -55,8 +56,9 @@ public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod
 
 	@Override
 	public InteractionResult onClick(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-		if (!level.isClientSide() && level.getBlockEntity(pos) instanceof JellyBlockEntity be) {
-			be.makeWiggle();
+		if (!level.isClientSide() && level.getBlockEntity(pos) instanceof JellyBlockEntity jelly) {
+			var dir = hit.getDirection().getOpposite();
+			jelly.makeWiggle(dir);
 		}
 		return InteractionResult.SUCCESS;
 	}

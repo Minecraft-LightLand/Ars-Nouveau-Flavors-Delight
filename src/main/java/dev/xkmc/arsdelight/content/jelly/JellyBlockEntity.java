@@ -4,6 +4,7 @@ import com.hollingsworth.arsnouveau.api.util.BlockUtil;
 import dev.xkmc.l2library.base.tile.BaseBlockEntity;
 import dev.xkmc.l2serial.serialization.SerialClass;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,7 +18,12 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 @SerialClass
 public class JellyBlockEntity extends BaseBlockEntity implements GeoBlockEntity {
 
-	private static final RawAnimation WIGGLE = RawAnimation.begin().then("wiggle", Animation.LoopType.PLAY_ONCE);
+	private static final RawAnimation WIGGLE_SOUTH = RawAnimation.begin().then("wiggle_south", Animation.LoopType.PLAY_ONCE);
+	private static final RawAnimation WIGGLE_WEST = RawAnimation.begin().then("wiggle_west", Animation.LoopType.PLAY_ONCE);
+	private static final RawAnimation WIGGLE_NORTH = RawAnimation.begin().then("wiggle_north", Animation.LoopType.PLAY_ONCE);
+	private static final RawAnimation WIGGLE_EAST = RawAnimation.begin().then("wiggle_east", Animation.LoopType.PLAY_ONCE);
+	private static final RawAnimation[] WIGGLES = {WIGGLE_SOUTH, WIGGLE_WEST, WIGGLE_NORTH, WIGGLE_EAST};
+
 	private final AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
 	public JellyBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
@@ -28,26 +34,23 @@ public class JellyBlockEntity extends BaseBlockEntity implements GeoBlockEntity 
 		return getBlockState().getBlock().builtInRegistryHolder().unwrapKey().orElseThrow().location();
 	}
 
-	public void makeWiggle() {
+	public void makeWiggle(Direction dir) {
 		if (level == null) return;
 		if (level.isClientSide()) return;
 		BlockUtil.updateObservers(level, getBlockPos());
-		level.blockEvent(getBlockPos(), getBlockState().getBlock(), 1, 1);
+		int val = dir.getAxis() == Direction.Axis.Y ? level.getRandom().nextInt(4) : dir.get2DDataValue();
+		level.blockEvent(getBlockPos(), getBlockState().getBlock(), 1, val);
 	}
 
 	@Override
 	public boolean triggerEvent(int id, int data) {
 		if (id == 1 && level != null && level.isClientSide) {
-			clientWiggle();
+			wiggleDir = data;
 		}
 		return id == 1;
 	}
 
-	private boolean wiggleOnce = false;
-
-	public void clientWiggle() {
-		wiggleOnce = true;
-	}
+	private int wiggleDir = -1;
 
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar reg) {
@@ -55,10 +58,11 @@ public class JellyBlockEntity extends BaseBlockEntity implements GeoBlockEntity 
 	}
 
 	private PlayState wiggle(AnimationState<GeoAnimatable> state) {
-		if (wiggleOnce) {
-			wiggleOnce = false;
+		if (wiggleDir >= 0) {
+			var dir = WIGGLES[wiggleDir];
+			wiggleDir = -1;
 			state.getController().forceAnimationReset();
-			return state.setAndContinue(WIGGLE);
+			return state.setAndContinue(dir);
 		}
 		return PlayState.CONTINUE;
 	}
