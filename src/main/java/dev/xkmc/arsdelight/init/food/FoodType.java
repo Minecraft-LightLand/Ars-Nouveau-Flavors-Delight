@@ -53,7 +53,7 @@ public enum FoodType {
 
 	public ADFoodItem build(Item.Properties prop, int nut, float sat, EffectEntry... effs) {
 		var builder = new FoodProperties.Builder();
-		builder.nutrition(nut).saturationMod(sat);
+		builder.nutrition(nut).saturationModifier(sat);
 		for (var e : effs) {
 			builder.effect(e::getEffect, e.chance());
 		}

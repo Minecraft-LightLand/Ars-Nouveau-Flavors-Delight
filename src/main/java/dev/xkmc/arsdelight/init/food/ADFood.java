@@ -51,17 +51,17 @@ public enum ADFood implements ItemLike {
 	), TagGen.COOKED_CHIMERA, DietTagGen.PROTEINS.tag),
 
 	RAW_WILDEN_SKEWER(FoodType.MEAT_STICK, 4, 0.4f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 300, 0, 0.5f)
+			new EffectEntry(ADEffects.WILDEN, 300, 0, 0.5f)
 	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
 	GRILLED_WILDEN_SKEWER(FoodType.MEAT_STICK, 8, 0.7f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 1200, 1, 1f),
+			new EffectEntry(ADEffects.WILDEN, 1200, 1, 1f),
 			new EffectEntry(ModEffects.NOURISHMENT, 1200)
 	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
 	RAW_CHIMERA_SKEWER(FoodType.MEAT_STICK, 7, 0.4f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 600, 1, 0.5f)
+			new EffectEntry(ADEffects.WILDEN, 600, 1, 0.5f)
 	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
 	GRILLED_CHIMERA_SKEWER(FoodType.MEAT_STICK, 12, 0.7f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 1200, 2),
+			new EffectEntry(ADEffects.WILDEN, 1200, 2),
 			new EffectEntry(ModEffects.NOURISHMENT, 1200)
 	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
 
@@ -86,7 +86,7 @@ public enum ADFood implements ItemLike {
 	), DietTagGen.VEGETABLES.tag),
 
 	WILDEN_STEW(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 3600, 0),
+			new EffectEntry(ADEffects.WILDEN, 3600, 0),
 			new EffectEntry(ModEffects.COMFORT, 3600),
 			new EffectEntry(ModEffects.NOURISHMENT, 3600)
 	), DietTagGen.PROTEINS.tag),

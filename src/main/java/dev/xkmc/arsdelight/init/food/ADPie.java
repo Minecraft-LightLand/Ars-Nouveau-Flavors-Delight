@@ -11,18 +11,18 @@ import dev.xkmc.arsdelight.init.registrate.ADEffects;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.Locale;
 
 public enum ADPie {
-	MENDOSTEEN_PIE(true, new EffectEntry(ADEffects.FLOURISH::get, 600)),
-	BASTION_PIE(false, new EffectEntry(ADEffects.SHIELDING::get, 600)),
-	BOMBEGRANTE_PIE(false, new EffectEntry(ADEffects.BLAST_RES::get, 1200, 1)),
-	FROSTAYA_PIE(true, new EffectEntry(ADEffects.FREEZE::get, 2400)),
+	MENDOSTEEN_PIE(true, new EffectEntry(ADEffects.FLOURISH, 600)),
+	BASTION_PIE(false, new EffectEntry(ADEffects.SHIELDING, 600)),
+	BOMBEGRANTE_PIE(false, new EffectEntry(ADEffects.BLAST_RES, 1200, 1)),
+	FROSTAYA_PIE(true, new EffectEntry(ADEffects.FREEZE, 2400)),
 	;
 
 	public static void register() {
@@ -42,7 +42,7 @@ public enum ADPie {
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/pie/" + ctx.getName())))
 				.defaultLang().register();
 		block = ArsDelight.REGISTRATE.block(name,
-						p -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), slice::get))
+						p -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), slice::get))
 				.blockstate((ctx, pvd) -> {
 					ModelFile[] models = new ModelFile[4];
 					for (int i = 0; i < 4; i++) {
@@ -56,7 +56,7 @@ public enum ADPie {
 
 	private BlockModelBuilder genCakeModel(String name, RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
-		var id = new ResourceLocation(FarmersDelight.MODID, "block/pie" + model);
+		var id = ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "block/pie" + model);
 		if (deco) {
 			id = pvd.modLoc("custom/" + name + model);
 		}

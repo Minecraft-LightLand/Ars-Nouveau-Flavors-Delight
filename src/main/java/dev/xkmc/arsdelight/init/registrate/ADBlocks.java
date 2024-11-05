@@ -19,6 +19,7 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 
 public class ADBlocks {
@@ -94,7 +95,7 @@ public class ADBlocks {
 
 	private static BlockEntry<CabinetBlock> cabinet(String wood) {
 		return ArsDelight.REGISTRATE.block(wood + "_cabinet",
-						p -> new CabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL))
+						p -> new CabinetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL))
 				).blockstate((ctx, pvd) -> {
 					ModelFile close = pvd.models().orientable("block/" + ctx.getName(),
 							pvd.modLoc("block/cabinet/" + ctx.getName() + "_side"),

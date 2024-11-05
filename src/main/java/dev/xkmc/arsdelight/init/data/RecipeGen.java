@@ -132,7 +132,7 @@ public class RecipeGen {
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
 					ADFood.RAW_WILDEN_SKEWER, 8)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
 					.requires(TagGen.RAW_WILDEN_MEAT)
-					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.requires(CommonTags.FOODS_CABBAGE)
 					.requires(Items.STICK)
 					.requires(ADItems.SPIKE_POWDER)
 					.save(pvd);
@@ -140,7 +140,7 @@ public class RecipeGen {
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
 					ADFood.RAW_CHIMERA_SKEWER, 8)::unlockedBy, ADFood.CHIMERA_MEAT.asItem())
 					.requires(TagGen.RAW_CHIMERA)
-					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.requires(CommonTags.FOODS_CABBAGE)
 					.requires(Items.STICK)
 					.requires(ADItems.SPIKE_POWDER)
 					.save(pvd);
@@ -175,9 +175,9 @@ public class RecipeGen {
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_STEW, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(TagGen.RAW_WILDEN_MEAT)
-					.addIngredient(ForgeTags.VEGETABLES_TOMATO)
-					.addIngredient(ForgeTags.VEGETABLES_ONION)
-					.addIngredient(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.addIngredient(CommonTags.FOODS_TOMATO)
+					.addIngredient(CommonTags.FOODS_ONION)
+					.addIngredient(CommonTags.FOODS_CABBAGE)
 					.addIngredient(ADItems.HORN_POWDER)
 					.build(pvd);
 
@@ -423,7 +423,7 @@ public class RecipeGen {
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(
 						Ingredient.of(pie.block.get()),
-						Ingredient.of(ForgeTags.TOOLS_KNIVES),
+						Ingredient.of(CommonTags.TOOLS_KNIFE),
 						pie.slice.get(), 4)
 				.build(pvd);
 	}
