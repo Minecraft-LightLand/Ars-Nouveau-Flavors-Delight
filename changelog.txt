@@ -3,6 +3,7 @@
 - Add 13 more food: pie, skewers, stew, and jelly
 - Add patchouli for mechanics, special items, effects, and resources
 - Add archwood cabinet
+- Fix Enchanter's Knife display on cutting board
 
 1.1.0
 - Add Enchanter's Knife
