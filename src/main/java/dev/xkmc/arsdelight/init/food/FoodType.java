@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
@@ -47,6 +48,16 @@ public enum FoodType {
 		}
 		prop.food(builder.build());
 		return factory.apply(prop, this);
+	}
+
+
+	public ADFoodItem build(Item.Properties prop, int nut, float sat, EffectEntry... effs) {
+		var builder = new FoodProperties.Builder();
+		builder.nutrition(nut).saturationMod(sat);
+		for (var e : effs) {
+			builder.effect(e::getEffect, e.chance());
+		}
+		return build(prop, builder);
 	}
 
 }

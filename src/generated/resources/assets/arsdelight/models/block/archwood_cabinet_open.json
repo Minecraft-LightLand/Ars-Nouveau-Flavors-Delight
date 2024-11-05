@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "arsdelight:block/cabinet/archwood_cabinet_open",
+    "side": "arsdelight:block/cabinet/archwood_cabinet_side",
+    "top": "arsdelight:block/cabinet/archwood_cabinet_top"
+  }
+}

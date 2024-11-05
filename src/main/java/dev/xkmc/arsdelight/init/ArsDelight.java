@@ -24,6 +24,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.slf4j.Logger;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Mod(ArsDelight.MODID)
 @EventBusSubscriber(modid = ArsDelight.MODID, bus = EventBusSubscriber.Bus.MOD)
@@ -54,29 +58,32 @@ public class ArsDelight {
 
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
+		ADFood.CHIMERA_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(
+				ModEntities.WILDEN_BOSS.get().getDescription()));
+		ADFood.WILDEN_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(
+				ModEntities.WILDEN_HUNTER.get().getDescription()));
+		ADItems.CHIMERA_HORN.get().withTooltip(ADLangData.AXE_KILL.get(
+				ModEntities.WILDEN_BOSS.get().getDescription()));
+		ADFood.BOWL_OF_WILDEN_SALAD.get().withTooltip(ADLangData.GRAB.get(
+				ADBlocks.SALAD.asStack().getHoverName(),
+				Items.BOWL.asItem().getDefaultInstance().getHoverName()
+		));
+		ADFood.BOWL_OF_HONEY_GLAZED_CHIMERA.get().withTooltip(ADLangData.GRAB.get(
+				ADBlocks.CHIMERA.asStack().getHoverName(),
+				Items.BOWL.asItem().getDefaultInstance().getHoverName()
+		));
+		ADFood.HORN_ROLL.get().withTooltip(ADLangData.GRAB.get(
+				ADBlocks.SALAD.asStack().getHoverName(),
+				ADItems.CHIMERA_HORN.asItem().getDefaultInstance().getHoverName()
+		));
+
+		if (ADModConfig.COMMON.enableThirstCompat.get() && ModList.get().isLoaded(Thirst.ID))
+			ThirstCompat.init();
+
 		event.enqueueWork(() -> {
-			ADFood.CHIMERA_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(
-					ModEntities.WILDEN_BOSS.get().getDescription()));
-			ADFood.WILDEN_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(
-					ModEntities.WILDEN_HUNTER.get().getDescription()));
-			ADItems.CHIMERA_HORN.get().withTooltip(ADLangData.AXE_KILL.get(
-					ModEntities.WILDEN_BOSS.get().getDescription()));
-			ADFood.BOWL_OF_WILDEN_SALAD.get().withTooltip(ADLangData.GRAB.get(
-					ADBlocks.SALAD.asStack().getHoverName(),
-					Items.BOWL.asItem().getDefaultInstance().getHoverName()
-			));
-			ADFood.BOWL_OF_HONEY_GLAZED_CHIMERA.get().withTooltip(ADLangData.GRAB.get(
-					ADBlocks.CHIMERA.asStack().getHoverName(),
-					Items.BOWL.asItem().getDefaultInstance().getHoverName()
-			));
-			ADFood.HORN_ROLL.get().withTooltip(ADLangData.GRAB.get(
-					ADBlocks.SALAD.asStack().getHoverName(),
-					ADItems.CHIMERA_HORN.asItem().getDefaultInstance().getHoverName()
-			));
-
-			if (ADModConfig.COMMON.enableThirstCompat.get() && ModList.get().isLoaded(Thirst.ID))
-				ThirstCompat.init();
-
+			Set<Block> set = new LinkedHashSet<>(ModBlockEntityTypes.CABINET.get().validBlocks);
+			set.add(ADBlocks.ARCHWOOD_CABINET.get());
+			ModBlockEntityTypes.CABINET.get().validBlocks = set;
 		});
 	}
 

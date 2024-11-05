@@ -1,5 +1,6 @@
 package dev.xkmc.arsdelight.init.registrate;
 
+import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -44,7 +45,7 @@ public class ADJellys {
 						.texture("particle", "item/jelly/" + ctx.getName())))
 				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, resolve(effs)))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/jelly/" + ctx.getName())))
-				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag).build().register();
+				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD).build().register();
 	}
 
 	private static FoodProperties.Builder resolve(FoodProperties effs) {

@@ -55,6 +55,7 @@ public class ADItems {
 	public static void register() {
 		ADBlocks.register();
 		ADJellys.register();
+		ADPie.register();
 		ADFood.register();
 	}
 
