@@ -19,6 +19,9 @@ public class TagGen {
 	public static final TagKey<Item> RAW_WILDEN_MEAT = item("raw_wilden_meat");
 	public static final TagKey<Item> COOKED_WILDEN_MEAT = item("cooked_wilden_meat");
 
+	public static final TagKey<Item> JELLY = item("jelly");
+	public static final TagKey<Item> BARKS = item("barks");
+
 	public static void onBlockTagGen(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
 	}
 

@@ -9,6 +9,7 @@ import dev.xkmc.arsdelight.content.jelly.JellyBlock;
 import dev.xkmc.arsdelight.content.jelly.JellyBlockEntity;
 import dev.xkmc.arsdelight.content.jelly.JellyBlockEntityRenderer;
 import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.BlockFoodType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -45,7 +46,7 @@ public class ADJellys {
 						.texture("particle", "item/jelly/" + ctx.getName())))
 				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, resolve(effs)))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/jelly/" + ctx.getName())))
-				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD).build().register();
+				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY).build().register();
 	}
 
 	private static FoodProperties.Builder resolve(FoodProperties effs) {

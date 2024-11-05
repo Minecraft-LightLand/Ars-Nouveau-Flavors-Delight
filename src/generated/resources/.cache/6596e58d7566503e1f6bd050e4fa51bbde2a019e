@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-05T11:18:21.911072	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2024-11-05T16:02:14.827278	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -15,8 +15,8 @@ b5af141556ea920ae3725cd62a6dc57f4733d9e9 assets/arsdelight/blockstates/mendostee
 1eef1679ee401b66302d2d66b667a408ed65e962 assets/arsdelight/blockstates/mendosteen_pie.json
 a8911068f6ad52fad8fdc8ef425e003584f7566d assets/arsdelight/blockstates/source_berry_crate.json
 88a13424d368e1600330652ec98122395edcfe8c assets/arsdelight/blockstates/wilden_salad.json
-1c9ceb9cac76cca7b39c5b784efc181c94ec50a8 assets/arsdelight/lang/en_ud.json
-75f77e11de34449103f2f056c4f77a35500a6310 assets/arsdelight/lang/en_us.json
+0c83ae07fdb015896eb70c43c5f56fb9c1cab22b assets/arsdelight/lang/en_ud.json
+f34e3d93246616c2a9fadbced63b7ff8aac85801 assets/arsdelight/lang/en_us.json
 e16fdb9c23351a9390c7281baadc79155c8bed67 assets/arsdelight/models/block/archwood_cabinet.json
 15dc50d08e0631948b5e581a7f1d0f6ceab72986 assets/arsdelight/models/block/archwood_cabinet_open.json
 0c6e5771b2f1ed1f4d59a5f2447804fc9b856e19 assets/arsdelight/models/block/bastion_crate.json
@@ -199,8 +199,10 @@ de6aa2faad44ced64d467bdb175ad43ffc714347 data/arsdelight/recipes/mendosteen_pod_
 685e08757c77f37a745ade2cdd3afcb9301f5d8b data/arsdelight/recipes/source_berry_unpack.json
 ed4b5b7c344c114d26cecbe1ad44839f07e5df45 data/arsdelight/recipes/wilden_salad.json
 afe118852fb3afe799921f942890ee3401df2f96 data/arsdelight/recipes/wilden_skewer.json
+a86977d435067bf3dab9aac61a03da50a07efb2b data/arsdelight/tags/items/barks.json
 1e4fd257fa5070ffd7c3387bb324bc0019a599e3 data/arsdelight/tags/items/cooked_chimera.json
 b203752c057f6cbd5834c1c4407dbb12b5894fbc data/arsdelight/tags/items/cooked_wilden_meat.json
+84d2e9a89ab7ba40f7a8c48515e70b7a45d02b95 data/arsdelight/tags/items/jelly.json
 6c81b787ad4c456ce0e8d892fa3f0ec94ee4d514 data/arsdelight/tags/items/raw_chimera.json
 b1267529d7f92edea753e45422b45080006057f2 data/arsdelight/tags/items/raw_wilden_meat.json
 c854de44728f1112b33233d322001bec665f47d7 data/diet/tags/items/fruits.json
