@@ -49,10 +49,6 @@ public class JellyBlock extends DelegateEntityBlockImpl implements IPrismaticBlo
 
 	}
 
-	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-		return level.getBlockState(pos.below()).isSolid();
-	}
-
 	public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
 		return false;
 	}
