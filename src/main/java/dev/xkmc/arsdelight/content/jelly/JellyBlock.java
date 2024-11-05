@@ -56,17 +56,8 @@ public class JellyBlock extends DelegateEntityBlockImpl implements IPrismaticBlo
 		Vec3 v = entity.getDeltaMovement();
 		if (v.y < 0) {
 			double r = 0.8;
-			if (entity instanceof LivingEntity le) {
+			if (entity instanceof LivingEntity) {
 				r = 1;
-				var food = asItem().getFoodProperties();
-				if (food != null) {
-					for (var e : food.getEffects()) {
-						if (e.getSecond() > le.level().getRandom().nextFloat()) {
-							var eff = e.getFirst();
-							le.addEffect(new MobEffectInstance(eff.getEffect(), eff.getDuration() / 4, eff.getAmplifier() - 1));
-						}
-					}
-				}
 			}
 			entity.setDeltaMovement(v.x, -v.y * r, v.z);
 		}

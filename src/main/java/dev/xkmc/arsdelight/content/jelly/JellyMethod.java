@@ -9,7 +9,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -41,6 +43,17 @@ public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod
 		}
 		if (dist > 1 && level.getBlockEntity(pos) instanceof JellyBlockEntity be) {
 			be.makeWiggle(Direction.UP);
+			if (!level.isClientSide() && entity instanceof LivingEntity le) {
+				var food = block.getBlock().asItem().getFoodProperties();
+				if (food != null) {
+					for (var e : food.getEffects()) {
+						if (e.getSecond() > le.level().getRandom().nextFloat()) {
+							var eff = e.getFirst();
+							le.addEffect(new MobEffectInstance(eff.getEffect(), eff.getDuration() / 4, eff.getAmplifier() - 1));
+						}
+					}
+				}
+			}
 		}
 		return false;
 	}
