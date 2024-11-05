@@ -1,11 +1,9 @@
 {
+  "itemGroup.arsdelight.arsdelight": "新生乐事",
   "arsdelight.tooltip.chance": "%2$s%%概率获得%1$s",
   "arsdelight.tooltip.kill_axe": "用斧头击杀[%s]时掉落",
   "arsdelight.tooltip.kill_knife": "用小刀击杀[%s]时掉落",
   "arsdelight.tooltip.place": "潜行右键放置",
-  "itemGroup.arsdelight.arsdelight": "新生乐事",
-  "arsdelight.tooltip.grab": "拿[%2$s]右键[%1$s]获得",
-  "arsdelight.patchouli.drygmy_weapon.page1": "安装了新生乐事时，德格米可以模拟使用特定工具击杀生物的掉落。德格米会使用德格米石阵相邻的奥术基座上的工具。$(br2)这个功能让德格米收集农夫乐事及其附属的小刀击杀掉落成为可能",
-  "arsdelight.patchouli.drygmy_weapon.title": "德格米使用武器"
+  "arsdelight.tooltip.grab": "拿[%2$s]右键[%1$s]获得"
 
 }

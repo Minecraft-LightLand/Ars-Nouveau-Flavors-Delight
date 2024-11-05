@@ -7,13 +7,17 @@ import dev.xkmc.l2modularblock.core.DelegateEntityBlockImpl;
 import dev.xkmc.l2modularblock.impl.BlockEntityBlockMethodImpl;
 import dev.xkmc.l2modularblock.type.BlockMethod;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
 public class JellyBlock extends DelegateEntityBlockImpl implements IPrismaticBlock {
@@ -28,7 +32,15 @@ public class JellyBlock extends DelegateEntityBlockImpl implements IPrismaticBlo
 	public void onHit(ServerLevel world, BlockPos pos, EntityProjectileSpell spell) {
 		if (world.getBlockEntity(pos) instanceof JellyBlockEntity be) {
 			spell.spellResolver.spellContext.attachments.put(JellyAttachment.ID, new JellyAttachment(be.getId().toString()));
-			be.makeWiggle();
+			var v = spell.getDeltaMovement().normalize();
+			be.makeWiggle(Direction.getNearest(v.x, v.y, v.z));
+		}
+	}
+
+	@Override
+	public void onProjectileHit(Level level, BlockState state, BlockHitResult hit, Projectile pProjectile) {
+		if (!level.isClientSide() && level.getBlockEntity(hit.getBlockPos()) instanceof JellyBlockEntity be) {
+			be.makeWiggle(hit.getDirection());
 		}
 	}
 
@@ -40,11 +52,14 @@ public class JellyBlock extends DelegateEntityBlockImpl implements IPrismaticBlo
 		}
 	}
 
-	private void bounceUp(Entity pEntity) {
-		Vec3 v = pEntity.getDeltaMovement();
+	private void bounceUp(Entity entity) {
+		Vec3 v = entity.getDeltaMovement();
 		if (v.y < 0) {
-			double r = pEntity instanceof LivingEntity ? 1 : 0.8;
-			pEntity.setDeltaMovement(v.x, -v.y * r, v.z);
+			double r = 0.8;
+			if (entity instanceof LivingEntity) {
+				r = 1;
+			}
+			entity.setDeltaMovement(v.x, -v.y * r, v.z);
 		}
 
 	}

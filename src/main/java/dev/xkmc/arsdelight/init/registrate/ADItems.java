@@ -6,6 +6,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.arsdelight.content.item.EnchantersKnife;
 import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
@@ -29,10 +30,10 @@ public class ADItems {
 	public static final ItemEntry<EnchantersKnife> KNIFE;
 
 	static {
-		FLOURISHING_BARK = ingredient("flourishing_bark", p -> new FuelItem(p, 200)).register();
-		VEXING_BARK = ingredient("vexing_bark", p -> new FuelItem(p, 200)).register();
-		CASCADING_BARK = ingredient("cascading_bark", p -> new FuelItem(p, 200)).register();
-		BLAZING_BARK = ingredient("blazing_bark", p -> new FuelItem(p, 400)).register();
+		FLOURISHING_BARK = ingredient("flourishing_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
+		VEXING_BARK = ingredient("vexing_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
+		CASCADING_BARK = ingredient("cascading_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
+		BLAZING_BARK = ingredient("blazing_bark", p -> new FuelItem(p, 400)).tag(TagGen.BARKS).register();
 		HORN_POWDER = ingredient("wilden_horn_powder", ModItem::new).register();
 		SPIKE_POWDER = ingredient("wilden_spike_powder", ModItem::new).register();
 		CHIMERA_HORN = ingredient("chimera_horn", ModItem::new).register();

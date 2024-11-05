@@ -65,6 +65,7 @@ public class EnchantersKnife extends KnifeItem implements ICasterTool, GeoItem, 
 	}
 
 	public void sendInvalidMessage(Player player) {
+		//TODO
 		PortUtil.sendMessageNoSpam(player, Component.translatable("ars_nouveau.sword.invalid"));
 	}
 
@@ -72,7 +73,8 @@ public class EnchantersKnife extends KnifeItem implements ICasterTool, GeoItem, 
 		ArrayList<AbstractSpellPart> recipe = new ArrayList();
 		recipe.add(MethodTouch.INSTANCE);
 		recipe.addAll(spell.recipe);
-		recipe.add(AugmentAmplify.INSTANCE);
+		// Disable amplify
+		//recipe.add(AugmentAmplify.INSTANCE);
 		spell.recipe = recipe;
 	}
 
