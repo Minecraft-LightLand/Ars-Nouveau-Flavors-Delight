@@ -68,6 +68,7 @@ public enum ADPie {
 				.texture("inner", pvd.modLoc("block/pie/" + base + "_inner"));
 		if (deco) {
 			ans.texture("deco", pvd.modLoc("block/pie/" + base + "_deco"));
+			ans.renderType("cutout");
 		}
 		return ans;
 	}
