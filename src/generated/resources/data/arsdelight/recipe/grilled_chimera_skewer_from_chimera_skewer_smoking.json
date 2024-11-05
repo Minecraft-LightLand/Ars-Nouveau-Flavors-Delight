@@ -4,7 +4,7 @@
   "cookingtime": 100,
   "experience": 0.1,
   "ingredient": {
-    "item": "arsdelight:raw_chimera_skewer"
+    "item": "arsdelight:chimera_skewer"
   },
   "result": {
     "count": 1,

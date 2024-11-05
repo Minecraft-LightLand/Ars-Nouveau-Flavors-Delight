@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_chimera_skewer": {
+    "has_chimera_meat": {
       "conditions": {
         "items": [
           {
-            "items": "arsdelight:raw_chimera_skewer"
+            "items": "arsdelight:chimera_meat"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "arsdelight:grilled_chimera_skewer_from_raw_chimera_skewer_campfire"
+        "recipe": "arsdelight:chimera_skewer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_raw_chimera_skewer"
+      "has_chimera_meat"
     ]
   ],
   "rewards": {
     "recipes": [
-      "arsdelight:grilled_chimera_skewer_from_raw_chimera_skewer_campfire"
+      "arsdelight:chimera_skewer"
     ]
   }
 }

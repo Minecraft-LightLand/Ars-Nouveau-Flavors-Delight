@@ -50,14 +50,14 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ADEffects.WILDEN, 300, 1)
 	), TagGen.COOKED_CHIMERA, DietTagGen.PROTEINS.tag),
 
-	RAW_WILDEN_SKEWER(FoodType.MEAT_STICK, 4, 0.4f, List.of(
+	WILDEN_SKEWER(FoodType.MEAT_STICK, 4, 0.4f, List.of(
 			new EffectEntry(ADEffects.WILDEN, 300, 0, 0.5f)
 	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
 	GRILLED_WILDEN_SKEWER(FoodType.MEAT_STICK, 8, 0.7f, List.of(
 			new EffectEntry(ADEffects.WILDEN, 1200, 1, 1f),
 			new EffectEntry(ModEffects.NOURISHMENT, 1200)
 	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
-	RAW_CHIMERA_SKEWER(FoodType.MEAT_STICK, 7, 0.4f, List.of(
+	CHIMERA_SKEWER(FoodType.MEAT_STICK, 7, 0.4f, List.of(
 			new EffectEntry(ADEffects.WILDEN, 600, 1, 0.5f)
 	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
 	GRILLED_CHIMERA_SKEWER(FoodType.MEAT_STICK, 12, 0.7f, List.of(

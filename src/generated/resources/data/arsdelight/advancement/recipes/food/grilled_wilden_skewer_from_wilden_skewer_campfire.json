@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "arsdelight:raw_wilden_skewer"
+        "recipe": "arsdelight:grilled_wilden_skewer_from_wilden_skewer_campfire"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wilden_meat": {
+    "has_wilden_skewer": {
       "conditions": {
         "items": [
           {
-            "items": "arsdelight:wilden_meat"
+            "items": "arsdelight:wilden_skewer"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_wilden_meat"
+      "has_wilden_skewer"
     ]
   ],
   "rewards": {
     "recipes": [
-      "arsdelight:raw_wilden_skewer"
+      "arsdelight:grilled_wilden_skewer_from_wilden_skewer_campfire"
     ]
   }
 }

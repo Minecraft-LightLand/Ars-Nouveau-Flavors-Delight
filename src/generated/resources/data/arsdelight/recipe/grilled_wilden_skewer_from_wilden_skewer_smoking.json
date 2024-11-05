@@ -4,7 +4,7 @@
   "cookingtime": 100,
   "experience": 0.1,
   "ingredient": {
-    "item": "arsdelight:raw_wilden_skewer"
+    "item": "arsdelight:wilden_skewer"
   },
   "result": {
     "count": 1,

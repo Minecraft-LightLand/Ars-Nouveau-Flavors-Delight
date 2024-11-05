@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "arsdelight:grilled_wilden_skewer_from_wilden_skewer_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wilden_skewer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "arsdelight:wilden_skewer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wilden_skewer"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "arsdelight:grilled_wilden_skewer_from_wilden_skewer_smoking"
+    ]
+  }
+}
