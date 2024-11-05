@@ -2,7 +2,11 @@ package dev.xkmc.arsdelight.init.data;
 
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.l2core.util.ConfigInit;
+import dev.xkmc.l2core.util.ServerProxy;
 import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.data.loading.DatagenModLoader;
+
+import java.util.function.Function;
 
 public class ADModConfig {
 
@@ -51,6 +55,13 @@ public class ADModConfig {
 					.defineInRange("drygmyFarmingDamageTool", 2, 0, 10000);
 		}
 
+		public <T> T getOrDefault(Function<Server, ModConfigSpec.ConfigValue<T>> func) {
+			var config = func.apply(this);
+			var def = config.getDefault();
+			if (DatagenModLoader.isRunningDataGen()) return def;
+			if (ServerProxy.getRegistryAccess() == null) return def;
+			return config.get();
+		}
 	}
 
 	public static final Client CLIENT = ArsDelight.REGISTRATE.registerClient(Client::new);
