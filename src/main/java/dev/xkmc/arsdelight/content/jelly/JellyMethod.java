@@ -6,6 +6,7 @@ import dev.xkmc.l2modularblock.mult.UseWithoutItemBlockMethod;
 import dev.xkmc.l2modularblock.one.RenderShapeBlockMethod;
 import dev.xkmc.l2modularblock.one.ShapeBlockMethod;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -42,11 +43,11 @@ public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod
 		if (dist > 1 && level.getBlockEntity(pos) instanceof JellyBlockEntity be) {
 			be.makeWiggle(Direction.UP);
 			if (!level.isClientSide() && entity instanceof LivingEntity le) {
-				var food = block.getBlock().asItem().getFoodProperties();
+				var food = block.getBlock().asItem().getDefaultInstance().getFoodProperties(le);
 				if (food != null) {
-					for (var e : food.getEffects()) {
-						if (e.getSecond() > le.level().getRandom().nextFloat()) {
-							var eff = e.getFirst();
+					for (var e : food.effects()) {
+						if (e.probability() > le.level().getRandom().nextFloat()) {
+							var eff = e.effect();
 							le.addEffect(new MobEffectInstance(eff.getEffect(), eff.getDuration() / 4, eff.getAmplifier() - 1));
 						}
 					}
@@ -66,7 +67,7 @@ public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod
 	}
 
 	@Override
-	public InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos pos, Player player, BlockHitResult blockHitResult) {
+	public InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 		if (!level.isClientSide() && level.getBlockEntity(pos) instanceof JellyBlockEntity jelly) {
 			var dir = hit.getDirection().getOpposite();
 			jelly.makeWiggle(dir);

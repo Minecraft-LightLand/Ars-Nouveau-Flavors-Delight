@@ -1,0 +1,29 @@
+{
+	"arsdelight.title": "新生乐事",
+	"arsdelight.configuration": {
+		"title": "新生乐事 - 配置",
+		"section.arsdelight": {
+			"client.toml": "新生乐事 - 客户端配置",
+			"client.toml.title": "新生乐事 - 客户端配置",
+			"common.toml": "新生乐事 - 联动配置",
+			"common.toml.title": "新生乐事 - 联动配置",
+			"server.toml": "新生乐事 - 服务端配置",
+			"server.toml.title": "新生乐事 - 服务端配置"
+		},
+		"enableThirstCompat": "启用口渴兼容",
+		"enableThirstCompat.tooltip": "",
+		"maxShieldingAbsorption": "同频护盾：基础最大伤害吸收",
+		"maxShieldingAbsorption.tooltip": "高等级效果每级翻倍。范围: 2.0 ~ 100.0",
+		"wildenManaRegenBonus": "野化效果：每级魔力再生",
+		"wildenManaRegenBonus.tooltip": "范围: 0.0 ~ 1.0",
+		"wildenMaxManaBonus": "野化效果：每级魔力上限提升",
+		"wildenMaxManaBonus.tooltip": "范围: 0.0 ~ 1.0",
+		"wildenSpellDamageBonus": "野化效果：每级法术伤害提升",
+		"wildenSpellDamageBonus.tooltip": "范围: 0.0 ~ 1.0",
+		"drygmyFarmingDamageTool": "德格米：工具耐久消耗",
+		"drygmyFarmingDamageTool.tooltip": "范围: 0 ~ 10000",
+		"drygmyFarmingToolPlainCopy": "德格米：使用无数据物品",
+		"drygmyFarmingToolPlainCopy.tooltip": "使用无数据物品避免触发附魔/升级/宝石/词条效果"
+
+	}
+}
