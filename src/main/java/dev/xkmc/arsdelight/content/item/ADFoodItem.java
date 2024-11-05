@@ -67,7 +67,7 @@ public class ADFoodItem extends ModItem {
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack stack) {
-		return type == FoodType.DRINK || type == FoodType.JELLY ? UseAnim.DRINK : UseAnim.EAT;
+		return type == FoodType.DRINK || type == FoodType.HORNED_DRINK || type == FoodType.JELLY ? UseAnim.DRINK : UseAnim.EAT;
 	}
 
 	@Override
