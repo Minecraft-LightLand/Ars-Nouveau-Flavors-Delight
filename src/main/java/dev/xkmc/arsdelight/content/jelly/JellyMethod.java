@@ -1,11 +1,10 @@
 package dev.xkmc.arsdelight.content.jelly;
 
 import dev.xkmc.l2modularblock.mult.FallOnBlockMethod;
-import dev.xkmc.l2modularblock.mult.OnClickBlockMethod;
+import dev.xkmc.l2modularblock.mult.UseWithoutItemBlockMethod;
 import dev.xkmc.l2modularblock.one.RenderShapeBlockMethod;
 import dev.xkmc.l2modularblock.one.ShapeBlockMethod;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod, OnClickBlockMethod, ShapeBlockMethod {
+public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod, UseWithoutItemBlockMethod, ShapeBlockMethod {
 
 	private static final VoxelShape SHAPE = Shapes.or(
 			Block.box(3, 0, 3, 13, 1, 13),
@@ -48,7 +47,7 @@ public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod
 	}
 
 	@Override
-	public InteractionResult onClick(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+	public InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
 		return InteractionResult.PASS;
 	}
 

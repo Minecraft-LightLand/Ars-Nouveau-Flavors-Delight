@@ -197,7 +197,7 @@ public enum ADFood implements ItemLike {
 	public <T extends Block, P> ItemBuilder<ADFoodBlockItem, BlockBuilder<T, P>> copyToBlockItem(
 			BlockBuilder<T, P> block, BlockFoodType type, int nut, float sat) {
 		var builder = new FoodProperties.Builder();
-		builder.nutrition(nut).saturationMod(sat);
+		builder.nutrition(nut).saturationModifier(sat);
 		for (var e : effs) {
 			builder.effect(e::getEffect, e.chance());
 		}

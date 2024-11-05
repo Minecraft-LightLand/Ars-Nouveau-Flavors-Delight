@@ -3,7 +3,7 @@ package dev.xkmc.arsdelight.content.jelly;
 import com.hollingsworth.arsnouveau.api.block.IPrismaticBlock;
 import com.hollingsworth.arsnouveau.common.entity.EntityProjectileSpell;
 import dev.xkmc.arsdelight.init.registrate.ADJellys;
-import dev.xkmc.l2modularblock.DelegateEntityBlockImpl;
+import dev.xkmc.l2modularblock.core.DelegateEntityBlockImpl;
 import dev.xkmc.l2modularblock.impl.BlockEntityBlockMethodImpl;
 import dev.xkmc.l2modularblock.type.BlockMethod;
 import net.minecraft.core.BlockPos;

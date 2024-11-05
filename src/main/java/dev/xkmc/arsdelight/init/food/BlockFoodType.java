@@ -34,8 +34,7 @@ public enum BlockFoodType {
 
 	public ADFoodBlockItem build(Block block, Item.Properties prop, FoodProperties.Builder builder) {
 		if (fast) builder.fast();
-		if (always) builder.alwaysEat();
-		if (meat) builder.meat();
+		if (always) builder.alwaysEdible();
 		prop.food(builder.build());
 		if (container != null) {
 			prop.stacksTo(16);

@@ -14,7 +14,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 
 public class ADJellys {
 
@@ -49,9 +49,9 @@ public class ADJellys {
 
 	private static FoodProperties.Builder resolve(FoodProperties effs) {
 		var builder = new FoodProperties.Builder();
-		builder.nutrition(4).saturationMod(0.6f);
-		for (var e : effs.getEffects()) {
-			builder.effect(() -> amplify(e.getFirst()), e.getSecond());
+		builder.nutrition(4).saturationModifier(0.6f);
+		for (var e : effs.effects()) {
+			builder.effect(() -> amplify(e.effect()), e.probability());
 		}
 		return builder;
 	}

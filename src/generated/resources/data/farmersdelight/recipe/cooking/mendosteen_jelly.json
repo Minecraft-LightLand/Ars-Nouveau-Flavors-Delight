@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "ars_nouveau:mendosteen_pod"
+    },
+    {
+      "item": "ars_nouveau:mendosteen_pod"
+    },
+    {
+      "item": "arsdelight:flourishing_bark"
+    },
+    {
+      "item": "ars_nouveau:sourceberry_bush"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 1,
+    "id": "arsdelight:mendosteen_jelly"
+  }
+}

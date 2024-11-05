@@ -10,6 +10,7 @@ import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
+import dev.xkmc.arsdelight.init.registrate.ADJellys;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -186,6 +187,7 @@ public class RecipeGen {
 			// jelly
 			{
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.MENDOSTEEN_JELLY, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get(), 2)
 						.addIngredient(ADItems.FLOURISHING_BARK.get())
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
@@ -194,6 +196,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.BASTION_JELLY, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
 						.addIngredient(ADItems.VEXING_BARK.get())
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
@@ -202,6 +205,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.BOMBEGRANTE_JELLY, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
@@ -210,6 +214,7 @@ public class RecipeGen {
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.FROSTAYA_JELLY, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.CASCADING_BARK.get())
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
