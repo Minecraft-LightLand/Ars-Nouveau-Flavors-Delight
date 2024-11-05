@@ -1,5 +1,6 @@
 {
   "parent": "arsdelight:custom/frostaya_pie_slice2",
+  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "arsdelight:block/pie/pie_bottom",
     "deco": "arsdelight:block/pie/frostaya_pie_deco",

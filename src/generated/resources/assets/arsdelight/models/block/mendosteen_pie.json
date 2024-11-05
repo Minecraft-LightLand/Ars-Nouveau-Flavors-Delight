@@ -1,5 +1,6 @@
 {
   "parent": "arsdelight:custom/mendosteen_pie",
+  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "arsdelight:block/pie/pie_bottom",
     "deco": "arsdelight:block/pie/mendosteen_pie_deco",
