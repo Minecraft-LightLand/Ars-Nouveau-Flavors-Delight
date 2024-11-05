@@ -88,7 +88,12 @@ public class RecipeGen {
 							RecipeCategory.MISC, () -> BlockRegistry.SOURCEBERRY_BUSH, 1, 9)
 					.save(pvd, ArsDelight.loc("source_berry_unpack"));
 
-			// TODO cabinet
+			var slab = BlockRegistry.ARCHWOOD_SLABS.get().asItem();
+			var trap = BlockRegistry.ARCHWOOD_TRAPDOOR.get().asItem();
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ADBlocks.ARCHWOOD_CABINET.get(), 1)::unlockedBy, slab)
+					.pattern("---").pattern("D D").pattern("---")
+					.define('-', slab).define('D', trap)
+					.save(pvd);
 
 		}
 

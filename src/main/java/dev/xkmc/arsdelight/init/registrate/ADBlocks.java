@@ -19,12 +19,14 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraftforge.client.model.generators.ModelFile;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 
 public class ADBlocks {
 
 	public static final BlockEntry<Block> MENDOSTEEN_CRATE, BASTION_CRATE,
 			BOMBEGRANTE_CRATE, FROSTAYA_CRATE, SOURCE_BERRY_CRATE;
+	public static final BlockEntry<CabinetBlock> ARCHWOOD_CABINET;
 	public static final BlockEntry<ChimeraFeast> CHIMERA;
 	public static final BlockEntry<SaladFeast> SALAD;
 
@@ -35,6 +37,7 @@ public class ADBlocks {
 		BOMBEGRANTE_CRATE = crate("bombegrante_crate");
 		FROSTAYA_CRATE = crate("frostaya_crate");
 		SOURCE_BERRY_CRATE = crate("source_berry_crate");
+		ARCHWOOD_CABINET = cabinet("archwood");
 
 		SALAD = ArsDelight.REGISTRATE.block("wilden_salad",
 						p -> new SaladFeast(p, ADFood.BOWL_OF_WILDEN_SALAD::get, true))
@@ -85,6 +88,25 @@ public class ADBlocks {
 						pvd.modLoc("block/crate/" + name + "_side"),
 						pvd.modLoc("block/crate/crate_bottom"),
 						pvd.modLoc("block/crate/" + name + "_top"))))
+				.tag(BlockTags.MINEABLE_WITH_AXE)
+				.simpleItem()
+				.register();
+	}
+
+	private static BlockEntry<CabinetBlock> cabinet(String wood) {
+		return ArsDelight.REGISTRATE.block(wood + "_cabinet",
+						p -> new CabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL))
+				).blockstate((ctx, pvd) -> {
+					ModelFile close = pvd.models().orientable("block/" + ctx.getName(),
+							pvd.modLoc("block/cabinet/" + ctx.getName() + "_side"),
+							pvd.modLoc("block/cabinet/" + ctx.getName() + "_front"),
+							pvd.modLoc("block/cabinet/" + ctx.getName() + "_top"));
+					ModelFile open = pvd.models().orientable("block/" + ctx.getName() + "_open",
+							pvd.modLoc("block/cabinet/" + ctx.getName() + "_side"),
+							pvd.modLoc("block/cabinet/" + ctx.getName() + "_open"),
+							pvd.modLoc("block/cabinet/" + ctx.getName() + "_top"));
+					pvd.horizontalBlock(ctx.get(), state -> state.getValue(CabinetBlock.OPEN) ? open : close);
+				})
 				.tag(BlockTags.MINEABLE_WITH_AXE)
 				.simpleItem()
 				.register();

@@ -6,6 +6,7 @@
   "arsdelight.tooltip.kill_axe": "Dropped when killing [%s] with axe",
   "arsdelight.tooltip.kill_knife": "Dropped when killing [%s] with knife",
   "arsdelight.tooltip.place": "Shift right click to place down",
+  "block.arsdelight.archwood_cabinet": "Archwood Cabinet",
   "block.arsdelight.bastion_crate": "Bastion Crate",
   "block.arsdelight.bastion_jelly": "Bastion Jelly",
   "block.arsdelight.bastion_pie": "Bastion Pie",
