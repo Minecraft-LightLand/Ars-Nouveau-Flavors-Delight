@@ -174,6 +174,7 @@ public class RecipeGen {
 					.build(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_STEW, 1, 200, 0.1f, Items.BOWL)
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(TagGen.RAW_WILDEN_MEAT)
 					.addIngredient(CommonTags.FOODS_TOMATO)
 					.addIngredient(CommonTags.FOODS_ONION)

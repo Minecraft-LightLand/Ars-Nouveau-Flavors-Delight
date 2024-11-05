@@ -53,7 +53,7 @@ public record JellyMethod() implements FallOnBlockMethod, RenderShapeBlockMethod
 	}
 
 	@Override
-	public InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
+	public InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos pos, Player player, BlockHitResult blockHitResult) {
 		if (!level.isClientSide() && level.getBlockEntity(pos) instanceof JellyBlockEntity be) {
 			be.makeWiggle();
 		}

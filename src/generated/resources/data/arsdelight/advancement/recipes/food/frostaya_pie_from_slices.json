@@ -1,13 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_archwood_slab": {
+    "has_frostaya_pie_slice": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "ars_nouveau:archwood_slab"
-            ]
+            "items": "arsdelight:frostaya_pie_slice"
           }
         ]
       },
@@ -15,21 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "arsdelight:archwood_cabinet"
+        "recipe": "arsdelight:frostaya_pie_from_slices"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_archwood_slab",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_frostaya_pie_slice"
     ]
   ],
   "rewards": {
     "recipes": [
-      "arsdelight:archwood_cabinet"
+      "arsdelight:frostaya_pie_from_slices"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

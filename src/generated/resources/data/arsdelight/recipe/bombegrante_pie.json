@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "O": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "a": {
+      "item": "ars_nouveau:sourceberry_bush"
+    },
+    "f": {
+      "item": "ars_nouveau:bombegranate_pod"
+    },
+    "j": {
+      "item": "arsdelight:neutralized_bombegrante_jam"
+    },
+    "x": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "#f#",
+    "aja",
+    "xOx"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arsdelight:bombegrante_pie"
+  }
+}

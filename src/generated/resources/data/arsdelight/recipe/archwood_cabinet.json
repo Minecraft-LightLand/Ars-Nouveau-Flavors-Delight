@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "-": {
+      "item": "ars_nouveau:archwood_slab"
+    },
+    "D": {
+      "item": "ars_nouveau:archwood_trapdoor"
+    }
+  },
+  "pattern": [
+    "---",
+    "D D",
+    "---"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arsdelight:archwood_cabinet"
+  }
+}
