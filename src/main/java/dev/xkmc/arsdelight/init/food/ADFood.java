@@ -1,8 +1,11 @@
 package dev.xkmc.arsdelight.init.food;
 
 import com.hollingsworth.arsnouveau.setup.registry.ModPotions;
+import com.tterrag.registrate.builders.BlockBuilder;
+import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.compat.diet.DietTagGen;
+import dev.xkmc.arsdelight.content.item.ADFoodBlockItem;
 import dev.xkmc.arsdelight.content.item.ADFoodItem;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.data.TagGen;
@@ -13,6 +16,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.List;
@@ -160,17 +164,25 @@ public enum ADFood implements ItemLike {
 	private final String name;
 	public final FoodType type;
 	public final ItemEntry<ADFoodItem> item;
+	private final List<EffectEntry> effs;
+	private final TagKey<Item>[] tags;
 
 	@SafeVarargs
 	ADFood(FoodType type, int nut, float sat, List<EffectEntry> effs, TagKey<Item>... tags) {
 		this.name = name().toLowerCase(Locale.ROOT);
 		this.type = type;
-		String tex = (nut == 0 ? "item/drink/" : "item/food/") + name;
+		String tex = switch (type) {
+			case MEAT, FAST_MEAT -> "item/meat/";
+			case JELLY, DRINK, HORNED_DRINK -> "item/drink/";
+			default -> "item/food/";
+		} + name;
 		this.item = ArsDelight.REGISTRATE.item(name, p -> this.build(p, nut, sat, effs))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc(tex)))
 				.lang(ADItems.toEnglishName(name))
 				.tag(tags)
 				.register();
+		this.effs = effs;
+		this.tags = tags;
 	}
 
 	private ADFoodItem build(Item.Properties prop, int nut, float sat, List<EffectEntry> effs) {
@@ -180,6 +192,16 @@ public enum ADFood implements ItemLike {
 			builder.effect(e::getEffect, e.chance());
 		}
 		return type.build(prop, builder);
+	}
+
+	public <T extends Block, P> ItemBuilder<ADFoodBlockItem, BlockBuilder<T, P>> copyToBlockItem(
+			BlockBuilder<T, P> block, BlockFoodType type, int nut, float sat) {
+		var builder = new FoodProperties.Builder();
+		builder.nutrition(nut).saturationMod(sat);
+		for (var e : effs) {
+			builder.effect(e::getEffect, e.chance());
+		}
+		return block.item((t, p) -> type.build(t, p, builder)).tag(tags);
 	}
 
 	public ItemStack asStack() {

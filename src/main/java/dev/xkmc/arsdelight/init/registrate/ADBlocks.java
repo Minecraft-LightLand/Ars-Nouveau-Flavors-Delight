@@ -38,6 +38,7 @@ public class ADBlocks {
 
 		SALAD = ArsDelight.REGISTRATE.block("wilden_salad",
 						p -> new SaladFeast(p, ADFood.BOWL_OF_WILDEN_SALAD::get, true))
+				.initialProperties(() -> Blocks.CAKE)
 				.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
 					int serve = state.getValue(FeastBlock.SERVINGS);
 					String suffix = serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
@@ -54,6 +55,7 @@ public class ADBlocks {
 
 		CHIMERA = ArsDelight.REGISTRATE.block("honey_glazed_chimera",
 						p -> new ChimeraFeast(p, ADFood.BOWL_OF_HONEY_GLAZED_CHIMERA::get, true))
+				.initialProperties(() -> Blocks.CAKE)
 				.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
 					int serve = state.getValue(FeastBlock.SERVINGS);
 					String suffix = serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
