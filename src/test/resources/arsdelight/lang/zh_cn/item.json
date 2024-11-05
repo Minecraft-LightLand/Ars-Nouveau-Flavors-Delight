@@ -1,0 +1,87 @@
+{
+	"item.arsdelight": {
+		"blazing_bark": "烈焰至高树皮",
+		"cascading_bark": "奔流至高树皮",
+		"vexing_bark": "恼人至高树皮",
+		"flourishing_bark": "繁茂至高树皮",
+		"wilden_horn_powder": "荒野角粉",
+		"wilden_spike_powder": "荒野刺粉",
+		"chimera_horn": "奇美拉角",
+		"activated_bastion_jam": "活化堡垒果酱",
+		"activated_mendosteen_jam": "魔化山竹果酱",
+		"neutralized_bombegrante_jam": "硬化石榴果酱",
+		"neutralized_frostaya_jam": "冰焰木瓜果酱",
+		"bastion_pork": "活化堡垒果炖猪排",
+		"frostaya_mutton": "冰焰木瓜炖羊排",
+		"bombegrante_steak": "硬化石榴炖牛排",
+		"mendosteen_chicken": "魔化山竹烤鸡",
+		"arch_sauce": "至高酱",
+		"wilden_sauce": "荒野酱",
+		"arch_soup": "至高炖汤",
+		"wilden_stew": "荒野炖肉",
+		"source_berry_cookie": "魔源浆果曲奇",
+		"source_berry_pie_slice": "切片魔源浆果派",
+		"source_berry_cupcake": "魔源浆果蛋糕",
+		"bowl_of_wilden_salad": "碗装荒野沙拉",
+		"horn_roll": "丰饶角卷",
+		"bowl_of_honey_glazed_chimera": "盘装蜜汁奇美拉炖肉",
+		"unstable_cocktail": "不稳定鸡尾酒",
+		"enchanters_knife": "巫师小刀"
+	},
+	"block.arsdelight": {
+		"honey_glazed_chimera": "蜜汁奇美拉炖肉",
+		"source_berry_crate": "箱装魔源浆果",
+		"wilden_salad": "荒野沙拉",
+		"archwood_cabinet": "至高木橱柜"
+	},
+	"-cartesian": {
+		"meat": {
+			"path": "item.arsdelight",
+			"list": [
+				{
+					"chimera": "生奇美拉肉",
+					"grilled_chimera": "烤奇美拉肉",
+					"wilden": "荒野生肉",
+					"grilled_wilden": "荒野烤肉"
+				},
+				{
+					"*_meat": "*",
+					"*_meat_slice": "*片",
+					"*_skewer": "*串"
+				}
+			]
+		},
+		"processed_fruits": {
+			"path": "",
+			"list": [
+				{
+					"bastion": "活化堡垒",
+					"bombegrante": "硬化石榴",
+					"mendosteen": "魔化山竹",
+					"frostaya": "冰焰木瓜"
+				},
+				{
+					"item.arsdelight.*_hornbeer": "*果酒",
+					"item.arsdelight.*_tea": "*果茶",
+					"block.arsdelight.*_pie": "派",
+					"item.arsdelight.*_pie_slice": "派切片"
+				}
+			]
+		},
+		"raw_fruits": {
+			"path": "",
+			"list": [
+				{
+					"bastion": "堡垒果",
+					"bombegrante": "炸弹石榴",
+					"mendosteen": "门多山竹",
+					"frostaya": "霜木瓜"
+				},
+				{
+					"block.arsdelight.*_crate": "箱装*",
+					"block.arsdelight.*_jelly": "*果冻"
+				}
+			]
+		}
+	}
+}

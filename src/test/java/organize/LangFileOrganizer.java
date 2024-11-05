@@ -49,12 +49,7 @@ public class LangFileOrganizer extends ResourceOrganizer {
 										finalMap.add(Pair.of(ent1.getKey(), ent1.getValue().getAsString())));
 							} else {
 								map = map.stream().flatMap(ent1 -> vector.getAsJsonObject().entrySet().stream()
-												.map(ent2 -> Pair.of(ent1.getFirst().length() == 0 ? ent2.getKey() :
-																ent2.getKey().contains("*") ?
-																		ent2.getKey().replaceFirst("\\*", ent1.getFirst()) :
-																		ent1.getFirst() + con + ent2.getKey(),
-														reverse ? ent2.getValue().getAsString() + ent1.getSecond() :
-																ent1.getSecond() + ent2.getValue().getAsString())))
+												.map(ent2 -> connect(ent1, ent2, reverse, con)))
 										.collect(Collectors.toList());
 							}
 						}
@@ -71,6 +66,16 @@ public class LangFileOrganizer extends ResourceOrganizer {
 		}
 	}
 
+	private Pair<String, String> connect(Pair<String, String> ent1, Map.Entry<String, JsonElement> ent2, boolean reverse, String con) {
+		String k1 = ent1.getFirst();
+		String k2 = ent2.getKey();
+		String key = k2.contains("*") ? k2.replaceFirst("\\*", k1) : k1.isEmpty() ? k2 : k1 + con + k2;
+		String v1 = ent1.getSecond();
+		String v2 = ent2.getValue().getAsString();
+		String val = v2.contains("*") ? v2.replaceFirst("\\*", v1) : reverse ? v2 + v1 : v1 + v2;
+		return Pair.of(key, val);
+	}
+
 	private void inject(String path, JsonObject src, JsonObject dst) {
 		for (Map.Entry<String, JsonElement> ent : src.entrySet()) {
 			if (ent.getKey().startsWith("-")) continue;
@@ -81,4 +86,5 @@ public class LangFileOrganizer extends ResourceOrganizer {
 			}
 		}
 	}
+
 }

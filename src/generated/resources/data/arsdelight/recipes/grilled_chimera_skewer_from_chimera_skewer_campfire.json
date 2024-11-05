@@ -4,7 +4,7 @@
   "cookingtime": 600,
   "experience": 0.1,
   "ingredient": {
-    "item": "arsdelight:raw_wilden_skewer"
+    "item": "arsdelight:chimera_skewer"
   },
-  "result": "arsdelight:grilled_wilden_skewer"
+  "result": "arsdelight:grilled_chimera_skewer"
 }

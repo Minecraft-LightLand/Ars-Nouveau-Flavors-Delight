@@ -42,8 +42,8 @@ public class RecipeGen {
 					ADFood.CHIMERA_MEAT_SLICE, ADFood.GRILLED_CHIMERA_MEAT_SLICE);
 			meat(pvd, ADFood.WILDEN_MEAT, ADFood.GRILLED_WILDEN_MEAT,
 					ADFood.WILDEN_MEAT_SLICE, ADFood.GRILLED_WILDEN_MEAT_SLICE);
-			cook(pvd, ADFood.RAW_WILDEN_SKEWER, ADFood.GRILLED_WILDEN_SKEWER);
-			cook(pvd, ADFood.RAW_CHIMERA_SKEWER, ADFood.GRILLED_CHIMERA_SKEWER);
+			cook(pvd, ADFood.WILDEN_SKEWER, ADFood.GRILLED_WILDEN_SKEWER);
+			cook(pvd, ADFood.CHIMERA_SKEWER, ADFood.GRILLED_CHIMERA_SKEWER);
 			strip(pvd, ADItems.BLAZING_BARK, BlockRegistry.BLAZING_LOG, BlockRegistry.STRIPPED_AWLOG_RED,
 					BlockRegistry.BLAZING_WOOD, BlockRegistry.STRIPPED_AWWOOD_RED);
 			strip(pvd, ADItems.CASCADING_BARK, BlockRegistry.CASCADING_LOG, BlockRegistry.STRIPPED_AWLOG_BLUE,
@@ -126,7 +126,7 @@ public class RecipeGen {
 					.build(pvd);
 
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
-					ADFood.RAW_WILDEN_SKEWER, 8)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
+					ADFood.WILDEN_SKEWER, 8)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
 					.requires(TagGen.RAW_WILDEN_MEAT)
 					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
 					.requires(Items.STICK)
@@ -134,7 +134,7 @@ public class RecipeGen {
 					.save(pvd);
 
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
-					ADFood.RAW_CHIMERA_SKEWER, 8)::unlockedBy, ADFood.CHIMERA_MEAT.asItem())
+					ADFood.CHIMERA_SKEWER, 8)::unlockedBy, ADFood.CHIMERA_MEAT.asItem())
 					.requires(TagGen.RAW_CHIMERA)
 					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
 					.requires(Items.STICK)
