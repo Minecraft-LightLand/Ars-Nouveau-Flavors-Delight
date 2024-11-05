@@ -4,10 +4,13 @@ import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import com.hollingsworth.arsnouveau.client.renderer.item.FixedGeoItemRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.core.object.Color;
@@ -29,6 +32,18 @@ public class KnifeRenderer extends FixedGeoItemRenderer<EnchantersKnife> {
 				return ArsDelight.loc("animations/knife.json");
 			}
 		});
+	}
+
+	@Override
+	public void renderByItem(ItemStack stack, ItemDisplayContext type, PoseStack pose, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
+		pose.pushPose();
+		if (type == ItemDisplayContext.FIXED) {
+			pose.translate(0, 0.8, 0.5);
+			pose.mulPose(Axis.XP.rotationDegrees(-45));
+			pose.translate(0, -0.8, -0.5);
+		}
+		super.renderByItem(stack, type, pose, bufferSource, packedLight, packedOverlay);
+		pose.popPose();
 	}
 
 	public void renderRecursively(PoseStack poseStack, EnchantersKnife animatable, GeoBone bone, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
