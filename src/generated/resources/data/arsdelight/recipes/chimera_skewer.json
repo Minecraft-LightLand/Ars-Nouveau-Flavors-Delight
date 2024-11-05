@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "arsdelight:raw_chimera"
+    },
+    {
+      "tag": "forge:salad_ingredients/cabbage"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "arsdelight:wilden_spike_powder"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "arsdelight:chimera_skewer"
+  }
+}

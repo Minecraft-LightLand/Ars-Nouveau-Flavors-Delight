@@ -1,0 +1,9 @@
+{
+  "itemGroup.arsdelight.arsdelight": "新生乐事",
+  "arsdelight.tooltip.chance": "%2$s%%概率获得%1$s",
+  "arsdelight.tooltip.kill_axe": "用斧头击杀[%s]时掉落",
+  "arsdelight.tooltip.kill_knife": "用小刀击杀[%s]时掉落",
+  "arsdelight.tooltip.place": "潜行右键放置",
+  "arsdelight.tooltip.grab": "拿[%2$s]右键[%1$s]获得"
+
+}

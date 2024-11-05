@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "arsdelight:wilden_skewer"
+  },
+  "result": "arsdelight:grilled_wilden_skewer"
+}

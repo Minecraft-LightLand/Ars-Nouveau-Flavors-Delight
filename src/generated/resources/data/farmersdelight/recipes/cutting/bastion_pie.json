@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "arsdelight:bastion_pie"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "arsdelight:bastion_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

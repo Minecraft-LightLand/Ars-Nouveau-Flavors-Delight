@@ -1,15 +1,19 @@
 package dev.xkmc.arsdelight.init.registrate;
 
 import com.hollingsworth.arsnouveau.common.items.ModItem;
-import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
+import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.arsdelight.content.item.EnchantersKnife;
 import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADFood;
+import dev.xkmc.arsdelight.init.food.ADPie;
+import dev.xkmc.l2library.base.L2Registrate;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import org.apache.commons.lang3.StringUtils;
 import vectorwing.farmersdelight.common.item.FuelItem;
-import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -26,16 +30,18 @@ public class ADItems {
 	public static final ItemEntry<EnchantersKnife> KNIFE;
 
 	static {
-		FLOURISHING_BARK = ArsDelight.REGISTRATE.item("flourishing_bark", p -> new FuelItem(p, 200)).register();
-		VEXING_BARK = ArsDelight.REGISTRATE.item("vexing_bark", p -> new FuelItem(p, 200)).register();
-		CASCADING_BARK = ArsDelight.REGISTRATE.item("cascading_bark", p -> new FuelItem(p, 200)).register();
-		BLAZING_BARK = ArsDelight.REGISTRATE.item("blazing_bark", p -> new FuelItem(p, 400)).register();
-		HORN_POWDER = ArsDelight.REGISTRATE.item("wilden_horn_powder", ModItem::new).register();
-		SPIKE_POWDER = ArsDelight.REGISTRATE.item("wilden_spike_powder", ModItem::new).register();
-		CHIMERA_HORN = ArsDelight.REGISTRATE.item("chimera_horn", ModItem::new).register();
+		FLOURISHING_BARK = ingredient("flourishing_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
+		VEXING_BARK = ingredient("vexing_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
+		CASCADING_BARK = ingredient("cascading_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
+		BLAZING_BARK = ingredient("blazing_bark", p -> new FuelItem(p, 400)).tag(TagGen.BARKS).register();
+		HORN_POWDER = ingredient("wilden_horn_powder", ModItem::new).register();
+		SPIKE_POWDER = ingredient("wilden_spike_powder", ModItem::new).register();
+		CHIMERA_HORN = ingredient("chimera_horn", ModItem::new).register();
+
 		KNIFE = ArsDelight.REGISTRATE.item("enchanters_knife", p -> new EnchantersKnife(Tiers.NETHERITE, 1, -2F))
 				.model((ctx, pvd) -> {
-				}).tag(ForgeTags.TOOLS_KNIVES, ModTags.KNIVES).register();
+				}).tag(ForgeTags.TOOLS_KNIVES, ModTags.KNIVES)
+				.lang("Enchanter's Knife").register();
 	}
 
 	public static String toEnglishName(String internalName) {
@@ -44,8 +50,14 @@ public class ADItems {
 				.collect(Collectors.joining(" "));
 	}
 
+	private static <T extends Item> ItemBuilder<T, L2Registrate> ingredient(String id, NonNullFunction<Item.Properties, T> factory) {
+		return ArsDelight.REGISTRATE.item(id, factory).model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/ingredient/" + ctx.getName())));
+	}
+
 	public static void register() {
 		ADBlocks.register();
+		ADJellys.register();
+		ADPie.register();
 		ADFood.register();
 	}
 

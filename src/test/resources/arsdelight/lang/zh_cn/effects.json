@@ -1,0 +1,12 @@
+{
+	"effect.arsdelight.blast_resistance": "爆炸抗性",
+	"effect.arsdelight.blast_resistance.description": "减少受到的爆炸伤害",
+	"effect.arsdelight.flourishing": "魔力同步",
+	"effect.arsdelight.flourishing.description": "玩家收到治愈时同步恢复魔力",
+	"effect.arsdelight.freezing_spell": "凛冽魔源",
+	"effect.arsdelight.freezing_spell.description": "玩家造成的法术伤害同时施加冰冻效果",
+	"effect.arsdelight.synchronized_shield": "同频护盾",
+	"effect.arsdelight.synchronized_shield.description": "玩家收到治愈时获得伤害吸收",
+	"effect.arsdelight.wilden": "野化",
+	"effect.arsdelight.wilden.description": "提升最大魔力，魔力恢复速度，以及法术伤害"
+}

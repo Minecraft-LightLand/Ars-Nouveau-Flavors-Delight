@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/bombegrante_hornbeer"
+    "layer0": "arsdelight:item/drink/bombegrante_hornbeer"
   }
 }

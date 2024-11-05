@@ -1,0 +1,12 @@
+{
+  "parent": "arsdelight:custom/mendosteen_pie_slice2",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "arsdelight:block/pie/pie_bottom",
+    "deco": "arsdelight:block/pie/mendosteen_pie_deco",
+    "inner": "arsdelight:block/pie/mendosteen_pie_inner",
+    "particle": "arsdelight:block/pie/mendosteen_pie_top",
+    "side": "arsdelight:block/pie/pie_side",
+    "top": "arsdelight:block/pie/mendosteen_pie_top"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/unstable_cocktail"
+    "layer0": "arsdelight:item/drink/unstable_cocktail"
   }
 }

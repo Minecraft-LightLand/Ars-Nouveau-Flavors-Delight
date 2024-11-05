@@ -1,8 +1,11 @@
 package dev.xkmc.arsdelight.init.food;
 
 import com.hollingsworth.arsnouveau.setup.registry.ModPotions;
+import com.tterrag.registrate.builders.BlockBuilder;
+import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.compat.diet.DietTagGen;
+import dev.xkmc.arsdelight.content.item.ADFoodBlockItem;
 import dev.xkmc.arsdelight.content.item.ADFoodItem;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.data.TagGen;
@@ -13,6 +16,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.List;
@@ -46,6 +50,21 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ADEffects.WILDEN::get, 300, 1)
 	), TagGen.COOKED_CHIMERA, DietTagGen.PROTEINS.tag),
 
+	WILDEN_SKEWER(FoodType.MEAT_STICK, 4, 0.4f, List.of(
+			new EffectEntry(ADEffects.WILDEN::get, 300, 0, 0.5f)
+	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
+	GRILLED_WILDEN_SKEWER(FoodType.MEAT_STICK, 8, 0.7f, List.of(
+			new EffectEntry(ADEffects.WILDEN::get, 1200, 1, 1f),
+			new EffectEntry(ModEffects.NOURISHMENT, 1200)
+	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
+	CHIMERA_SKEWER(FoodType.MEAT_STICK, 7, 0.4f, List.of(
+			new EffectEntry(ADEffects.WILDEN::get, 600, 1, 0.5f)
+	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
+	GRILLED_CHIMERA_SKEWER(FoodType.MEAT_STICK, 12, 0.7f, List.of(
+			new EffectEntry(ADEffects.WILDEN::get, 1200, 2),
+			new EffectEntry(ModEffects.NOURISHMENT, 1200)
+	), DietTagGen.PROTEINS.tag, DietTagGen.VEGETABLES.tag),
+
 	SOURCE_BERRY_COOKIE(FoodType.FAST, 2, 0.8f, List.of(
 			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 200, 0)
 	), DietTagGen.SUGARS.tag),
@@ -65,16 +84,12 @@ public enum ADFood implements ItemLike {
 			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200),
 			new EffectEntry(ModEffects.COMFORT, 1200)
 	), DietTagGen.VEGETABLES.tag),
-	/*
+
 	WILDEN_STEW(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN::get, 3600, 0),
 			new EffectEntry(ModEffects.COMFORT, 3600),
 			new EffectEntry(ModEffects.NOURISHMENT, 3600)
-	), DietTagGen.PROTEINS.tag),*/
-	/*WILDEN_SKEWER(FoodType.MEAT_STICK, 8, 0.8f, List.of(
-			new EffectEntry(ADEffects.WILDEN::get, 2400, 0),
-			new EffectEntry(ModEffects.NOURISHMENT, 2400)
-	), DietTagGen.PROTEINS.tag),*/
+	), DietTagGen.PROTEINS.tag),
 	BOWL_OF_WILDEN_SALAD(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN::get, 2400, 1),
 			new EffectEntry(ModEffects.NOURISHMENT, 2400)
@@ -160,16 +175,25 @@ public enum ADFood implements ItemLike {
 	private final String name;
 	public final FoodType type;
 	public final ItemEntry<ADFoodItem> item;
+	private final List<EffectEntry> effs;
+	private final TagKey<Item>[] tags;
 
 	@SafeVarargs
 	ADFood(FoodType type, int nut, float sat, List<EffectEntry> effs, TagKey<Item>... tags) {
 		this.name = name().toLowerCase(Locale.ROOT);
 		this.type = type;
+		String tex = switch (type) {
+			case MEAT, FAST_MEAT, MEAT_STICK -> "item/meat/";
+			case JELLY, DRINK, HORNED_DRINK -> "item/drink/";
+			default -> "item/food/";
+		} + name;
 		this.item = ArsDelight.REGISTRATE.item(name, p -> this.build(p, nut, sat, effs))
-				.model((ctx, pvd) -> pvd.generated(ctx))
+				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc(tex)))
 				.lang(ADItems.toEnglishName(name))
 				.tag(tags)
 				.register();
+		this.effs = effs;
+		this.tags = tags;
 	}
 
 	private ADFoodItem build(Item.Properties prop, int nut, float sat, List<EffectEntry> effs) {
@@ -179,6 +203,16 @@ public enum ADFood implements ItemLike {
 			builder.effect(e::getEffect, e.chance());
 		}
 		return type.build(prop, builder);
+	}
+
+	public <T extends Block, P> ItemBuilder<ADFoodBlockItem, BlockBuilder<T, P>> copyToBlockItem(
+			BlockBuilder<T, P> block, BlockFoodType type, int nut, float sat) {
+		var builder = new FoodProperties.Builder();
+		builder.nutrition(nut).saturationMod(sat);
+		for (var e : effs) {
+			builder.effect(e::getEffect, e.chance());
+		}
+		return block.item((t, p) -> type.build(t, p, builder)).tag(tags);
 	}
 
 	public ItemStack asStack() {

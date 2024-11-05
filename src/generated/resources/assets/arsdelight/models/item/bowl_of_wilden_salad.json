@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "arsdelight:item/bowl_of_wilden_salad"
+    "layer0": "arsdelight:item/food/bowl_of_wilden_salad"
   }
 }
