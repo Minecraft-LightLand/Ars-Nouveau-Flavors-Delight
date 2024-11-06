@@ -95,6 +95,16 @@ public class RecipeGen {
 					.define('-', slab).define('D', trap)
 					.save(pvd);
 
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PAPER)::unlockedBy, ModItems.TREE_BARK.get())
+					.requires(TagGen.BARKS).requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.save(pvd, ArsDelight.loc("paper_from_barks"));
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get(), 1)::unlockedBy, ModItems.TREE_BARK.get())
+					.requires(Items.DIRT)
+					.requires(ModItems.STRAW.get()).requires(ModItems.STRAW.get())
+					.requires(Items.BONE_MEAL).requires(Items.BONE_MEAL)
+					.requires(TagGen.BARKS).requires(TagGen.FDBARKS)
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.save(pvd, ArsDelight.loc("organic_compost_from_tree_bark"));
 		}
 
 		// misc

@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-06T09:29:16.949387	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2024-11-06T14:27:32.876386	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -111,6 +111,7 @@ e25646ca052f9327f10276053e690ed6306fa011 assets/arsdelight/models/item/wilden_sa
 1dae78a8b38da7d4cfd4337e8ca84796869f271e assets/arsdelight/models/item/wilden_spike_powder.json
 4c6f46c2170a88502b9dd1862cf183147540f9ad assets/arsdelight/models/item/wilden_stew.json
 6700f8c48b63ecf7853c32ee43795ed6ff5442ef data/ars_nouveau/tags/items/magic_food.json
+7933797db47ed063d0d28dcba9812f9675febc4d data/arsdelight/advancements/recipes/building_blocks/organic_compost_from_tree_bark.json
 a1869e085a7b4fdf1f6e2cb45c137ddb6e17c26d data/arsdelight/advancements/recipes/decorations/archwood_cabinet.json
 e5382d25f4c422b9204f893586d0a6b9168cba3f data/arsdelight/advancements/recipes/food/bastion_pie.json
 785b96215d5ee37ef41f681bc16a120a151a5f19 data/arsdelight/advancements/recipes/food/bastion_pie_from_slices.json
@@ -145,6 +146,7 @@ a403c7ced1366fb711c4c29ec0e4b0b4d6bb6f14 data/arsdelight/advancements/recipes/mi
 67784641fb4beadbdf71a1289a22a710ca141f00 data/arsdelight/advancements/recipes/misc/frostaya_pod_from_frostaya_crate.json
 f18fc2d4b500348ba44bf74a616a94ee7bf138b3 data/arsdelight/advancements/recipes/misc/mendosteen_crate.json
 1d54cc1e8d5499eef0859e7a368447840685f056 data/arsdelight/advancements/recipes/misc/mendosteen_pod_from_mendosteen_crate.json
+b73fe5be502f6db6a2e2fa62edafcd206a9b0e04 data/arsdelight/advancements/recipes/misc/paper_from_barks.json
 0dab4affd3ed2834d601f44c46cbf2833120ea77 data/arsdelight/advancements/recipes/misc/source_berry_crate.json
 8ed7e6f6847f0f1a428155891f9256614bcd024b data/arsdelight/advancements/recipes/misc/source_berry_unpack.json
 8aa2af0a7c2f4e88c31f645cf2e2965a5c068274 data/arsdelight/loot_tables/blocks/archwood_cabinet.json
@@ -193,6 +195,8 @@ cc6393f0a81e90b7a73cb0e3965e253518d973fa data/arsdelight/recipes/mendosteen_crat
 5e45a2697f96cb8cc3f8e524fe4d38efacc31604 data/arsdelight/recipes/mendosteen_pie.json
 3e80f7941bdb37c4fb5e78f9daf2d4f5b92f0e4f data/arsdelight/recipes/mendosteen_pie_from_slices.json
 de6aa2faad44ced64d467bdb175ad43ffc714347 data/arsdelight/recipes/mendosteen_pod_from_mendosteen_crate.json
+7ea533299b0bce9bb8c09aaeb120737efb0a9fc2 data/arsdelight/recipes/organic_compost_from_tree_bark.json
+dc9a51e803d6cea02d4486ed0ff0751cd15413b8 data/arsdelight/recipes/paper_from_barks.json
 3ba29ee9635bc3634592e3cf63faf75c37e76ec8 data/arsdelight/recipes/source_berry_cookie.json
 83e18a74f8aa28283efe5562a16fc2e4ed25b077 data/arsdelight/recipes/source_berry_crate.json
 1edd34c08348cb1758c6a8233e5322d9562c556a data/arsdelight/recipes/source_berry_pie.json
@@ -253,6 +257,7 @@ e9881d7d0f8e8c43b8c567905e872209059f1000 data/farmersdelight/recipes/cutting/red
 70d19c800e845a2c4d2c1e79ab1d8b37f0c54257 data/farmersdelight/recipes/cutting/wilden_horn.json
 e7c85b286a12e07db66a8179365d8c575867ec00 data/farmersdelight/recipes/cutting/wilden_meat.json
 49f31416192368fcafac987bf01e442a9a842bd5 data/farmersdelight/recipes/cutting/wilden_spike.json
+60e743f42a854a1ed1bb3eced1a72a90f4a5ea15 data/farmersdelight/tags/items/barks.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/items/flat_on_cutting_board.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/items/tools/knives.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/forge/tags/items/tools/knives.json
