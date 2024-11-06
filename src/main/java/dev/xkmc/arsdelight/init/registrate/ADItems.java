@@ -40,7 +40,7 @@ public class ADItems {
 
 		KNIFE = ArsDelight.REGISTRATE.item("enchanters_knife", p -> new EnchantersKnife(Tiers.NETHERITE, 1, -2F))
 				.model((ctx, pvd) -> {
-				}).tag(ForgeTags.TOOLS_KNIVES, ModTags.KNIVES)
+				}).tag(ForgeTags.TOOLS_KNIVES, ModTags.KNIVES, ModTags.FLAT_ON_CUTTING_BOARD)
 				.lang("Enchanter's Knife").register();
 	}
 

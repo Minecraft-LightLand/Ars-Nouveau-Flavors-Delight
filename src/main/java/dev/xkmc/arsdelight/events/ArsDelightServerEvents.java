@@ -88,7 +88,7 @@ public class ArsDelightServerEvents {
 		if (ins != null) {
 			double config = ADModConfig.COMMON.wildenManaRegenBonus.get();
 			double factor = 1 + (ins.getAmplifier() + 1) * config;
-			event.setRegen((int) (event.getRegen() * factor));
+			event.setRegen(event.getRegen() * factor);
 		}
 	}
 
