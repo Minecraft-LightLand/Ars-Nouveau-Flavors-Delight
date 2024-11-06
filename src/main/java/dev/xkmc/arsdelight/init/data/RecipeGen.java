@@ -242,6 +242,11 @@ public class RecipeGen {
 						.addIngredient(Items.SLIME_BALL)
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.SOURCE_BERRY_JELLY, 1, 200, 0.1f, Items.BOWL)
+						.addIngredient(ADFood.SOURCE_BERRY_JAM.get(), 3)
+						.addIngredient(Items.SLIME_BALL)
+						.build(pvd);
 			}
 
 			// jam
@@ -267,6 +272,11 @@ public class RecipeGen {
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.NEUTRALIZED_FROSTAYA_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
+						.addIngredient(Items.SUGAR)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
 			}
@@ -299,6 +309,11 @@ public class RecipeGen {
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(BlockRegistry.BLAZING_LEAVES)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
+						.addIngredient(TagGen.LEAVES)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.UNSTABLE_COCKTAIL, 1, 200, 0.1f, Items.GLASS_BOTTLE)
@@ -339,6 +354,12 @@ public class RecipeGen {
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
+						.addIngredient(TagGen.BARKS)
+						.addIngredient(ItemsRegistry.MAGE_BLOOM.get())
 						.build(pvd);
 
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "arsdelight:item/drink/source_berry_jam"
+  }
+}

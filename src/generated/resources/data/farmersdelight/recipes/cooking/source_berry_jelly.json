@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "arsdelight:source_berry_jam"
+    },
+    {
+      "item": "arsdelight:source_berry_jam"
+    },
+    {
+      "item": "arsdelight:source_berry_jam"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "result": {
+    "item": "arsdelight:source_berry_jelly"
+  }
+}

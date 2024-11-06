@@ -1,6 +1,7 @@
 package dev.xkmc.arsdelight.init.data;
 
 import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
+import com.hollingsworth.arsnouveau.setup.registry.BlockRegistry;
 import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.xkmc.arsdelight.init.ArsDelight;
@@ -23,6 +24,7 @@ public class TagGen {
 
 	public static final TagKey<Item> JELLY = item("jelly");
 	public static final TagKey<Item> BARKS = item("barks");
+	public static final TagKey<Item> LEAVES = item("leaves");
 	public static final TagKey<Item> FDBARKS = fdItem("barks");
 
 	public static void onBlockTagGen(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
@@ -34,6 +36,13 @@ public class TagGen {
 			builder.add(e.asItem());
 		}
 		pvd.addTag(FDBARKS).addTag(BARKS).add(ModItems.TREE_BARK.get());
+		pvd.addTag(LEAVES).add(
+				BlockRegistry.BLAZING_LEAVES.asItem(),
+				BlockRegistry.FLOURISHING_LEAVES.asItem(),
+				BlockRegistry.VEXING_LEAVES.asItem(),
+				BlockRegistry.CASCADING_LEAVE.asItem()
+		);
+
 	}
 
 	private static TagKey<Item> item(String id) {
