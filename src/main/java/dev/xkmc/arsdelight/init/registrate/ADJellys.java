@@ -36,7 +36,7 @@ public class ADJellys {
 
 		JELLY_BE = ArsDelight.REGISTRATE.blockEntity("jelly", JellyBlockEntity::new)
 				.renderer(() -> JellyBlockEntityRenderer::new)
-				.validBlocks(MENDOSTEEN_JELLY, BASTION_JELLY, BOMBEGRANTE_JELLY, FROSTAYA_JELLY)
+				.validBlocks(MENDOSTEEN_JELLY, BASTION_JELLY, BOMBEGRANTE_JELLY, FROSTAYA_JELLY, SOURCE_BERRY_JELLY)
 				.register();
 	}
 
