@@ -1,4 +1,6 @@
 {
+  "arsdelight.patchouli.automation.page1": "When spells hit a cutting board, it would simulate tools processing items on the cutting board based on the spell effect:$(li)Cut: Knife or Shear$(li)Cut + Amplify: Axe or Knife$(li)Cut + Extract: Shear only$(li)Break: Pickaxe$(li)Crush: Shovel$(li)Fell: Axe$(br)Having AOE augment will cancel cutting board automation and proceed with original spell effect.",
+  "arsdelight.patchouli.automation.title": "Spell Automation",
   "arsdelight.patchouli.category_desc": "Mechanics, effects, and items worth noting added by Ars Delight that interacts with contents in Ars Nouveau",
   "arsdelight.patchouli.category_title": "Ars Delight - Mechanic",
   "arsdelight.patchouli.drygmy_weapon.page1": "With Ars Delight, Drygmy can simulate entity loot with tools on an Arcane Pedestal right next to Drygmy Henge.$(br2)This feature allows Drygmy to farm scavenging loot from Farmer's Delight and its addons.",
