@@ -437,12 +437,12 @@ public class RecipeGen {
 							  RegistryWrapper<? extends Block> wood,
 							  RegistryWrapper<? extends Block> stwood
 	) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), log)
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + stripped.getRegistryName()));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), wood)
+				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + log.getRegistryName()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), stwood)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + stwood.getRegistryName()));
+				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + wood.getRegistryName()));
 	}
 
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {
