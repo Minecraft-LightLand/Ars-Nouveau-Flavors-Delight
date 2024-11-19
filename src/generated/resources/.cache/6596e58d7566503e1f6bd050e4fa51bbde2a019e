@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-19T13:17:36.453987	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2024-11-19T13:31:48.30912	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -217,14 +217,14 @@ b203752c057f6cbd5834c1c4407dbb12b5894fbc data/arsdelight/tags/items/cooked_wilde
 fb9f6c0fe586fb8866417512696b4031ed3eccc6 data/arsdelight/tags/items/leaves.json
 6c81b787ad4c456ce0e8d892fa3f0ec94ee4d514 data/arsdelight/tags/items/raw_chimera.json
 b1267529d7f92edea753e45422b45080006057f2 data/arsdelight/tags/items/raw_wilden_meat.json
-c6e514ffbfd98cd7ee09a810c160a5020b71d793 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_blue_archwood_log.json
-bc9f2f499ccbb7ec7ba46a0ea51fd286123a41b8 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_blue_archwood_wood.json
-034a4a90e386314cf01d6f9b1bafa0bba8cf0767 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_green_archwood_log.json
-029479fdb844581ed491c83220d2d19604cad3ed data/delightful/recipes/integration/ars_nouveau/cutting/stripped_green_archwood_wood.json
-eaae13a273cf1fe5f100dc5f04f076e31c973509 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_purple_archwood_log.json
-6658cbc287250616f3967f878ebf21bf28c87776 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_purple_archwood_wood.json
-eb4fa181369abf1924dd50703faef7172a9660c0 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_red_archwood_log.json
-e08840629fcb5b569763b5593420e5f665597a13 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_red_archwood_wood.json
+3a7eebbf592c664e69a9d46ad8141776bce1b553 data/delightful/recipes/integration/ars_nouveau/cutting/blue_archwood_log.json
+b833977f793102129438e89da9e2324d6e898d6a data/delightful/recipes/integration/ars_nouveau/cutting/blue_archwood_wood.json
+3d73711c7769e1aaa94f9444e4fec580bebda94c data/delightful/recipes/integration/ars_nouveau/cutting/green_archwood_log.json
+047d53c13a8e7607787024ae2d82153844201156 data/delightful/recipes/integration/ars_nouveau/cutting/green_archwood_wood.json
+61dd9a2ff1b43ddeaa2940422c36748f82254a39 data/delightful/recipes/integration/ars_nouveau/cutting/purple_archwood_log.json
+ea22fe481a54a3d55c0e7385e66d70cf561134ba data/delightful/recipes/integration/ars_nouveau/cutting/purple_archwood_wood.json
+e9881d7d0f8e8c43b8c567905e872209059f1000 data/delightful/recipes/integration/ars_nouveau/cutting/red_archwood_log.json
+31d0da52df5317ec34f013f940ae11205669ae8a data/delightful/recipes/integration/ars_nouveau/cutting/red_archwood_wood.json
 4a5b834735ddf6bcd75dca7f0a8f63fa10d8d0dd data/diet/tags/items/fruits.json
 7779ba2a044b0aabb37a033f29c8784d8682faba data/diet/tags/items/proteins.json
 b469a60bb1f54cf4ea65565e933a2a751254b8ec data/diet/tags/items/sugars.json
