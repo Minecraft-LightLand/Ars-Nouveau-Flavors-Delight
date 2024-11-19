@@ -18,48 +18,51 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.client.model.generators.ModelFile;
 
+import java.util.function.Supplier;
+
 public class ADJellys {
 
 	public static final BlockEntry<JellyBlock> MENDOSTEEN_JELLY, BASTION_JELLY,
-			BOMBEGRANTE_JELLY, FROSTAYA_JELLY;
+			BOMBEGRANTE_JELLY, FROSTAYA_JELLY, SOURCE_BERRY_JELLY;
 
 	public static final BlockEntityEntry<JellyBlockEntity> JELLY_BE;
 
 	static {
-		MENDOSTEEN_JELLY = jelly("mendosteen_jelly", ItemsRegistry.MENDOSTEEN_FOOD);
-		BASTION_JELLY = jelly("bastion_jelly", ItemsRegistry.BASTION_FOOD);
-		BOMBEGRANTE_JELLY = jelly("bombegrante_jelly", ItemsRegistry.BLASTING_FOOD);
-		FROSTAYA_JELLY = jelly("frostaya_jelly", ItemsRegistry.FROSTAYA_FOOD);
+		MENDOSTEEN_JELLY = jelly("mendosteen_jelly", () -> resolve(ItemsRegistry.MENDOSTEEN_FOOD, 1, 1));
+		BASTION_JELLY = jelly("bastion_jelly", () -> resolve(ItemsRegistry.BASTION_FOOD, 1, 1));
+		BOMBEGRANTE_JELLY = jelly("bombegrante_jelly", () -> resolve(ItemsRegistry.BLASTING_FOOD, 1, 1));
+		FROSTAYA_JELLY = jelly("frostaya_jelly", () -> resolve(ItemsRegistry.FROSTAYA_FOOD, 1, 1));
+		SOURCE_BERRY_JELLY = jelly("source_berry_jelly", () -> resolve(ItemsRegistry.SOURCE_BERRY_FOOD, 2, 4));
 
 		JELLY_BE = ArsDelight.REGISTRATE.blockEntity("jelly", JellyBlockEntity::new)
 				.renderer(() -> JellyBlockEntityRenderer::new)
-				.validBlocks(MENDOSTEEN_JELLY, BASTION_JELLY, BOMBEGRANTE_JELLY, FROSTAYA_JELLY)
+				.validBlocks(MENDOSTEEN_JELLY, BASTION_JELLY, BOMBEGRANTE_JELLY, FROSTAYA_JELLY, SOURCE_BERRY_JELLY)
 				.register();
 	}
 
-	private static BlockEntry<JellyBlock> jelly(String name, FoodProperties effs) {
+	private static BlockEntry<JellyBlock> jelly(String name, Supplier<FoodProperties.Builder> effs) {
 		return ArsDelight.REGISTRATE.block(name, JellyBlock::new)
 				.properties((p) -> p.instabreak().pushReaction(PushReaction.DESTROY).mapColor(DyeColor.BROWN).sound(SoundType.WOOL)
 						.noOcclusion())
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().getBuilder(ctx.getName())
 						.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
 						.texture("particle", "item/jelly/" + ctx.getName())))
-				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, resolve(effs)))
+				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, effs.get()))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/jelly/" + ctx.getName())))
 				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY).build().register();
 	}
 
-	private static FoodProperties.Builder resolve(FoodProperties effs) {
+	private static FoodProperties.Builder resolve(FoodProperties effs, double dur, int amp) {
 		var builder = new FoodProperties.Builder();
 		builder.nutrition(4).saturationMod(0.6f);
 		for (var e : effs.getEffects()) {
-			builder.effect(() -> amplify(e.getFirst()), e.getSecond());
+			builder.effect(() -> amplify(e.getFirst(), dur, amp), e.getSecond());
 		}
 		return builder;
 	}
 
-	private static MobEffectInstance amplify(MobEffectInstance ins) {
-		return new MobEffectInstance(ins.getEffect(), ins.getDuration(), ins.getAmplifier() + 1);
+	private static MobEffectInstance amplify(MobEffectInstance ins, double dur, int amp) {
+		return new MobEffectInstance(ins.getEffect(), (int) (ins.getDuration() * dur), ins.getAmplifier() + amp);
 	}
 
 	public static void register() {

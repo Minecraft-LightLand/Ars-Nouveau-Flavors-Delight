@@ -18,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -84,6 +85,11 @@ public class ArsDelight {
 			Set<Block> set = new LinkedHashSet<>(ModBlockEntityTypes.CABINET.get().validBlocks);
 			set.add(ADBlocks.ARCHWOOD_CABINET.get());
 			ModBlockEntityTypes.CABINET.get().validBlocks = set;
+
+			ComposterBlock.COMPOSTABLES.put(ADItems.FLOURISHING_BARK.get(), 0.3F);
+			ComposterBlock.COMPOSTABLES.put(ADItems.BLAZING_BARK.get(), 0.3F);
+			ComposterBlock.COMPOSTABLES.put(ADItems.VEXING_BARK.get(), 0.3F);
+			ComposterBlock.COMPOSTABLES.put(ADItems.CASCADING_BARK.get(), 0.3F);
 		});
 	}
 

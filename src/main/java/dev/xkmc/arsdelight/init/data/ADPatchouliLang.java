@@ -22,6 +22,17 @@ public class ADPatchouliLang {
 				"Archwood pod jellies are made from archwood fruits and barks, with enhanced fruit effect. Jelly on ground bounces up falling entities and applies jelly effect.$(br2)" +
 						"Spell projectiles can pass through jelly blocks. If the spell has infuse effect, override the potion effect, then it won't consume potions.");
 
+		pvd.add("arsdelight.patchouli.automation.title","Spell Automation");
+		pvd.add("arsdelight.patchouli.automation.page1","When spells hit a cutting board, it would simulate tools processing items on the cutting board based on the spell effect:" +
+				"$(li)Cut: Knife or Shear" +
+				"$(li)Cut + Amplify: Axe or Knife" +
+				"$(li)Cut + Extract: Shear only" +
+				"$(li)Break: Pickaxe" +
+				"$(li)Crush: Shovel" +
+				"$(li)Fell: Axe$(br)" +
+				"Having AOE augment will cancel cutting board automation and proceed with original spell effect.");
+
+		// effects
 		pvd.add("arsdelight.patchouli.effects.title", "Food Effects");
 		pvd.add("arsdelight.patchouli.effects.page1",
 				"By cooking fruits from one archwood with barks from another, one can neutralize the negative effects into something new and activate more beneficial effects.$(br2)" +
@@ -39,6 +50,7 @@ public class ADPatchouliLang {
 		pvd.add("arsdelight.patchouli.effects.wilden", "Wilden effect will increase player max mana, mana regeneration, and spell damage.$(br2)" +
 				"By default, each level increases 20%% max mana, mana regen, and spell damage. The number can be tweaked individually in config.");
 
+		// resources
 		pvd.add("arsdelight.patchouli.resources.title", "Natural Resources");
 		pvd.add("arsdelight.patchouli.resources.page1", "Ars Delight adds several ingredients player can collect with tools:" +
 				"$(li)Archwood Barks" +

@@ -4,6 +4,7 @@
     "arsdelight:bastion_jelly",
     "arsdelight:bombegrante_jelly",
     "arsdelight:frostaya_jelly",
+    "arsdelight:source_berry_jelly",
     "arsdelight:mendosteen_pie_slice",
     "arsdelight:bastion_pie_slice",
     "arsdelight:bombegrante_pie_slice",
@@ -14,6 +15,7 @@
     "arsdelight:activated_mendosteen_jam",
     "arsdelight:activated_bastion_jam",
     "arsdelight:neutralized_bombegrante_jam",
-    "arsdelight:neutralized_frostaya_jam"
+    "arsdelight:neutralized_frostaya_jam",
+    "arsdelight:source_berry_jam"
   ]
 }

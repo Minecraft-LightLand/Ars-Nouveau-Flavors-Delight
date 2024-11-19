@@ -16,6 +16,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -95,6 +96,16 @@ public class RecipeGen {
 					.define('-', slab).define('D', trap)
 					.save(pvd);
 
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PAPER)::unlockedBy, ModItems.TREE_BARK.get())
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.save(pvd, ArsDelight.loc("paper_from_barks"));
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get(), 1)::unlockedBy, ModItems.TREE_BARK.get())
+					.requires(Items.DIRT)
+					.requires(ModItems.STRAW.get()).requires(ModItems.STRAW.get())
+					.requires(Items.BONE_MEAL).requires(Items.BONE_MEAL)
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.save(pvd, ArsDelight.loc("organic_compost_from_tree_bark"));
 		}
 
 		// misc
@@ -232,6 +243,11 @@ public class RecipeGen {
 						.addIngredient(Items.SLIME_BALL)
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.SOURCE_BERRY_JELLY, 1, 200, 0.1f, Items.BOWL)
+						.addIngredient(ADFood.SOURCE_BERRY_JAM.get(), 3)
+						.addIngredient(Items.SLIME_BALL)
+						.build(pvd);
 			}
 
 			// jam
@@ -257,6 +273,11 @@ public class RecipeGen {
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.NEUTRALIZED_FROSTAYA_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
+						.addIngredient(Items.SUGAR)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
 			}
@@ -289,6 +310,11 @@ public class RecipeGen {
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(BlockRegistry.BLAZING_LEAVES)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
+						.addIngredient(TagGen.LEAVES)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.UNSTABLE_COCKTAIL, 1, 200, 0.1f, Items.GLASS_BOTTLE)
@@ -329,6 +355,12 @@ public class RecipeGen {
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
+						.addIngredient(TagGen.BARKS)
+						.addIngredient(ItemsRegistry.MAGE_BLOOM.get())
 						.build(pvd);
 
 
@@ -405,12 +437,12 @@ public class RecipeGen {
 							  RegistryWrapper<? extends Block> wood,
 							  RegistryWrapper<? extends Block> stwood
 	) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped)
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), log)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd);
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), stwood)
+				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + stripped.getRegistryName()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), wood)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd);
+				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + stwood.getRegistryName()));
 	}
 
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {

@@ -118,6 +118,9 @@ public enum ADFood implements ItemLike {
 	FROSTAYA_TEA(FoodType.DRINK, 0, 0, List.of(
 			new EffectEntry(ADEffects.FREEZE::get, 4800)
 	), DietTagGen.FRUITS.tag),
+	SOURCE_BERRY_TEA(FoodType.DRINK, 0, 0, List.of(
+			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 2400, 1)
+	), DietTagGen.FRUITS.tag),
 	UNSTABLE_COCKTAIL(FoodType.DRINK, 0, 0, List.of(
 			new EffectEntry(ModPotions.BLAST_EFFECT, 200, 4)
 	), DietTagGen.FRUITS.tag),
@@ -136,6 +139,9 @@ public enum ADFood implements ItemLike {
 	FROSTAYA_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(
 			new EffectEntry(ADEffects.FREEZE::get, 2400, 1)
 	), DietTagGen.FRUITS.tag),
+	SOURCE_BERRY_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(
+			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200, 3)
+	), DietTagGen.FRUITS.tag),
 
 	ACTIVATED_MENDOSTEEN_JAM(FoodType.JELLY, 0, 0, List.of(
 			new EffectEntry(ModPotions.RECOVERY_EFFECT, 1200),
@@ -150,6 +156,9 @@ public enum ADFood implements ItemLike {
 	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
 	NEUTRALIZED_FROSTAYA_JAM(FoodType.JELLY, 0, 0, List.of(
 			new EffectEntry(ADEffects.FREEZE::get, 2400)
+	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
+	SOURCE_BERRY_JAM(FoodType.JELLY, 0, 0, List.of(
+			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 100, 4)
 	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
 
 	MENDOSTEEN_CHICKEN(FoodType.MEAT_PLATE, 10, 0.8f, List.of(
