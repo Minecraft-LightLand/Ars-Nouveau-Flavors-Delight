@@ -2,15 +2,15 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "ars_nouveau:green_archwood_wood"
+      "item": "ars_nouveau:red_archwood_log"
     }
   ],
   "result": [
     {
-      "item": "ars_nouveau:stripped_green_archwood_wood"
+      "item": "ars_nouveau:red_archwood_log"
     },
     {
-      "item": "arsdelight:flourishing_bark"
+      "item": "arsdelight:blazing_bark"
     }
   ],
   "sound": "minecraft:item.axe.strip",

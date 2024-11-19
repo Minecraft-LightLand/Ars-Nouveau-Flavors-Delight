@@ -16,6 +16,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -96,13 +97,13 @@ public class RecipeGen {
 					.save(pvd);
 
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PAPER)::unlockedBy, ModItems.TREE_BARK.get())
-					.requires(TagGen.BARKS).requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
 					.save(pvd, ArsDelight.loc("paper_from_barks"));
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get(), 1)::unlockedBy, ModItems.TREE_BARK.get())
 					.requires(Items.DIRT)
 					.requires(ModItems.STRAW.get()).requires(ModItems.STRAW.get())
 					.requires(Items.BONE_MEAL).requires(Items.BONE_MEAL)
-					.requires(TagGen.BARKS).requires(TagGen.FDBARKS)
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
 					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
 					.save(pvd, ArsDelight.loc("organic_compost_from_tree_bark"));
 		}
@@ -436,12 +437,12 @@ public class RecipeGen {
 							  RegistryWrapper<? extends Block> wood,
 							  RegistryWrapper<? extends Block> stwood
 	) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped)
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), log)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd);
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), stwood)
+				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + stripped.getRegistryName()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), wood)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd);
+				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + stwood.getRegistryName()));
 	}
 
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {

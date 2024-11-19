@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-14T14:17:43.784721	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2024-11-19T13:17:36.453987	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -202,8 +202,8 @@ cc6393f0a81e90b7a73cb0e3965e253518d973fa data/arsdelight/recipes/mendosteen_crat
 5e45a2697f96cb8cc3f8e524fe4d38efacc31604 data/arsdelight/recipes/mendosteen_pie.json
 3e80f7941bdb37c4fb5e78f9daf2d4f5b92f0e4f data/arsdelight/recipes/mendosteen_pie_from_slices.json
 de6aa2faad44ced64d467bdb175ad43ffc714347 data/arsdelight/recipes/mendosteen_pod_from_mendosteen_crate.json
-7ea533299b0bce9bb8c09aaeb120737efb0a9fc2 data/arsdelight/recipes/organic_compost_from_tree_bark.json
-dc9a51e803d6cea02d4486ed0ff0751cd15413b8 data/arsdelight/recipes/paper_from_barks.json
+bc0a4eabfd8b8768cc69eb93a57d54645817759a data/arsdelight/recipes/organic_compost_from_tree_bark.json
+8db0851fe7b7759cf7f9b63a1ae120343db59286 data/arsdelight/recipes/paper_from_barks.json
 3ba29ee9635bc3634592e3cf63faf75c37e76ec8 data/arsdelight/recipes/source_berry_cookie.json
 83e18a74f8aa28283efe5562a16fc2e4ed25b077 data/arsdelight/recipes/source_berry_crate.json
 1edd34c08348cb1758c6a8233e5322d9562c556a data/arsdelight/recipes/source_berry_pie.json
@@ -217,6 +217,14 @@ b203752c057f6cbd5834c1c4407dbb12b5894fbc data/arsdelight/tags/items/cooked_wilde
 fb9f6c0fe586fb8866417512696b4031ed3eccc6 data/arsdelight/tags/items/leaves.json
 6c81b787ad4c456ce0e8d892fa3f0ec94ee4d514 data/arsdelight/tags/items/raw_chimera.json
 b1267529d7f92edea753e45422b45080006057f2 data/arsdelight/tags/items/raw_wilden_meat.json
+c6e514ffbfd98cd7ee09a810c160a5020b71d793 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_blue_archwood_log.json
+bc9f2f499ccbb7ec7ba46a0ea51fd286123a41b8 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_blue_archwood_wood.json
+034a4a90e386314cf01d6f9b1bafa0bba8cf0767 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_green_archwood_log.json
+029479fdb844581ed491c83220d2d19604cad3ed data/delightful/recipes/integration/ars_nouveau/cutting/stripped_green_archwood_wood.json
+eaae13a273cf1fe5f100dc5f04f076e31c973509 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_purple_archwood_log.json
+6658cbc287250616f3967f878ebf21bf28c87776 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_purple_archwood_wood.json
+eb4fa181369abf1924dd50703faef7172a9660c0 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_red_archwood_log.json
+e08840629fcb5b569763b5593420e5f665597a13 data/delightful/recipes/integration/ars_nouveau/cutting/stripped_red_archwood_wood.json
 4a5b834735ddf6bcd75dca7f0a8f63fa10d8d0dd data/diet/tags/items/fruits.json
 7779ba2a044b0aabb37a033f29c8784d8682faba data/diet/tags/items/proteins.json
 b469a60bb1f54cf4ea65565e933a2a751254b8ec data/diet/tags/items/sugars.json
@@ -253,18 +261,10 @@ dcd3127bf6ccd84b70b243dbac7ee11e4d7a0df9 data/farmersdelight/recipes/cooking/uns
 a7fe6e0123fe6d1b10dc28951147a7156eb280e5 data/farmersdelight/recipes/cooking/wilden_sauce.json
 83cfbd99892b4e3c723bfc671a5b324b2c58f9f8 data/farmersdelight/recipes/cooking/wilden_stew.json
 ea8233051650c75f4c85a0dcd8419ee1c5da5fc9 data/farmersdelight/recipes/cutting/bastion_pie.json
-3a7eebbf592c664e69a9d46ad8141776bce1b553 data/farmersdelight/recipes/cutting/blue_archwood_log.json
-b833977f793102129438e89da9e2324d6e898d6a data/farmersdelight/recipes/cutting/blue_archwood_wood.json
 ee8a5fc19243245d89ad6fcee68419a4cc200b79 data/farmersdelight/recipes/cutting/bombegrante_pie.json
 3c1d35747f51304bc4f919b80e22167c67ae898a data/farmersdelight/recipes/cutting/chimera_meat.json
 299f64189840142ebdfe56c03afcb973b7d3cb00 data/farmersdelight/recipes/cutting/frostaya_pie.json
-3d73711c7769e1aaa94f9444e4fec580bebda94c data/farmersdelight/recipes/cutting/green_archwood_log.json
-047d53c13a8e7607787024ae2d82153844201156 data/farmersdelight/recipes/cutting/green_archwood_wood.json
 63deb23fd90f3af55cb0cc8c9e7336972eb6047e data/farmersdelight/recipes/cutting/mendosteen_pie.json
-61dd9a2ff1b43ddeaa2940422c36748f82254a39 data/farmersdelight/recipes/cutting/purple_archwood_log.json
-ea22fe481a54a3d55c0e7385e66d70cf561134ba data/farmersdelight/recipes/cutting/purple_archwood_wood.json
-e9881d7d0f8e8c43b8c567905e872209059f1000 data/farmersdelight/recipes/cutting/red_archwood_log.json
-31d0da52df5317ec34f013f940ae11205669ae8a data/farmersdelight/recipes/cutting/red_archwood_wood.json
 2269c821dc7b80aa667bcfdc8f87557a9923ad04 data/farmersdelight/recipes/cutting/source_berry_pie.json
 70d19c800e845a2c4d2c1e79ab1d8b37f0c54257 data/farmersdelight/recipes/cutting/wilden_horn.json
 e7c85b286a12e07db66a8179365d8c575867ec00 data/farmersdelight/recipes/cutting/wilden_meat.json
