@@ -10,6 +10,7 @@ import dev.xkmc.arsdelight.init.data.*;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADEffects;
+import dev.xkmc.arsdelight.init.registrate.ADEmptyRecipe;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.l2library.serial.config.PacketHandler;
@@ -50,6 +51,7 @@ public class ArsDelight {
 		ADEffects.register();
 		ADModConfig.init();
 		ADGLMProvider.register();
+		ADEmptyRecipe.register();
 
 		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::onBlockTagGen);
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::onItemTagGen);

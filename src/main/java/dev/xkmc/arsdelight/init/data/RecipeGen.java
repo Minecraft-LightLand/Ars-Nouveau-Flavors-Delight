@@ -10,13 +10,13 @@ import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
+import dev.xkmc.arsdelight.init.registrate.ADEmptyRecipe;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.arsdelight.init.registrate.ADJellys;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -439,10 +439,12 @@ public class RecipeGen {
 	) {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + log.getRegistryName()));
+				.build(pvd);
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), stwood)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd, new ResourceLocation("delightful", "integration/ars_nouveau/cutting/" + wood.getRegistryName()));
+				.build(pvd);
+		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + log.getRegistryName());
+		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + wood.getRegistryName());
 	}
 
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {
