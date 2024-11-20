@@ -6,6 +6,8 @@
 	"refmap": "arsdelight.refmap.json",
 	"mixins": [
 		"AddItemModifierAccessor",
+		"CookingPotRecipeBuilderMixin",
+		"CuttingBoardRecipeBuilderMixin",
 		"DrygmyTileMixin",
 		"EffectInfuseMixin"
 	],

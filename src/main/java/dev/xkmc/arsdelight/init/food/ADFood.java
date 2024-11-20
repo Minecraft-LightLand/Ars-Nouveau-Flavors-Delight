@@ -11,6 +11,7 @@ import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.registrate.ADEffects;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -235,6 +236,10 @@ public enum ADFood implements ItemLike {
 	@Override
 	public Item asItem() {
 		return item.get();
+	}
+
+	public ResourceLocation id(){
+		return item.getId();
 	}
 
 	public static void register() {
