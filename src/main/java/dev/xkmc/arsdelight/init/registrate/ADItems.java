@@ -12,8 +12,10 @@ import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
+import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
+import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
+import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import org.apache.commons.lang3.StringUtils;
-import vectorwing.farmersdelight.common.item.FuelItem;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -25,22 +27,35 @@ public class ADItems {
 
 	private static final Set<String> SMALL_WORDS = Set.of("of", "the", "with");
 
-	public static final ItemEntry<FuelItem> FLOURISHING_BARK, VEXING_BARK, CASCADING_BARK, BLAZING_BARK;
+	public static final ItemEntry<Item> FLOURISHING_BARK, VEXING_BARK, CASCADING_BARK, BLAZING_BARK;
 	public static final ItemEntry<ModItem> HORN_POWDER, SPIKE_POWDER, CHIMERA_HORN;
 	public static final ItemEntry<EnchantersKnife> KNIFE;
 
 	static {
-		FLOURISHING_BARK = ingredient("flourishing_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
-		VEXING_BARK = ingredient("vexing_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
-		CASCADING_BARK = ingredient("cascading_bark", p -> new FuelItem(p, 200)).tag(TagGen.BARKS).register();
-		BLAZING_BARK = ingredient("blazing_bark", p -> new FuelItem(p, 400)).tag(TagGen.BARKS).register();
+		FLOURISHING_BARK = ingredient("flourishing_bark", Item::new)
+				.dataMap(NeoForgeDataMaps.FURNACE_FUELS, new FurnaceFuel(200))
+				.dataMap(NeoForgeDataMaps.COMPOSTABLES, new Compostable(0.3f))
+				.tag(TagGen.BARKS).register();
+		VEXING_BARK = ingredient("vexing_bark", Item::new)
+				.dataMap(NeoForgeDataMaps.FURNACE_FUELS, new FurnaceFuel(200))
+				.dataMap(NeoForgeDataMaps.COMPOSTABLES, new Compostable(0.3f))
+				.tag(TagGen.BARKS).register();
+		CASCADING_BARK = ingredient("cascading_bark", Item::new)
+				.dataMap(NeoForgeDataMaps.FURNACE_FUELS, new FurnaceFuel(200))
+				.dataMap(NeoForgeDataMaps.COMPOSTABLES, new Compostable(0.3f))
+				.tag(TagGen.BARKS).register();
+		BLAZING_BARK = ingredient("blazing_bark", Item::new)
+				.dataMap(NeoForgeDataMaps.FURNACE_FUELS, new FurnaceFuel(400))
+				.dataMap(NeoForgeDataMaps.COMPOSTABLES, new Compostable(0.3f))
+				.tag(TagGen.BARKS).register();
+
 		HORN_POWDER = ingredient("wilden_horn_powder", ModItem::new).register();
 		SPIKE_POWDER = ingredient("wilden_spike_powder", ModItem::new).register();
 		CHIMERA_HORN = ingredient("chimera_horn", ModItem::new).register();
 
 		KNIFE = ArsDelight.REGISTRATE.item("enchanters_knife", p -> new EnchantersKnife(Tiers.NETHERITE, 1, -2F))
 				.model((ctx, pvd) -> {
-				}).tag(CommonTags.TOOLS_KNIFE, ModTags.KNIVES)
+				}).tag(CommonTags.TOOLS_KNIFE, ModTags.KNIVES, ModTags.FLAT_ON_CUTTING_BOARD)
 				.lang("Enchanter's Knife").register();
 	}
 

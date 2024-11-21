@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "farmersdelight:straw"
+    },
+    {
+      "item": "farmersdelight:straw"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "tag": "farmersdelight:barks"
+    },
+    {
+      "tag": "farmersdelight:barks"
+    },
+    {
+      "tag": "farmersdelight:barks"
+    },
+    {
+      "tag": "farmersdelight:barks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:organic_compost"
+  }
+}

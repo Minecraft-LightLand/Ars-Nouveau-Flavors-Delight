@@ -1,0 +1,16 @@
+{
+  "values": {
+    "arsdelight:blazing_bark": {
+      "burn_time": 400
+    },
+    "arsdelight:cascading_bark": {
+      "burn_time": 200
+    },
+    "arsdelight:flourishing_bark": {
+      "burn_time": 200
+    },
+    "arsdelight:vexing_bark": {
+      "burn_time": 200
+    }
+  }
+}

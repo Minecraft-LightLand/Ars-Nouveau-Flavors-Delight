@@ -1,0 +1,16 @@
+{
+  "values": {
+    "arsdelight:blazing_bark": {
+      "chance": 0.3
+    },
+    "arsdelight:cascading_bark": {
+      "chance": 0.3
+    },
+    "arsdelight:flourishing_bark": {
+      "chance": 0.3
+    },
+    "arsdelight:vexing_bark": {
+      "chance": 0.3
+    }
+  }
+}

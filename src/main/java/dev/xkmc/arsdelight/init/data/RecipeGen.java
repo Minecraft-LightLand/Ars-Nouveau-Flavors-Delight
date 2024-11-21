@@ -10,6 +10,7 @@ import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
+import dev.xkmc.arsdelight.init.registrate.ADEmptyRecipe;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.arsdelight.init.registrate.ADJellys;
 import net.minecraft.advancements.Criterion;
@@ -98,6 +99,16 @@ public class RecipeGen {
 					.define('-', slab).define('D', trap)
 					.save(pvd);
 
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PAPER)::unlockedBy, ModItems.TREE_BARK.get())
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.save(pvd, ArsDelight.loc("paper_from_barks"));
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get(), 1)::unlockedBy, ModItems.TREE_BARK.get())
+					.requires(Items.DIRT)
+					.requires(ModItems.STRAW.get()).requires(ModItems.STRAW.get())
+					.requires(Items.BONE_MEAL).requires(Items.BONE_MEAL)
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.requires(TagGen.FDBARKS).requires(TagGen.FDBARKS)
+					.save(pvd, ArsDelight.loc("organic_compost_from_tree_bark"));
 		}
 
 		// misc
@@ -245,6 +256,12 @@ public class RecipeGen {
 						.addIngredient(Items.SLIME_BALL)
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.SOURCE_BERRY_JELLY, 1, 200, 0.1f, Items.BOWL)
+						.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+						.addIngredient(ADFood.SOURCE_BERRY_JAM.get(), 3)
+						.addIngredient(Items.SLIME_BALL)
+						.build(pvd);
 			}
 
 			// jam
@@ -274,6 +291,12 @@ public class RecipeGen {
 						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
+						.addIngredient(Items.SUGAR)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
 						.addIngredient(Items.SUGAR)
 						.build(pvd);
 			}
@@ -310,6 +333,12 @@ public class RecipeGen {
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(BlockRegistry.BLAZING_LEAVES)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
+						.addIngredient(TagGen.LEAVES)
 						.build(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.UNSTABLE_COCKTAIL, 1, 200, 0.1f, Items.GLASS_BOTTLE)
@@ -355,6 +384,13 @@ public class RecipeGen {
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
+						.build(pvd);
+
+				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
+						.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
+						.addIngredient(TagGen.BARKS)
+						.addIngredient(ItemsRegistry.MAGE_BLOOM.get())
 						.build(pvd);
 
 
@@ -441,6 +477,8 @@ public class RecipeGen {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stwood)
 				.addResult(bark).addSound(SoundEvents.AXE_STRIP)
 				.build(pvd);
+		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + log.getRegistryName());
+		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + wood.getRegistryName());
 	}
 
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {

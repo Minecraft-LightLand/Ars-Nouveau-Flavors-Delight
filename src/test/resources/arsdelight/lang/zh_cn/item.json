@@ -22,6 +22,9 @@
 		"source_berry_cookie": "魔源浆果曲奇",
 		"source_berry_pie_slice": "切片魔源浆果派",
 		"source_berry_cupcake": "魔源浆果蛋糕",
+		"source_berry_hornbeer": "魔源浆果酒",
+		"source_berry_tea": "魔源浆果茶",
+		"source_berry_jam": "魔源浆果酱",
 		"bowl_of_wilden_salad": "碗装荒野沙拉",
 		"horn_roll": "丰饶角卷",
 		"bowl_of_honey_glazed_chimera": "盘装蜜汁奇美拉炖肉",
@@ -30,7 +33,6 @@
 	},
 	"block.arsdelight": {
 		"honey_glazed_chimera": "蜜汁奇美拉炖肉",
-		"source_berry_crate": "箱装魔源浆果",
 		"wilden_salad": "荒野沙拉",
 		"archwood_cabinet": "至高木橱柜"
 	},
@@ -75,7 +77,8 @@
 					"bastion": "堡垒果",
 					"bombegrante": "炸弹石榴",
 					"mendosteen": "门多山竹",
-					"frostaya": "霜木瓜"
+					"frostaya": "霜木瓜",
+					"source_berry": "魔源浆果"
 				},
 				{
 					"block.arsdelight.*_crate": "箱装*",

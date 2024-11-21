@@ -9,9 +9,11 @@ import dev.xkmc.arsdelight.init.data.*;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADEffects;
+import dev.xkmc.arsdelight.init.registrate.ADEmptyRecipe;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import dev.xkmc.l2core.init.reg.registrate.SimpleEntry;
+import dev.xkmc.l2core.init.reg.simple.Reg;
 import dev.xkmc.l2serial.network.PacketHandler;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +39,7 @@ public class ArsDelight {
 	public static final String MODID = "arsdelight";
 	public static final Logger LOGGER = LogUtils.getLogger();
 	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
+	public static final Reg REG = new Reg(MODID);
 
 	public static final PacketHandler HANDLER = new PacketHandler(MODID, 1
 	);
@@ -50,6 +53,7 @@ public class ArsDelight {
 		ADEffects.register();
 		ADModConfig.init();
 		ADGLMProvider.register();
+		ADEmptyRecipe.register();
 
 		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::onBlockTagGen);
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::onItemTagGen);
