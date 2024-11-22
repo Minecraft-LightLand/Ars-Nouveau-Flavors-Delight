@@ -1,3 +1,8 @@
+1.1.2
+- Source berry tea / beer / jelly
+- Fix bark recipe conflict with Delightful
+- Move recipes to Ars Delight namespace
+
 1.1.1
 - Add Jelly that infuse spell projectiles
 - Add 13 more food: pie, skewers, stew, and jelly

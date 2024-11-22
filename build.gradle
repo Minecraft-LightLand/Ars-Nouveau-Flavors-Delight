@@ -171,6 +171,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:bookshelf-228525:4808092")
     implementation fg.deobf("curse.maven:thirst-was-taken-679270:5568703")
+    runtimeOnly fg.deobf("curse.maven:delightful-637529:5654704")
 
     compileOnly fg.deobf("curse.maven:diet-443570:4634780")
 

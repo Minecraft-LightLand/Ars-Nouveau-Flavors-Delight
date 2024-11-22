@@ -9,7 +9,8 @@
 		"CookingPotRecipeBuilderMixin",
 		"CuttingBoardRecipeBuilderMixin",
 		"DrygmyTileMixin",
-		"EffectInfuseMixin"
+		"EffectInfuseMixin",
+		"MultiPackResourceManagerMixin"
 	],
 	"client": [
 	],
