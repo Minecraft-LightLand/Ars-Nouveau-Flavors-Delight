@@ -15,6 +15,7 @@ import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -70,7 +71,7 @@ public class EnchantersKnife extends KnifeItem implements ICasterTool, GeoItem, 
 	}
 
 	public void scribeModifiedSpell(AbstractCaster<?> caster, Player player, InteractionHand hand, ItemStack stack, Spell.Mutable spell) {
-		ArrayList<AbstractSpellPart> recipe = new ArrayList();
+		ArrayList<AbstractSpellPart> recipe = new ArrayList<>();
 		recipe.add(MethodTouch.INSTANCE);
 		recipe.addAll(spell.recipe);
 		// Disable amplify
@@ -87,7 +88,7 @@ public class EnchantersKnife extends KnifeItem implements ICasterTool, GeoItem, 
 		} else {
 			wrappedCaster = new LivingCaster(entity);
 		}
-		SpellContext context = new SpellContext(entity.level(), caster.modifySpellBeforeCasting(target.level(), entity, InteractionHand.MAIN_HAND, caster.getSpell()), entity, wrappedCaster, stack);
+		SpellContext context = new SpellContext(entity.level(), caster.modifySpellBeforeCasting((ServerLevel) target.level(), entity, InteractionHand.MAIN_HAND, caster.getSpell()), entity, wrappedCaster, stack);
 		SpellResolver resolver = entity instanceof Player ? new SpellResolver(context) : new EntitySpellResolver(context);
 		EntityHitResult entityRes = new EntityHitResult(target);
 		resolver.onCastOnEntity(stack, entityRes.getEntity(), InteractionHand.MAIN_HAND);

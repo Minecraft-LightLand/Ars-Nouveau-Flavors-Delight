@@ -165,7 +165,7 @@ dependencies {
     implementation "curse.maven:thirst-was-taken-679270:5568715"
     implementation "curse.maven:just-enough-effect-descriptions-jeed-532286:5634312"
     implementation "curse.maven:geckolib-388172:5763144"
-    implementation "curse.maven:ars-nouveau-401955:5843653"
+    implementation "curse.maven:ars-nouveau-401955:5972111"
     implementation "curse.maven:farmers-delight-398521:5566383"
     implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}"
 }
