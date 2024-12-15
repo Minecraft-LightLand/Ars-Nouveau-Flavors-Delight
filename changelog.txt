@@ -1,7 +1,8 @@
 1.1.2
 - Source berry tea / beer / jelly
-- Fix bark recipe conflict with Delightful
+- Fix Enchanter's Knife lying display on cutting board
 - Move recipes to Ars Delight namespace
+- Fix bark recipe conflict with Delightful
 
 1.1.1
 - Add Jelly that infuse spell projectiles
