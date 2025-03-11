@@ -8,6 +8,7 @@ import dev.xkmc.arsdelight.compat.diet.DietTagGen;
 import dev.xkmc.arsdelight.content.item.ADFoodItem;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.registrate.ADEffects;
+import dev.xkmc.arsdelight.init.registrate.ADItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -40,7 +41,7 @@ public enum ADPie {
 		slice = ArsDelight.REGISTRATE.item(name + "_slice", p -> FoodType.FAST.build(p, 3, 0.3f, effects))
 				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD)
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/pie/" + ctx.getName())))
-				.defaultLang().register();
+				.lang(ADItems.toEnglishName(name + "_slice")).register();
 		block = ArsDelight.REGISTRATE.block(name,
 						p -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), slice::get))
 				.blockstate((ctx, pvd) -> {
@@ -51,7 +52,7 @@ public enum ADPie {
 					pvd.horizontalBlock(ctx.getEntry(), state -> models[state.getValue(PieBlock.BITES)]);
 				}).loot((a, b) -> a.dropOther(b, slice)).item()
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/pie/" + ctx.getName()))).build()
-				.defaultLang().register();
+				.lang(ADItems.toEnglishName(name)).register();
 	}
 
 	private BlockModelBuilder genCakeModel(String name, RegistrateBlockstateProvider pvd, String model) {

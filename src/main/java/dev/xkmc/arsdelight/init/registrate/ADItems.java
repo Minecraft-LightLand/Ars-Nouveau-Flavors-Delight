@@ -62,7 +62,7 @@ public class ADItems {
 	public static String toEnglishName(String internalName) {
 		return Arrays.stream(internalName.split("_"))
 				.map(e -> SMALL_WORDS.contains(e) ? e : StringUtils.capitalize(e))
-				.collect(Collectors.joining(" "));
+				.collect(Collectors.joining(" ")).replace("grante", "granate");
 	}
 
 	private static <T extends Item> ItemBuilder<T, L2Registrate> ingredient(String id, NonNullFunction<Item.Properties, T> factory) {

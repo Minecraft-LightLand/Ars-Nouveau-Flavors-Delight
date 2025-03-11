@@ -90,6 +90,7 @@ public class ADBlocks {
 						pvd.modLoc("block/crate/" + name + "_top"))))
 				.tag(BlockTags.MINEABLE_WITH_AXE)
 				.simpleItem()
+				.lang(ADItems.toEnglishName(name))
 				.register();
 	}
 
