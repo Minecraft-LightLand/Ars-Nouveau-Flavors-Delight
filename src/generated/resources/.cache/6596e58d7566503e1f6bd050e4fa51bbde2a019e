@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-22T11:00:47.084754	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2025-03-11T15:19:18.676249	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -16,8 +16,8 @@ b5af141556ea920ae3725cd62a6dc57f4733d9e9 assets/arsdelight/blockstates/mendostee
 a8911068f6ad52fad8fdc8ef425e003584f7566d assets/arsdelight/blockstates/source_berry_crate.json
 ae82cf020a98dd0b91d6fda991eb6a9d95968846 assets/arsdelight/blockstates/source_berry_jelly.json
 88a13424d368e1600330652ec98122395edcfe8c assets/arsdelight/blockstates/wilden_salad.json
-6144ce8758504a6a44ae8a75912426e55f71a2bb assets/arsdelight/lang/en_ud.json
-98812d95358c4d93e8f714ea8bf4ad5a91a883e5 assets/arsdelight/lang/en_us.json
+747f452cee6543ccea89e0ebac669ee478c0a083 assets/arsdelight/lang/en_ud.json
+44a502f73bb0c673a15c487b03afac8af184f006 assets/arsdelight/lang/en_us.json
 e16fdb9c23351a9390c7281baadc79155c8bed67 assets/arsdelight/models/block/archwood_cabinet.json
 15dc50d08e0631948b5e581a7f1d0f6ceab72986 assets/arsdelight/models/block/archwood_cabinet_open.json
 0c6e5771b2f1ed1f4d59a5f2447804fc9b856e19 assets/arsdelight/models/block/bastion_crate.json
