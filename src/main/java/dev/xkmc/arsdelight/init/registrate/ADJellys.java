@@ -49,7 +49,8 @@ public class ADJellys {
 						.texture("particle", "item/jelly/" + ctx.getName())))
 				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, effs.get()))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/jelly/" + ctx.getName())))
-				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY).build().register();
+				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY).build()
+				.lang(ADItems.toEnglishName(name)).register();
 	}
 
 	private static FoodProperties.Builder resolve(FoodProperties effs, double dur, int amp) {

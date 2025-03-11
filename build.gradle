@@ -151,7 +151,7 @@ dependencies {
     }
 
     implementation fg.deobf("curse.maven:geckolib-388172:5675221")
-    implementation fg.deobf("curse.maven:ars-nouveau-401955:5600384")
+    implementation fg.deobf("curse.maven:ars-nouveau-401955:5894609")
 
 
     implementation fg.deobf("dev.xkmc.cuisinedelight:cuisinedelight:1.1.12-slim")
