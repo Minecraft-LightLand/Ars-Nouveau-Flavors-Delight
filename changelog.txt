@@ -1,3 +1,7 @@
+1.1.3
+- Fix the typo that Bombegranate being misspelled as Bombegrante
+
+
 1.1.2
 - Source berry tea / beer / jelly
 - Fix Enchanter's Knife lying display on cutting board
