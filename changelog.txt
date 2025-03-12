@@ -1,3 +1,7 @@
+2.1.5
+- Fix the typo that Bombegranate being misspelled as Bombegrante
+
+
 2.1.4
 - Fix compatibility with Ars
 
