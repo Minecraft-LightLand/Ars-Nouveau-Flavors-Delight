@@ -1,11 +1,13 @@
 package dev.xkmc.arsdelight.events;
 
+import com.hollingsworth.arsnouveau.api.documentation.ReloadDocumentationEvent;
 import com.hollingsworth.arsnouveau.api.event.ManaRegenCalcEvent;
 import com.hollingsworth.arsnouveau.api.event.MaxManaCalcEvent;
 import com.hollingsworth.arsnouveau.api.event.SpellDamageEvent;
 import com.hollingsworth.arsnouveau.setup.registry.CapabilityRegistry;
 import com.hollingsworth.arsnouveau.setup.registry.ModPotions;
 import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.arsdelight.init.data.ADDoc;
 import dev.xkmc.arsdelight.init.data.ADModConfig;
 import dev.xkmc.arsdelight.init.registrate.ADEffects;
 import net.minecraft.tags.DamageTypeTags;
@@ -90,6 +92,11 @@ public class ArsDelightServerEvents {
 			double factor = 1 + (ins.getAmplifier() + 1) * config;
 			event.setRegen(event.getRegen() * factor);
 		}
+	}
+
+	@SubscribeEvent
+	public static void reloadDoc(ReloadDocumentationEvent.AddEntries event) {
+		ADDoc.addPages();
 	}
 
 }

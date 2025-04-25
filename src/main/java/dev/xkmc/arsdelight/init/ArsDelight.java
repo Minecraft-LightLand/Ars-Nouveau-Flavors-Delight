@@ -63,6 +63,7 @@ public class ArsDelight {
 
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
+		ADDoc.init();
 		ADFood.CHIMERA_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(
 				ModEntities.WILDEN_BOSS.get().getDescription()));
 		ADFood.WILDEN_MEAT.get().withTooltip(ADLangData.KNIFE_KILL.get(

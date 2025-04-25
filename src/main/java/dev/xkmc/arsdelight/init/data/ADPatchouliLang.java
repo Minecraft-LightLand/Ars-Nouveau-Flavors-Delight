@@ -22,8 +22,8 @@ public class ADPatchouliLang {
 				"Archwood pod jellies are made from archwood fruits and barks, with enhanced fruit effect. Jelly on ground bounces up falling entities and applies jelly effect.$(br2)" +
 						"Spell projectiles can pass through jelly blocks. If the spell has infuse effect, override the potion effect, then it won't consume potions.");
 
-		pvd.add("arsdelight.patchouli.automation.title","Spell Automation");
-		pvd.add("arsdelight.patchouli.automation.page1","When spells hit a cutting board, it would simulate tools processing items on the cutting board based on the spell effect:" +
+		pvd.add("arsdelight.patchouli.automation.title", "Spell Automation");
+		pvd.add("arsdelight.patchouli.automation.page1", "When spells hit a cutting board, it would simulate tools processing items on the cutting board based on the spell effect:" +
 				"$(li)Cut: Knife or Shear" +
 				"$(li)Cut + Amplify: Axe or Knife" +
 				"$(li)Cut + Extract: Shear only" +

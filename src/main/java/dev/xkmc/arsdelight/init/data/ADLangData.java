@@ -47,6 +47,7 @@ public enum ADLangData {
 			pvd.add(lang.key, lang.def);
 		}
 		ADPatchouliLang.addLang(pvd);
+		ADDoc.addLang(pvd);
 	}
 
 
