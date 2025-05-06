@@ -1,3 +1,6 @@
+2.1.7
+- Add storage block tag for crates
+
 2.1.6
 - Be compatible with 5.8.1+ new Notebook style documentation
 - Warning: Requires Ars Nouveau 5.8.1+. If you can't use this version yet, don't update

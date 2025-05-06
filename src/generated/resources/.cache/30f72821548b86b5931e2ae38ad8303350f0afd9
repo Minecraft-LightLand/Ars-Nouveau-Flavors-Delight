@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-25T18:18:00.076638	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
+// 1.21.1	2025-05-06T09:31:40.755501	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -296,6 +296,8 @@ b203752c057f6cbd5834c1c4407dbb12b5894fbc data/arsdelight/tags/item/cooked_wilden
 fb9f6c0fe586fb8866417512696b4031ed3eccc6 data/arsdelight/tags/item/leaves.json
 6c81b787ad4c456ce0e8d892fa3f0ec94ee4d514 data/arsdelight/tags/item/raw_chimera.json
 b1267529d7f92edea753e45422b45080006057f2 data/arsdelight/tags/item/raw_wilden_meat.json
+bbf20a0c31d3b502714d24903597db0ba4fa26be data/c/tags/block/storage_blocks.json
+bbf20a0c31d3b502714d24903597db0ba4fa26be data/c/tags/item/storage_blocks.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/c/tags/item/tools/knife.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/blue_archwood_log.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/blue_archwood_wood.json
