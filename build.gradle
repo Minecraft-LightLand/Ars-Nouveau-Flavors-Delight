@@ -145,9 +145,9 @@ dependencies {
         jarJar.ranged(it, "[1.1.1,)")
     }
 
-    implementation fg.deobf(jarJar("dev.xkmc.l2library:l2library:2.4.29-slim")) {
+    implementation fg.deobf(jarJar("dev.xkmc.l2library:l2library:2.5.1-slim")) {
         transitive = false
-        jarJar.ranged(it, "[2.4.29,)")
+        jarJar.ranged(it, "[2.5.1,)")
     }
 
     implementation fg.deobf("curse.maven:geckolib-388172:5675221")

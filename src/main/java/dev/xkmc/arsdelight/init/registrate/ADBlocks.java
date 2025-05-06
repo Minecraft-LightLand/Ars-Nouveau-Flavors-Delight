@@ -19,6 +19,7 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.common.Tags;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 
@@ -88,8 +89,8 @@ public class ADBlocks {
 						pvd.modLoc("block/crate/" + name + "_side"),
 						pvd.modLoc("block/crate/crate_bottom"),
 						pvd.modLoc("block/crate/" + name + "_top"))))
-				.tag(BlockTags.MINEABLE_WITH_AXE)
-				.simpleItem()
+				.tag(BlockTags.MINEABLE_WITH_AXE, Tags.Blocks.STORAGE_BLOCKS)
+				.item().tag(Tags.Items.STORAGE_BLOCKS).build()
 				.lang(ADItems.toEnglishName(name))
 				.register();
 	}

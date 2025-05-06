@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-11T15:19:18.676249	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2025-05-06T09:26:47.032663	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -280,5 +280,7 @@ a7748b44f61829e05bdbc33b1d61c43885857452 data/diet/tags/items/vegetables.json
 60e743f42a854a1ed1bb3eced1a72a90f4a5ea15 data/farmersdelight/tags/items/barks.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/items/flat_on_cutting_board.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/items/tools/knives.json
+bbf20a0c31d3b502714d24903597db0ba4fa26be data/forge/tags/blocks/storage_blocks.json
+bbf20a0c31d3b502714d24903597db0ba4fa26be data/forge/tags/items/storage_blocks.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/forge/tags/items/tools/knives.json
 5e1cd21656b66ab5b088cb16583bef322825796a data/minecraft/tags/blocks/mineable/axe.json
