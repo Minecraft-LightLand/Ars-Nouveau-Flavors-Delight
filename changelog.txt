@@ -1,3 +1,6 @@
+2.1.8
+- Use mug model orientation for drinks and horns
+
 2.1.7
 - Add storage block tag for crates
 

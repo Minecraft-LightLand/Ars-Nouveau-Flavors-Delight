@@ -15,6 +15,7 @@ import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
@@ -77,7 +78,7 @@ public class ADItems {
 
 	public static void mug(RegistrateItemModelProvider pvd, DataGenContext<Item, ? extends Item> ctx, ResourceLocation tex) {
 		pvd.getBuilder(ctx.getName()).parent(new ModelFile.UncheckedModelFile(
-						new ResourceLocation("farmersdelight", "item/mug")))
+						 ResourceLocation.fromNamespaceAndPath("farmersdelight", "item/mug")))
 				.texture("layer0", tex);
 	}
 
