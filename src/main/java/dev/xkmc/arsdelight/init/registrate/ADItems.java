@@ -2,6 +2,8 @@ package dev.xkmc.arsdelight.init.registrate;
 
 import com.hollingsworth.arsnouveau.common.items.ModItem;
 import com.tterrag.registrate.builders.ItemBuilder;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.arsdelight.content.item.EnchantersKnife;
@@ -10,6 +12,7 @@ import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
@@ -51,7 +54,10 @@ public class ADItems {
 
 		HORN_POWDER = ingredient("wilden_horn_powder", ModItem::new).register();
 		SPIKE_POWDER = ingredient("wilden_spike_powder", ModItem::new).register();
-		CHIMERA_HORN = ingredient("chimera_horn", ModItem::new).register();
+		CHIMERA_HORN = ArsDelight.REGISTRATE.item("chimera_horn", ModItem::new)
+				.model((ctx, pvd) ->
+						mug(pvd, ctx, pvd.modLoc("item/ingredient/" + ctx.getName())))
+				.register();
 
 		KNIFE = ArsDelight.REGISTRATE.item("enchanters_knife", p -> new EnchantersKnife(Tiers.NETHERITE, 1, -2F))
 				.model((ctx, pvd) -> {
@@ -67,6 +73,12 @@ public class ADItems {
 
 	private static <T extends Item> ItemBuilder<T, L2Registrate> ingredient(String id, NonNullFunction<Item.Properties, T> factory) {
 		return ArsDelight.REGISTRATE.item(id, factory).model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/ingredient/" + ctx.getName())));
+	}
+
+	public static void mug(RegistrateItemModelProvider pvd, DataGenContext<Item, ? extends Item> ctx, ResourceLocation tex) {
+		pvd.getBuilder(ctx.getName()).parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation("farmersdelight", "item/mug")))
+				.texture("layer0", tex);
 	}
 
 	public static void register() {

@@ -198,7 +198,7 @@ public enum ADFood implements ItemLike {
 			default -> "item/food/";
 		} + name;
 		this.item = ArsDelight.REGISTRATE.item(name, p -> this.build(p, nut, sat, effs))
-				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc(tex)))
+				.model((ctx, pvd) -> type.model(pvd, ctx, pvd.modLoc(tex)))
 				.lang(ADItems.toEnglishName(name))
 				.tag(tags)
 				.register();

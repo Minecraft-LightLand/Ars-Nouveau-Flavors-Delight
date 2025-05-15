@@ -1,13 +1,15 @@
 package dev.xkmc.arsdelight.init.food;
 
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import dev.xkmc.arsdelight.content.item.ADFoodItem;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
@@ -60,4 +62,11 @@ public enum FoodType {
 		return build(prop, builder);
 	}
 
+	public void model(RegistrateItemModelProvider pvd, DataGenContext<Item, ADFoodItem> ctx, ResourceLocation tex) {
+		switch (this) {
+			case MEAT_STICK -> pvd.handheld(ctx, tex);
+			case BOTTLE, DRINK, HORNED_DRINK, HORNED_MEAT -> ADItems.mug(pvd, ctx, tex);
+			default -> pvd.generated(ctx, tex);
+		}
+	}
 }
