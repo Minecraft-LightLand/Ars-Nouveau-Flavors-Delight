@@ -3,11 +3,13 @@ package dev.xkmc.arsdelight.content.spell;
 import com.hollingsworth.arsnouveau.api.spell.SpellStats;
 import com.hollingsworth.arsnouveau.common.spell.augment.AugmentAmplify;
 import com.hollingsworth.arsnouveau.common.spell.augment.AugmentExtract;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import vectorwing.farmersdelight.common.block.CuttingBoardBlock;
 import vectorwing.farmersdelight.common.block.entity.CuttingBoardBlockEntity;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -45,7 +47,13 @@ public class ResolveCutting extends ResolveOnBlock {
 		ItemStack boardStack = be.getStoredItem().copy();
 		for (var e : items) {
 			if (be.processStoredItemUsingTool(e.getDefaultInstance(), null)) {
-				CuttingBoardBlock.spawnCuttingParticles(level, be.getBlockPos(), boardStack, 5);
+				var pos = be.getBlockPos();
+				if (level instanceof ServerLevel sl)
+					sl.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, boardStack),
+							(double) pos.getX() + (double) 0.5F,
+							(double) pos.getY() + 0.2,
+							(double) pos.getZ() + (double) 0.5F,
+							5, 0.1, 0.1, 0.1, 0.05);
 				return true;
 			}
 		}

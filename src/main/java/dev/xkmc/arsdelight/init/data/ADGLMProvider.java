@@ -18,7 +18,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import vectorwing.farmersdelight.common.loot.modifier.AddItemModifier;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 
 public class ADGLMProvider extends GlobalLootModifierProvider {
 
@@ -34,15 +34,15 @@ public class ADGLMProvider extends GlobalLootModifierProvider {
 	protected void start() {
 		add("scavenge_chimera_meat", create(ADFood.CHIMERA_MEAT.asItem(), 4,
 				killTarget(ModEntities.WILDEN_BOSS.get()),
-				killedByItem(ForgeTags.TOOLS_KNIVES)
+				killedByItem(CommonTags.Items.TOOLS_KNIVES)
 		));
 		add("scavenge_wilden_hunter_meat", create(ADFood.WILDEN_MEAT.asItem(), 1,
 				killTarget(ModEntities.WILDEN_HUNTER.get()),
-				killedByItem(ForgeTags.TOOLS_KNIVES)
+				killedByItem(CommonTags.Items.TOOLS_KNIVES)
 		));
 		add("scavenge_chimera_horn", create(ADItems.CHIMERA_HORN.asItem(), 1,
 				killTarget(ModEntities.WILDEN_BOSS.get()),
-				killedByItem(ForgeTags.TOOLS_AXES)
+				killedByItem(CommonTags.Items.TOOLS_AXES)
 		));
 	}
 

@@ -27,7 +27,7 @@ import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
@@ -68,15 +68,15 @@ public class RecipeGen {
 		{
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(ItemsRegistry.WILDEN_HORN),
-							Ingredient.of(ForgeTags.TOOLS_SHOVELS),
+							Ingredient.of(CommonTags.Items.TOOLS_SHOVELS),
 							ADItems.HORN_POWDER, 1)
-					.build(pvd);
+					.setNamespace(ArsDelight.MODID).save(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(ItemsRegistry.WILDEN_SPIKE),
-							Ingredient.of(ForgeTags.TOOLS_SHOVELS),
+							Ingredient.of(CommonTags.Items.TOOLS_SHOVELS),
 							ADItems.SPIKE_POWDER, 1)
-					.build(pvd);
+					.setNamespace(ArsDelight.MODID).save(pvd);
 
 			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
 					ADBlocks.SOURCE_BERRY_CRATE, 1)::unlockedBy, BlockRegistry.SOURCEBERRY_BUSH.asItem())
@@ -112,9 +112,9 @@ public class RecipeGen {
 		{
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(ItemsRegistry.SOURCE_BERRY_PIE),
-							Ingredient.of(ForgeTags.TOOLS_KNIVES),
+							Ingredient.of(CommonTags.Items.TOOLS_KNIVES),
 							ADFood.SOURCE_BERRY_PIE_SLICE, 4)
-					.build(pvd);
+					.setNamespace(ArsDelight.MODID)	.save(pvd);
 
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
 					ItemsRegistry.SOURCE_BERRY_PIE, 1)::unlockedBy, ADFood.SOURCE_BERRY_PIE_SLICE.get())
@@ -131,15 +131,15 @@ public class RecipeGen {
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_CUPCAKE, 2, 200, 0.1f, Items.PAPER)
 					.addIngredient(ADFood.ARCH_SAUCE)
 					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-					.addIngredient(ForgeTags.EGGS)
+					.addIngredient(CommonTags.Items.EGGS)
 					.addIngredient(Items.WHEAT)
-					.addIngredient(ForgeTags.MILK)
-					.build(pvd);
+					.addIngredient(CommonTags.Items.MILK)
+					.save(pvd);
 
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
 					ADFood.WILDEN_SKEWER, 8)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
 					.requires(TagGen.RAW_WILDEN_MEAT)
-					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.requires(CommonTags.Items.SALAD_INGREDIENTS_CABBAGE)
 					.requires(Items.STICK)
 					.requires(ADItems.SPIKE_POWDER)
 					.save(pvd);
@@ -147,7 +147,7 @@ public class RecipeGen {
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
 					ADFood.CHIMERA_SKEWER, 8)::unlockedBy, ADFood.CHIMERA_MEAT.asItem())
 					.requires(TagGen.RAW_CHIMERA)
-					.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.requires(CommonTags.Items.SALAD_INGREDIENTS_CABBAGE)
 					.requires(Items.STICK)
 					.requires(ADItems.SPIKE_POWDER)
 					.save(pvd);
@@ -162,42 +162,42 @@ public class RecipeGen {
 					.addIngredient(ADFood.ACTIVATED_BASTION_JAM)
 					.addIngredient(ADFood.ACTIVATED_MENDOSTEEN_JAM)
 					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-					.build(pvd);
+					.save(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_SAUCE, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(ADItems.HORN_POWDER)
 					.addIngredient(ADItems.SPIKE_POWDER)
 					.addIngredient(ItemsRegistry.WILDEN_WING)
-					.build(pvd);
+					.save(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.ARCH_SOUP, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(ADItems.BLAZING_BARK)
 					.addIngredient(ADItems.CASCADING_BARK)
 					.addIngredient(ADItems.FLOURISHING_BARK)
 					.addIngredient(ADItems.VEXING_BARK)
-					.build(pvd);
+					.save(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADFood.WILDEN_STEW, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(TagGen.RAW_WILDEN_MEAT)
-					.addIngredient(ForgeTags.VEGETABLES_TOMATO)
-					.addIngredient(ForgeTags.VEGETABLES_ONION)
-					.addIngredient(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.addIngredient(CommonTags.Items.VEGETABLES_TOMATO)
+					.addIngredient(CommonTags.Items.VEGETABLES_ONION)
+					.addIngredient(CommonTags.Items.SALAD_INGREDIENTS_CABBAGE)
 					.addIngredient(ADItems.HORN_POWDER)
-					.build(pvd);
+					.save(pvd);
 
 			CookingPotRecipeBuilder.cookingPotRecipe(ADBlocks.CHIMERA, 1, 200, 0.1f, Items.BOWL)
 					.addIngredient(ADFood.CHIMERA_MEAT)
-					.addIngredient(ForgeTags.GRAIN_RICE)
+					.addIngredient(CommonTags.Items.GRAIN_RICE)
 					.addIngredient(ADFood.ARCH_SAUCE)
 					.addIngredient(Items.HONEY_BOTTLE)
 					.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
 					.addIngredient(Items.GLOW_BERRIES)
-					.build(pvd);
+					.save(pvd);
 
 			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.FOOD,
 					ADBlocks.SALAD, 1)::unlockedBy, ADFood.WILDEN_MEAT.asItem())
 					.pattern("SAS").pattern("FMF").pattern("CBC")
-					.define('C', ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+					.define('C', CommonTags.Items.SALAD_INGREDIENTS_CABBAGE)
 					.define('B', Items.BOWL)
 					.define('S', BlockRegistry.SOURCEBERRY_BUSH)
 					.define('M', ADFood.GRILLED_WILDEN_MEAT)
@@ -218,7 +218,7 @@ public class RecipeGen {
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
 						.addIngredient(Items.SLIME_BALL)
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.BASTION_JELLY, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
@@ -226,7 +226,7 @@ public class RecipeGen {
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
 						.addIngredient(Items.SLIME_BALL)
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.BOMBEGRANTE_JELLY, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
@@ -234,7 +234,7 @@ public class RecipeGen {
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
 						.addIngredient(Items.SLIME_BALL)
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.FROSTAYA_JELLY, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
@@ -242,12 +242,12 @@ public class RecipeGen {
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
 						.addIngredient(Items.SLIME_BALL)
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADJellys.SOURCE_BERRY_JELLY, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(ADFood.SOURCE_BERRY_JAM.get(), 3)
 						.addIngredient(Items.SLIME_BALL)
-						.build(pvd);
+						.save(pvd);
 			}
 
 			// jam
@@ -256,30 +256,30 @@ public class RecipeGen {
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get(), 2)
 						.addIngredient(ADItems.CASCADING_BARK.get())
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.ACTIVATED_BASTION_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
 						.addIngredient(ADItems.FLOURISHING_BARK.get())
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.NEUTRALIZED_BOMBEGRANTE_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.VEXING_BARK.get())
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.NEUTRALIZED_FROSTAYA_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_JAM, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
 						.addIngredient(Items.SUGAR)
-						.build(pvd);
+						.save(pvd);
 			}
 
 			// tea
@@ -289,33 +289,33 @@ public class RecipeGen {
 						.addIngredient(ADItems.CASCADING_BARK.get())
 						.addIngredient(BlockRegistry.CASCADING_LEAVE)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BASTION_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
 						.addIngredient(ADItems.FLOURISHING_BARK.get())
 						.addIngredient(BlockRegistry.FLOURISHING_LEAVES)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BOMBEGRANTE_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.VEXING_BARK.get())
 						.addIngredient(BlockRegistry.VEXING_LEAVES)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.FROSTAYA_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(BlockRegistry.BLAZING_LEAVES)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_TEA, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
 						.addIngredient(TagGen.LEAVES)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.UNSTABLE_COCKTAIL, 1, 200, 0.1f, Items.GLASS_BOTTLE)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
@@ -323,7 +323,7 @@ public class RecipeGen {
 						.addIngredient(Items.GUNPOWDER)
 						.addIngredient(Items.SUGAR)
 						.addIngredient(ItemsRegistry.FIRE_ESSENCE)
-						.build(pvd);
+						.save(pvd);
 
 			}
 
@@ -334,34 +334,34 @@ public class RecipeGen {
 						.addIngredient(ADItems.CASCADING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BASTION_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
 						.addIngredient(BlockRegistry.BASTION_POD.get(), 2)
 						.addIngredient(ADItems.FLOURISHING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BOMBEGRANTE_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get(), 2)
 						.addIngredient(ADItems.VEXING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.FROSTAYA_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get(), 2)
 						.addIngredient(ADItems.BLAZING_BARK.get())
 						.addIngredient(ItemsRegistry.MAGE_BLOOM)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.SOURCE_BERRY_HORNBEER, 1, 200, 0.1f, ADItems.CHIMERA_HORN)
 						.addIngredient(BlockRegistry.SOURCEBERRY_BUSH.get(), 3)
 						.addIngredient(TagGen.BARKS)
 						.addIngredient(ItemsRegistry.MAGE_BLOOM.get())
-						.build(pvd);
+						.save(pvd);
 
 
 			}
@@ -371,34 +371,34 @@ public class RecipeGen {
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.MENDOSTEEN_CHICKEN, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.MENDOSTEEN_POD.get())
 						.addIngredient(ADFood.ACTIVATED_MENDOSTEEN_JAM.get())
-						.addIngredient(ForgeTags.RAW_CHICKEN)
-						.addIngredient(ForgeTags.CROPS_CABBAGE)
+						.addIngredient(CommonTags.Items.RAW_CHICKEN)
+						.addIngredient(CommonTags.Items.CROPS_CABBAGE)
 						.addIngredient(ADFood.WILDEN_SAUCE)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BASTION_PORK, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.BASTION_POD.get())
 						.addIngredient(ADFood.ACTIVATED_BASTION_JAM.get())
-						.addIngredient(ForgeTags.RAW_PORK)
-						.addIngredient(ForgeTags.VEGETABLES_TOMATO)
+						.addIngredient(CommonTags.Items.RAW_PORK)
+						.addIngredient(CommonTags.Items.VEGETABLES_TOMATO)
 						.addIngredient(ADFood.WILDEN_SAUCE)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.BOMBEGRANTE_STEAK, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.BOMBEGRANTE_POD.get())
 						.addIngredient(ADFood.NEUTRALIZED_BOMBEGRANTE_JAM.get())
-						.addIngredient(ForgeTags.RAW_BEEF)
-						.addIngredient(ForgeTags.VEGETABLES_POTATO)
+						.addIngredient(CommonTags.Items.RAW_BEEF)
+						.addIngredient(CommonTags.Items.VEGETABLES_POTATO)
 						.addIngredient(ADFood.WILDEN_SAUCE)
-						.build(pvd);
+						.save(pvd);
 
 				CookingPotRecipeBuilder.cookingPotRecipe(ADFood.FROSTAYA_MUTTON, 1, 200, 0.1f, Items.BOWL)
 						.addIngredient(BlockRegistry.FROSTAYA_POD.get())
 						.addIngredient(ADFood.NEUTRALIZED_FROSTAYA_JAM.get())
-						.addIngredient(ForgeTags.RAW_MUTTON)
-						.addIngredient(ForgeTags.VEGETABLES_ONION)
+						.addIngredient(CommonTags.Items.RAW_MUTTON)
+						.addIngredient(CommonTags.Items.VEGETABLES_ONION)
 						.addIngredient(ADFood.WILDEN_SAUCE)
-						.build(pvd);
+						.save(pvd);
 
 
 			}
@@ -426,9 +426,9 @@ public class RecipeGen {
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(
 						Ingredient.of(pie.block.get()),
-						Ingredient.of(ForgeTags.TOOLS_KNIVES),
+						Ingredient.of(CommonTags.Items.TOOLS_KNIVES),
 						pie.slice.get(), 4)
-				.build(pvd);
+				.save(pvd);
 	}
 
 	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,
@@ -439,10 +439,10 @@ public class RecipeGen {
 	) {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd);
+				.setNamespace(ArsDelight.MODID).save(pvd);
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ToolActionIngredient(ToolActions.AXE_STRIP), stwood)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
-				.build(pvd);
+				.setNamespace(ArsDelight.MODID).save(pvd);
 		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + log.getRegistryName());
 		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + wood.getRegistryName());
 	}
@@ -450,8 +450,8 @@ public class RecipeGen {
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {
 		cook(pvd, in, out);
 		cook(pvd, inslice, outslice);
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(in), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				inslice, 3).build(pvd);
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(in), Ingredient.of(CommonTags.Items.TOOLS_KNIVES),
+				inslice, 3).save(pvd);
 	}
 
 	private static void cook(RegistrateRecipeProvider pvd, ADFood in, ADFood out) {

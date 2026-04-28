@@ -18,8 +18,6 @@ import net.minecraft.world.item.Tiers;
 import net.minecraftforge.client.model.generators.ModelFile;
 import org.apache.commons.lang3.StringUtils;
 import vectorwing.farmersdelight.common.item.FuelItem;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -47,8 +45,7 @@ public class ADItems {
 
 		KNIFE = ArsDelight.REGISTRATE.item("enchanters_knife", p -> new EnchantersKnife(Tiers.NETHERITE, 1, -2F))
 				.model((ctx, pvd) -> {
-				}).tag(ForgeTags.TOOLS_KNIVES, ModTags.KNIVES, ModTags.FLAT_ON_CUTTING_BOARD)
-				.lang("Enchanter's Knife").register();
+				}).lang("Enchanter's Knife").register();
 	}
 
 	public static String toEnglishName(String internalName) {

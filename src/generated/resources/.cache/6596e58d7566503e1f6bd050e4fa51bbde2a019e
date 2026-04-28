@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-15T09:23:36.736602	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2026-04-28T15:53:09.005894	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -277,8 +277,15 @@ ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipes/integration/ars
 7779ba2a044b0aabb37a033f29c8784d8682faba data/diet/tags/items/proteins.json
 b469a60bb1f54cf4ea65565e933a2a751254b8ec data/diet/tags/items/sugars.json
 a7748b44f61829e05bdbc33b1d61c43885857452 data/diet/tags/items/vegetables.json
+c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/blocks/cabinets.json
+c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/blocks/cabinets/wooden.json
+c06ace169315cac2393f9010c6899d17685e009e data/farmersdelight/tags/blocks/feasts.json
+e10155e20898edb152560a0aee383c8dee6db185 data/farmersdelight/tags/blocks/pies.json
 60e743f42a854a1ed1bb3eced1a72a90f4a5ea15 data/farmersdelight/tags/items/barks.json
+c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/items/cabinets.json
+c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/items/cabinets/wooden.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/items/flat_on_cutting_board.json
+089c5ec77b5b1536c0cbe5c2af0b571b938954b0 data/farmersdelight/tags/items/pies.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/items/tools/knives.json
 bbf20a0c31d3b502714d24903597db0ba4fa26be data/forge/tags/blocks/storage_blocks.json
 bbf20a0c31d3b502714d24903597db0ba4fa26be data/forge/tags/items/storage_blocks.json
