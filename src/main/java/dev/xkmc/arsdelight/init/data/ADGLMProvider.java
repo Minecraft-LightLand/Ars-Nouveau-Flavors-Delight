@@ -37,11 +37,11 @@ public class ADGLMProvider extends GlobalLootModifierProvider {
 	protected void start() {
 		add("scavenge_chimera_meat", create(ADFood.CHIMERA_MEAT.asItem(), 4,
 				killTarget(ModEntities.WILDEN_BOSS.get()),
-				killedByItem(CommonTags.TOOLS_KNIFE)
+				killedByItem(CommonTags.Items.TOOLS_KNIFE)
 		));
 		add("scavenge_wilden_hunter_meat", create(ADFood.WILDEN_MEAT.asItem(), 1,
 				killTarget(ModEntities.WILDEN_HUNTER.get()),
-				killedByItem(CommonTags.TOOLS_KNIFE)
+				killedByItem(CommonTags.Items.TOOLS_KNIFE)
 		));
 		add("scavenge_chimera_horn", create(ADItems.CHIMERA_HORN.asItem(), 1,
 				killTarget(ModEntities.WILDEN_BOSS.get()),

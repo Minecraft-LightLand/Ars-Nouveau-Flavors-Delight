@@ -1,8 +1,8 @@
 {
   "entries": [
     "arsdelight:scavenge_chimera_meat",
-    "arsdelight:scavenge_chimera_horn",
-    "arsdelight:scavenge_wilden_hunter_meat"
+    "arsdelight:scavenge_wilden_hunter_meat",
+    "arsdelight:scavenge_chimera_horn"
   ],
   "replace": false
 }

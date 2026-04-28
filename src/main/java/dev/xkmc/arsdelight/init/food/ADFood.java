@@ -83,12 +83,11 @@ public enum ADFood implements ItemLike {
 	), DietTagGen.PROTEINS.tag),
 	ARCH_SOUP(FoodType.BOWL, 4, 0.4f, List.of(
 			new EffectEntry(ModPotions.MANA_REGEN_EFFECT, 1200),
-			new EffectEntry(ModEffects.COMFORT, 1200)
+			new EffectEntry(ModEffects.NOURISHMENT, 1200)
 	), DietTagGen.VEGETABLES.tag),
 
 	WILDEN_STEW(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN, 3600, 0),
-			new EffectEntry(ModEffects.COMFORT, 3600),
 			new EffectEntry(ModEffects.NOURISHMENT, 3600)
 	), DietTagGen.PROTEINS.tag),
 	BOWL_OF_WILDEN_SALAD(FoodType.MEAT_PLATE, 12, 0.8f, List.of(
@@ -101,8 +100,7 @@ public enum ADFood implements ItemLike {
 	), DietTagGen.PROTEINS.tag),
 	BOWL_OF_HONEY_GLAZED_CHIMERA(FoodType.MEAT_PLATE, 18, 0.8f, List.of(
 			new EffectEntry(ADEffects.WILDEN, 3600, 2),
-			new EffectEntry(ModEffects.NOURISHMENT, 3600),
-			new EffectEntry(ModEffects.COMFORT, 3600)
+			new EffectEntry(ModEffects.NOURISHMENT, 3600)
 	)),
 
 	MENDOSTEEN_TEA(FoodType.DRINK, 0, 0, List.of(
@@ -165,12 +163,12 @@ public enum ADFood implements ItemLike {
 	MENDOSTEEN_CHICKEN(FoodType.MEAT_PLATE, 10, 0.8f, List.of(
 			new EffectEntry(ModPotions.RECOVERY_EFFECT, 2400),
 			new EffectEntry(ADEffects.FLOURISH, 2400),
-			new EffectEntry(ModEffects.COMFORT, 3600)
+			new EffectEntry(ModEffects.NOURISHMENT, 3600)
 	), DietTagGen.FRUITS.tag, DietTagGen.PROTEINS.tag),
 	BASTION_PORK(FoodType.MEAT_PLATE, 14, 0.8f, List.of(
 			new EffectEntry(ModPotions.DEFENCE_EFFECT, 2400),
 			new EffectEntry(ADEffects.SHIELDING, 2400),
-			new EffectEntry(ModEffects.COMFORT, 3600)
+			new EffectEntry(ModEffects.NOURISHMENT, 3600)
 	), DietTagGen.FRUITS.tag, DietTagGen.PROTEINS.tag),
 	BOMBEGRANTE_STEAK(FoodType.MEAT_PLATE, 16, 0.8f, List.of(
 			new EffectEntry(ADEffects.BLAST_RES, 3600, 1),
