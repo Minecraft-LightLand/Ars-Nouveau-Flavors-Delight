@@ -9,12 +9,10 @@ import dev.xkmc.arsdelight.content.item.ADFoodItem;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.registrate.ADEffects;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.Locale;
@@ -57,7 +55,7 @@ public enum ADPie {
 
 	private BlockModelBuilder genCakeModel(String name, RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
-		var id = new ResourceLocation(FarmersDelight.MODID, "block/pie" + model);
+		var id = pvd.modLoc("custom/pie" + model);
 		if (deco) {
 			id = pvd.modLoc("custom/" + name + model);
 		}

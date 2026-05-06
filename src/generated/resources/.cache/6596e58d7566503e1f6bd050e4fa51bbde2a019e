@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-28T15:53:09.005894	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2026-05-06T13:33:05.063086	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -22,16 +22,16 @@ e16fdb9c23351a9390c7281baadc79155c8bed67 assets/arsdelight/models/block/archwood
 15dc50d08e0631948b5e581a7f1d0f6ceab72986 assets/arsdelight/models/block/archwood_cabinet_open.json
 0c6e5771b2f1ed1f4d59a5f2447804fc9b856e19 assets/arsdelight/models/block/bastion_crate.json
 de774eca56d22f3d1b8e07223d16fc685fadda08 assets/arsdelight/models/block/bastion_jelly.json
-831a11228e0f1f2bed04b09fe06e9f01054ecf74 assets/arsdelight/models/block/bastion_pie.json
-4b7ce1909465b04a356b97055cf50441fd842597 assets/arsdelight/models/block/bastion_pie_slice1.json
-eb009a20721d7feefb51faf16fbf4cbdceaa1f76 assets/arsdelight/models/block/bastion_pie_slice2.json
-89dc20ee3faaa33731913e28bb3e7ba955f81dfe assets/arsdelight/models/block/bastion_pie_slice3.json
+e32d06709f3eb49b7520ced1186a523254a35773 assets/arsdelight/models/block/bastion_pie.json
+b3610ba1a04d3c08cd46475d12ab8553d0153d8e assets/arsdelight/models/block/bastion_pie_slice1.json
+2a325ce0fc7008a9d4e9651b18f203e3d4d7cac0 assets/arsdelight/models/block/bastion_pie_slice2.json
+97ade18e2e61266dbb86823ddc6cdf823d5c6360 assets/arsdelight/models/block/bastion_pie_slice3.json
 0110756276fdc3d0a90af3ddfa77f6bf078d53d1 assets/arsdelight/models/block/bombegrante_crate.json
 b4db82a00fb9c94f0bdfa848b6072bd10b94d9e5 assets/arsdelight/models/block/bombegrante_jelly.json
-c01795648ae5837c68f1a5bda80797c82e9eba26 assets/arsdelight/models/block/bombegrante_pie.json
-0866ad0e90e207b55d8b35d546c4e6e62a7c3f0b assets/arsdelight/models/block/bombegrante_pie_slice1.json
-b2bdb3dd32ed5ecf971f2e4ba7f6496a14143b96 assets/arsdelight/models/block/bombegrante_pie_slice2.json
-46f0716f32ba491f4ad735312e01cfd11619aef5 assets/arsdelight/models/block/bombegrante_pie_slice3.json
+69ec1baeeae04038751242bed06bb3999f123e4c assets/arsdelight/models/block/bombegrante_pie.json
+2adaf829f473ad9eb14b3888012ebf3519b8eedc assets/arsdelight/models/block/bombegrante_pie_slice1.json
+983add21994d031278285cd135f3b4021b62ebba assets/arsdelight/models/block/bombegrante_pie_slice2.json
+a659ab5cf7fb61f62f3cee07330cf51dcffdb778 assets/arsdelight/models/block/bombegrante_pie_slice3.json
 3c8b7d20c7c758bb6828a9590483d53a283aae27 assets/arsdelight/models/block/frostaya_crate.json
 e85931a3ae262e9dd7ba4888f9c77fc9b431c0da assets/arsdelight/models/block/frostaya_jelly.json
 dbca0598943b088409f6735d186a7c8f70583b21 assets/arsdelight/models/block/frostaya_pie.json

@@ -1,3 +1,6 @@
+1.2.1
+- Fix pie model
+
 1.2.0
 - Support Farmer's Delight 1.3
 

@@ -1,5 +1,5 @@
 {
-  "parent": "farmersdelight:block/pie",
+  "parent": "arsdelight:custom/pie",
   "textures": {
     "bottom": "arsdelight:block/pie/pie_bottom",
     "inner": "arsdelight:block/pie/bastion_pie_inner",
