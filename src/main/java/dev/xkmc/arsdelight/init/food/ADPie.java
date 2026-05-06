@@ -57,7 +57,7 @@ public enum ADPie {
 
 	private BlockModelBuilder genCakeModel(String name, RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
-		var id = ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "block/pie" + model);
+		var id = pvd.modLoc("custom/pie" + model);
 		if (deco) {
 			id = pvd.modLoc("custom/" + name + model);
 		}
