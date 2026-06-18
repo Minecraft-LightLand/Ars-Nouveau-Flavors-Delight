@@ -1,16 +1,15 @@
-package dev.xkmc.arsdelight.compat.elemental;
+package dev.xkmc.arsdelight.compat.archwood;
 
-import alexthw.ars_elemental.ArsElemental;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.compat.diet.DietTagGen;
 import dev.xkmc.arsdelight.content.item.ADFoodItem;
 import dev.xkmc.arsdelight.init.ArsDelight;
-import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.EffectEntry;
 import dev.xkmc.arsdelight.init.food.FoodType;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -19,15 +18,29 @@ import net.minecraft.world.level.ItemLike;
 import java.util.List;
 import java.util.Locale;
 
-public enum AEFood implements ItemLike {
-	FLASHPINE_TEA(FoodType.DRINK, 0, 0, List.of(
-			new EffectEntry(ElementalCompat.LIGHTNING_CURSE, 1200)
+public enum AWFood implements ItemLike {
+	DAWNBERRY_TEA(FoodType.DRINK, 0, 0, List.of(
+			new EffectEntry(MobEffects.FIRE_RESISTANCE, 4800)
 	), DietTagGen.FRUITS.tag),
-	FLASHPINE_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(
-			new EffectEntry(ElementalCompat.LIGHTNING_CURSE, 2400)
+	DAWNBERRY_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(
+			new EffectEntry(MobEffects.FIRE_RESISTANCE, 9600)
 	), DietTagGen.FRUITS.tag),
-	NEUTRALIZED_FLASHPINE_JAM(FoodType.JELLY, 0, 0, List.of(
-			new EffectEntry(ElementalCompat.LIGHTNING_CURSE, 600)
+	NEUTRALIZED_DAWNBERRY_JAM(FoodType.JELLY, 0, 0, List.of(
+			new EffectEntry(MobEffects.FIRE_RESISTANCE, 2400)
+	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
+
+	LIGHTCHEE_TEA(FoodType.DRINK, 0, 0, List.of(
+			new EffectEntry(MobEffects.REGENERATION, 4800)
+	), DietTagGen.FRUITS.tag),
+	LIGHTCHEE_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(
+			new EffectEntry(MobEffects.REGENERATION, 2400, 1)
+	), DietTagGen.FRUITS.tag),
+	NEUTRALIZED_LIGHTCHEE_JAM(FoodType.JELLY, 0, 0, List.of(
+			new EffectEntry(MobEffects.REGENERATION, 2400)
+	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
+
+	SKITTLE_STEW(FoodType.BOWL, 10, 1.2f, List.of(
+			new EffectEntry(MobEffects.REGENERATION, 4800)
 	), DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag),
 	;
 
@@ -38,7 +51,7 @@ public enum AEFood implements ItemLike {
 	private final TagKey<Item>[] tags;
 
 	@SafeVarargs
-	AEFood(FoodType type, int nut, float sat, List<EffectEntry> effs, TagKey<Item>... tags) {
+	AWFood(FoodType type, int nut, float sat, List<EffectEntry> effs, TagKey<Item>... tags) {
 		this.name = name().toLowerCase(Locale.ROOT);
 		this.type = type;
 		String tex = switch (type) {

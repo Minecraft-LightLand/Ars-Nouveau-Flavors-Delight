@@ -21,6 +21,10 @@
       "required": false
     },
     {
+      "id": "arsdelight:flashpine_jelly",
+      "required": false
+    },
+    {
       "id": "arsdelight:mendosteen_pie_slice",
       "required": false
     },
@@ -34,6 +38,42 @@
     },
     {
       "id": "arsdelight:frostaya_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:flashpine_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:neutralized_flashpine_jam",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawnberry_jelly",
+      "required": false
+    },
+    {
+      "id": "arsdelight:lightchee_jelly",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawnberry_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:lightchee_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:neutralized_dawnberry_jam",
+      "required": false
+    },
+    {
+      "id": "arsdelight:neutralized_lightchee_jam",
+      "required": false
+    },
+    {
+      "id": "arsdelight:skittle_stew",
       "required": false
     },
     "arsdelight:source_berry_cookie",

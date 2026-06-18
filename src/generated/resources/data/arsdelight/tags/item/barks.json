@@ -3,6 +3,22 @@
     "arsdelight:flourishing_bark",
     "arsdelight:vexing_bark",
     "arsdelight:cascading_bark",
-    "arsdelight:blazing_bark"
+    "arsdelight:blazing_bark",
+    {
+      "id": "arsdelight:flashing_bark",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawn_bark",
+      "required": false
+    },
+    {
+      "id": "arsdelight:bleak_bark",
+      "required": false
+    },
+    {
+      "id": "arsdelight:fading_bark",
+      "required": false
+    }
   ]
 }

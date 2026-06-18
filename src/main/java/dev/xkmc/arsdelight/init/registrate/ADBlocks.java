@@ -1,6 +1,10 @@
 package dev.xkmc.arsdelight.init.registrate;
 
+import alexthw.ars_elemental.ArsElemental;
+import com.alexthw.archwood_good.ArchwoodGood;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import dev.xkmc.arsdelight.compat.archwood.ArchwoodCompat;
+import dev.xkmc.arsdelight.compat.elemental.ElementalCompat;
 import dev.xkmc.arsdelight.content.block.ChimeraFeast;
 import dev.xkmc.arsdelight.content.block.SaladFeast;
 import dev.xkmc.arsdelight.init.ArsDelight;
@@ -18,6 +22,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.Tags;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
@@ -74,6 +79,11 @@ public class ADBlocks {
 								.when(InvertedLootItemCondition.invert(getServe(block))))
 				)).register();
 
+		if (ModList.get().isLoaded(ArsElemental.MODID))
+			ElementalCompat.register();
+
+		if (ModList.get().isLoaded(ArchwoodGood.MODID))
+			ArchwoodCompat.register();
 	}
 
 	private static <T extends FeastBlock> LootItemBlockStatePropertyCondition.Builder getServe(T block) {

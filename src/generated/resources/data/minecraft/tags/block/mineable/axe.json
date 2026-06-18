@@ -20,6 +20,18 @@
       "id": "arsdelight:source_berry_crate",
       "required": false
     },
-    "arsdelight:archwood_cabinet"
+    "arsdelight:archwood_cabinet",
+    {
+      "id": "arsdelight:flashpine_crate",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawnberry_crate",
+      "required": false
+    },
+    {
+      "id": "arsdelight:lightchee_crate",
+      "required": false
+    }
   ]
 }

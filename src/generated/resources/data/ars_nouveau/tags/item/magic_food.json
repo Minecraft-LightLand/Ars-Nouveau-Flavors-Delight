@@ -21,6 +21,10 @@
       "required": false
     },
     {
+      "id": "arsdelight:flashpine_jelly",
+      "required": false
+    },
+    {
       "id": "arsdelight:mendosteen_pie_slice",
       "required": false
     },
@@ -34,6 +38,26 @@
     },
     {
       "id": "arsdelight:frostaya_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:flashpine_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawnberry_jelly",
+      "required": false
+    },
+    {
+      "id": "arsdelight:lightchee_jelly",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawnberry_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:lightchee_pie_slice",
       "required": false
     },
     "arsdelight:wilden_meat",

@@ -15,6 +15,18 @@
     {
       "id": "arsdelight:frostaya_pie_slice",
       "required": false
+    },
+    {
+      "id": "arsdelight:flashpine_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawnberry_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:lightchee_pie_slice",
+      "required": false
     }
   ]
 }

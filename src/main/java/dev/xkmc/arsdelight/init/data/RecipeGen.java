@@ -1,11 +1,15 @@
 package dev.xkmc.arsdelight.init.data;
 
+import alexthw.ars_elemental.ArsElemental;
+import com.alexthw.archwood_good.ArchwoodGood;
 import com.hollingsworth.arsnouveau.setup.registry.BlockRegistry;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import com.hollingsworth.arsnouveau.setup.registry.RegistryWrapper;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.xkmc.arsdelight.compat.archwood.AWRecipeGen;
+import dev.xkmc.arsdelight.compat.elemental.AERecipeGen;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.food.ADPie;
@@ -16,6 +20,7 @@ import dev.xkmc.arsdelight.init.registrate.ADJellys;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.sounds.SoundEvents;
@@ -25,6 +30,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
@@ -439,10 +445,18 @@ public class RecipeGen {
 
 		}
 
+		if (ModList.get().isLoaded(ArsElemental.MODID))
+			AERecipeGen.genRecipes(pvd);
+		if (ModList.get().isLoaded(ArchwoodGood.MODID))
+			AWRecipeGen.genRecipes(pvd);
 	}
 
 
 	public static void pie(RegistrateRecipeProvider pvd, ADPie pie, ItemLike jam, ItemLike fruit) {
+		pie(pvd, pvd, pie, jam, fruit);
+	}
+
+	public static void pie(RegistrateRecipeProvider pvd, RecipeOutput out, ADPie pie, ItemLike jam, ItemLike fruit) {
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, fruit.asItem())
 				.pattern("#f#").pattern("aja").pattern("xOx")
 				.define('#', Items.WHEAT)
@@ -451,25 +465,25 @@ public class RecipeGen {
 				.define('a', BlockRegistry.SOURCEBERRY_BUSH)
 				.define('x', Items.SUGAR)
 				.define('O', ModItems.PIE_CRUST.get())
-				.save(pvd);
+				.save(out);
 
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, pie.slice.get())
 				.pattern("##").pattern("##")
 				.define('#', pie.slice.get())
-				.save(pvd, pie.block.getId().withSuffix("_from_slices"));
+				.save(out, pie.block.getId().withSuffix("_from_slices"));
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(
 						Ingredient.of(pie.block.get()),
 						Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						pie.slice.get(), 4)
-				.save(pvd);
+				.save(out);
 	}
 
 	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,
-							  RegistryWrapper<Block, ?> log,
-							  RegistryWrapper<Block, ?> stripped,
-							  RegistryWrapper<Block, ?> wood,
-							  RegistryWrapper<Block, ?> stwood
+	                          RegistryWrapper<Block, ?> log,
+	                          RegistryWrapper<Block, ?> stripped,
+	                          RegistryWrapper<Block, ?> wood,
+	                          RegistryWrapper<Block, ?> stwood
 	) {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stripped)
 				.addResult(bark).addSound(SoundEvents.AXE_STRIP)
