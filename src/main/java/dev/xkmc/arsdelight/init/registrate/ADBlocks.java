@@ -79,11 +79,6 @@ public class ADBlocks {
 								.when(InvertedLootItemCondition.invert(getServe(block))))
 				)).register();
 
-		if (ModList.get().isLoaded(ArsElemental.MODID))
-			ElementalCompat.register();
-
-		if (ModList.get().isLoaded(ArchwoodGood.MODID))
-			ArchwoodCompat.register();
 	}
 
 	private static <T extends FeastBlock> LootItemBlockStatePropertyCondition.Builder getServe(T block) {

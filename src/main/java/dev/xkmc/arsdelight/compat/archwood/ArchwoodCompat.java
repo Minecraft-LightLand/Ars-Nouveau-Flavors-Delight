@@ -2,14 +2,17 @@ package dev.xkmc.arsdelight.compat.archwood;
 
 import com.alexthw.archwood_good.registry.AWGItemRegistry;
 import com.hollingsworth.arsnouveau.api.event.SpellDamageEvent;
+import com.tterrag.registrate.builders.BlockEntityBuilder;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.content.jelly.JellyBlock;
+import dev.xkmc.arsdelight.content.jelly.JellyBlockEntity;
 import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.arsdelight.init.registrate.ADJellys;
+import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -44,8 +47,8 @@ public class ArchwoodCompat {
 	public static void spellDamage(SpellDamageEvent.Post event) {
 	}
 
-	public static void register() {
-
+	public static void register(BlockEntityBuilder<JellyBlockEntity, L2Registrate> builder) {
+		builder.validBlocks(DAWNBERRY_JELLY, LIGHTCHEE_JELLY);
 	}
 
 }
