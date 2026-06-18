@@ -25,6 +25,10 @@ public class AERecipeGen {
 		var out = ConditionalRecipeWrapper.mod(pvd, ArsElemental.MODID);
 
 		storage(pvd, out, ModItems.FLASHING_POD.get(), RecipeCategory.MISC, ElementalCompat.FLASHPINE_CRATE);
+
+		RecipeGen.strip(pvd, out, ElementalCompat.FLASH_BARK, ModItems.FLASHING_ARCHWOOD_LOG, ModItems.FLASHING_ARCHWOOD_LOG_STRIPPED,
+				ModItems.FLASHING_ARCHWOOD, ModItems.FLASHING_ARCHWOOD_STRIPPED);
+
 		RecipeGen.pie(pvd, out, ElementalCompat.FLASHPINE_PIE, AEFood.NEUTRALIZED_FLASHPINE_JAM, ModItems.FLASHING_POD.get());
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ElementalCompat.FLASHPINE_JELLY, 1, 200, 0.1f, Items.BOWL)

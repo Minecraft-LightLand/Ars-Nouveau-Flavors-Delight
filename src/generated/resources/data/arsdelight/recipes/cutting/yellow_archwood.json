@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "ars_elemental:yellow_archwood"
+    }
+  ],
+  "result": [
+    {
+      "item": "ars_elemental:stripped_yellow_archwood"
+    },
+    {
+      "item": "arsdelight:flashing_bark"
+    }
+  ],
+  "sound": "minecraft:item.axe.strip",
+  "tool": {
+    "type": "farmersdelight:tool_action",
+    "action": "axe_strip"
+  }
+}
