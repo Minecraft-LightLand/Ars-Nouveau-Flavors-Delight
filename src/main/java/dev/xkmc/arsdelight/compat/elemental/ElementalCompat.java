@@ -4,10 +4,12 @@ import alexthw.ars_elemental.ArsElemental;
 import alexthw.ars_elemental.registry.ModItems;
 import alexthw.ars_elemental.registry.ModPotions;
 import com.hollingsworth.arsnouveau.api.event.SpellDamageEvent;
+import com.tterrag.registrate.builders.BlockEntityBuilder;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import dev.xkmc.arsdelight.content.jelly.JellyBlock;
+import dev.xkmc.arsdelight.content.jelly.JellyBlockEntity;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADPie;
@@ -15,6 +17,7 @@ import dev.xkmc.arsdelight.init.food.EffectEntry;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.arsdelight.init.registrate.ADJellys;
+import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -57,8 +60,8 @@ public class ElementalCompat {
 		}
 	}
 
-	public static void register() {
-
+	public static void register(BlockEntityBuilder<JellyBlockEntity, L2Registrate> builder) {
+		builder.validBlock(FLASHPINE_JELLY);
 	}
 
 }

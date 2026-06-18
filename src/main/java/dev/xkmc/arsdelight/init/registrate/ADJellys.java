@@ -1,10 +1,12 @@
 package dev.xkmc.arsdelight.init.registrate;
 
+import alexthw.ars_elemental.ArsElemental;
 import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.xkmc.arsdelight.compat.diet.DietTagGen;
+import dev.xkmc.arsdelight.compat.elemental.ElementalCompat;
 import dev.xkmc.arsdelight.content.jelly.JellyBlock;
 import dev.xkmc.arsdelight.content.jelly.JellyBlockEntity;
 import dev.xkmc.arsdelight.content.jelly.JellyBlockEntityRenderer;
@@ -17,6 +19,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.fml.ModList;
 
 import java.util.function.Supplier;
 
@@ -34,10 +37,14 @@ public class ADJellys {
 		FROSTAYA_JELLY = jelly("frostaya_jelly", () -> resolve(ItemsRegistry.FROSTAYA_FOOD, 1, 1));
 		SOURCE_BERRY_JELLY = jelly("source_berry_jelly", () -> resolve(ItemsRegistry.SOURCE_BERRY_FOOD, 2, 4));
 
-		JELLY_BE = ArsDelight.REGISTRATE.blockEntity("jelly", JellyBlockEntity::new)
+		var builder = ArsDelight.REGISTRATE.blockEntity("jelly", JellyBlockEntity::new)
 				.renderer(() -> JellyBlockEntityRenderer::new)
-				.validBlocks(MENDOSTEEN_JELLY, BASTION_JELLY, BOMBEGRANTE_JELLY, FROSTAYA_JELLY, SOURCE_BERRY_JELLY)
-				.register();
+				.validBlocks(MENDOSTEEN_JELLY, BASTION_JELLY, BOMBEGRANTE_JELLY, FROSTAYA_JELLY, SOURCE_BERRY_JELLY);
+
+		if (ModList.get().isLoaded(ArsElemental.MODID))
+			ElementalCompat.register(builder);
+
+		JELLY_BE = builder.register();
 	}
 
 	public static BlockEntry<JellyBlock> jelly(String name, Supplier<FoodProperties.Builder> effs) {
