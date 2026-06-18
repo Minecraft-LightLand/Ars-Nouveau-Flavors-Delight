@@ -33,6 +33,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -479,20 +480,29 @@ public class RecipeGen {
 				.save(out);
 	}
 
-	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,
-	                          RegistryWrapper<Block, ?> log,
-	                          RegistryWrapper<Block, ?> stripped,
-	                          RegistryWrapper<Block, ?> wood,
-	                          RegistryWrapper<Block, ?> stwood
+	public static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,
+	                         RegistryWrapper<Block, ?> log,
+	                         RegistryWrapper<Block, ?> stripped,
+	                         RegistryWrapper<Block, ?> wood,
+	                         RegistryWrapper<Block, ?> stwood
 	) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stripped)
+		strip(pvd, pvd, bark, log.registryObject, stripped.registryObject, wood.registryObject, stwood.registryObject);
+	}
+
+	public static void strip(RegistrateRecipeProvider pvd, RecipeOutput out, ItemEntry<?> bark,
+	                         DeferredHolder<Block, ?> log,
+	                         DeferredHolder<Block, ?> stripped,
+	                         DeferredHolder<Block, ?> wood,
+	                         DeferredHolder<Block, ?> stwood
+	) {
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log.get()), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stripped.get())
 				.addResult(bark).addSound(SoundEvents.AXE_STRIP)
-				.setNamespace(ArsDelight.MODID).save(pvd);
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stwood)
+				.setNamespace(ArsDelight.MODID).save(out);
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(wood.get()), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), stwood.get())
 				.addResult(bark).addSound(SoundEvents.AXE_STRIP)
-				.setNamespace(ArsDelight.MODID).save(pvd);
-		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + log.getRegistryName());
-		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + wood.getRegistryName());
+				.setNamespace(ArsDelight.MODID).save(out);
+		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + log.getId().getPath());
+		ADEmptyRecipe.genEmpty(pvd, "delightful", "integration/ars_nouveau/cutting/" + wood.getId().getPath());
 	}
 
 	private static void meat(RegistrateRecipeProvider pvd, ADFood in, ADFood out, ADFood inslice, ADFood outslice) {

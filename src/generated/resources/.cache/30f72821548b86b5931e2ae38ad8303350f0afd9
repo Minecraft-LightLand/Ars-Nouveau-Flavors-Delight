@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-19T00:31:52.746331	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
+// 1.21.1	2026-06-19T00:49:11.312184	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -344,6 +344,8 @@ e0cc5c53bec653be9ccaade4eb35a12424d09f23 data/arsdelight/recipe/cooking/source_b
 2365a9f8e44a988d636b359519d35829a781bf24 data/arsdelight/recipe/cooking/unstable_cocktail.json
 8212994f397c7e38aaa0873d4db9cabf808836b2 data/arsdelight/recipe/cooking/wilden_sauce.json
 1368e2df26d3fe35d4ebd4cd70fa99aad3011c5b data/arsdelight/recipe/cooking/wilden_stew.json
+c912a72f95d058b586e2120a2f3d2ae8ccf7888e data/arsdelight/recipe/cutting/archwood_log.json
+1b4d45f5e60a359a411fcbdfa54b9ac3f946e3a0 data/arsdelight/recipe/cutting/archwood_wood.json
 8d9a4a9b7114b3919bf4048ee93e5a4e78ed84c3 data/arsdelight/recipe/cutting/bastion_pie.json
 69c694ec9efaa41ca514f2b7e0a8422b526bd0c5 data/arsdelight/recipe/cutting/blue_archwood_log.json
 a8132a2ac1ca336cb36e67ea7b31670b24fe1c04 data/arsdelight/recipe/cutting/blue_archwood_wood.json
@@ -356,14 +358,20 @@ f0bb32fd2f6fc5fc32ba329034a5c11e2bbffad7 data/arsdelight/recipe/cutting/flashpin
 57694938ce717e485c0add8068ee4d0c5f9aa949 data/arsdelight/recipe/cutting/green_archwood_wood.json
 c4ca0b7018eac8285c610178b938ffbd83dfbd20 data/arsdelight/recipe/cutting/lightchee_pie.json
 c913b11377f14691dee7c99b901391a4879f068b data/arsdelight/recipe/cutting/mendosteen_pie.json
+f75d2d3a58c29d4aa715b53920906980ffc3d520 data/arsdelight/recipe/cutting/orange_archwood_log.json
+25f39a37592462669ccb67edf1ba777c1085c1bd data/arsdelight/recipe/cutting/orange_archwood_wood.json
 38732b2b57153b78ce00d6946cf3dde2532ae323 data/arsdelight/recipe/cutting/purple_archwood_log.json
 8bb1f226359204ca0176900a141017ab48f915d1 data/arsdelight/recipe/cutting/purple_archwood_wood.json
 bc08f07e6755b34b6951c2769ef72504fed25e9d data/arsdelight/recipe/cutting/red_archwood_log.json
 52f1c8e91bcc3af628d32deb9766c5f9378d2180 data/arsdelight/recipe/cutting/red_archwood_wood.json
 e57c3a58d49b89452112b6d604b4d374e656fe94 data/arsdelight/recipe/cutting/source_berry_pie.json
+a0a07c08ba062951331a33b24533c4a39a003370 data/arsdelight/recipe/cutting/white_archwood_log.json
+b8f76d2a19611ebeae60879ca9fe5ff88b2d3e14 data/arsdelight/recipe/cutting/white_archwood_wood.json
 c520ca1e03957f5efb99a13f6cd01d8e91835051 data/arsdelight/recipe/cutting/wilden_horn.json
 28721458961d16f9772fea25244d649c6efcb676 data/arsdelight/recipe/cutting/wilden_meat.json
 481e8ace7facfe02989434539e7ffb794a4e2350 data/arsdelight/recipe/cutting/wilden_spike.json
+9943211f0b5b86ae7bf5a5482e3bfa2503c0e01b data/arsdelight/recipe/cutting/yellow_archwood.json
+f20332b67d756aecdbf8023ec6cd9b573a86d927 data/arsdelight/recipe/cutting/yellow_archwood_log.json
 0502f812828b5e5b3f0e575d60a66e89c527a2af data/arsdelight/recipe/dawnberry_crate.json
 06581edfe70f96782f9be27a17338c94cf8e90b2 data/arsdelight/recipe/dawnberry_pie.json
 caefd6e692c47f69f114bcc07550fb4a5d6b02f5 data/arsdelight/recipe/dawnberry_pie_from_slices.json
@@ -414,14 +422,22 @@ b1267529d7f92edea753e45422b45080006057f2 data/arsdelight/tags/item/raw_wilden_me
 dffbdb815c50ec78d06cfa81e77cd20c0bfdb8bc data/c/tags/block/storage_blocks.json
 dffbdb815c50ec78d06cfa81e77cd20c0bfdb8bc data/c/tags/item/storage_blocks.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/c/tags/item/tools/knife.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/archwood_log.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/archwood_wood.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/blue_archwood_log.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/blue_archwood_wood.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/green_archwood_log.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/green_archwood_wood.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/orange_archwood_log.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/orange_archwood_wood.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/purple_archwood_log.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/purple_archwood_wood.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/red_archwood_log.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/red_archwood_wood.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/white_archwood_log.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/white_archwood_wood.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/yellow_archwood.json
+ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/yellow_archwood_log.json
 7f0f1e69a9c86dfcf77af1ce39c1d3e0be41553b data/diet/tags/item/fruits.json
 7779ba2a044b0aabb37a033f29c8784d8682faba data/diet/tags/item/proteins.json
 afc35104e8f06c6d1712f42fea51763d24933415 data/diet/tags/item/sugars.json

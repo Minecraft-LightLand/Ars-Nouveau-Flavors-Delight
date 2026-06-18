@@ -26,6 +26,12 @@ public class AWRecipeGen {
 		AERecipeGen.storage(pvd, out, AWGItemRegistry.DAWNBERRY_POD, RecipeCategory.MISC, ArchwoodCompat.DAWNBERRY_CRATE);
 		AERecipeGen.storage(pvd, out, AWGItemRegistry.LIGHTCHEE_POD, RecipeCategory.MISC, ArchwoodCompat.LIGHTCHEE_CRATE);
 
+		RecipeGen.strip(pvd, out, ArchwoodCompat.DAWN_BARK, AWGBlockRegistry.ORANGE_ARCHWOOD_LOG, AWGBlockRegistry.STRIPPED_ORANGE_ARCHWOOD_LOG,
+				AWGBlockRegistry.ORANGE_ARCHWOOD_WOOD, AWGBlockRegistry.STRIPPED_ORANGE_ARCHWOOD_WOOD);
+		RecipeGen.strip(pvd, out, ArchwoodCompat.BLEAK_BARK, AWGBlockRegistry.WHITE_ARCHWOOD_LOG, AWGBlockRegistry.STRIPPED_WHITE_ARCHWOOD_LOG,
+				AWGBlockRegistry.WHITE_ARCHWOOD_WOOD, AWGBlockRegistry.STRIPPED_WHITE_ARCHWOOD_WOOD);
+		RecipeGen.strip(pvd, out, ArchwoodCompat.FADING_BARK, AWGBlockRegistry.FADING_ARCHWOOD_LOG.registryObject, AWGBlockRegistry.STRIPPED_FADING_ARCHWOOD_LOG.registryObject,
+				AWGBlockRegistry.FADING_ARCHWOOD_WOOD.registryObject, AWGBlockRegistry.STRIPPED_FADING_ARCHWOOD_WOOD.registryObject);
 
 		RecipeGen.pie(pvd, out, ArchwoodCompat.DAWNBERRY_PIE, AWFood.NEUTRALIZED_DAWNBERRY_JAM, AWGItemRegistry.DAWNBERRY_POD.get());
 		RecipeGen.pie(pvd, out, ArchwoodCompat.LIGHTCHEE_PIE, AWFood.NEUTRALIZED_LIGHTCHEE_JAM, AWGItemRegistry.LIGHTCHEE_POD.get());

@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "archwood_good"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "archwood_good:orange_archwood_log"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "archwood_good:stripped_orange_archwood_log"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "arsdelight:dawn_bark"
+      }
+    }
+  ],
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  },
+  "tool": {
+    "type": "farmersdelight:item_ability",
+    "action": "axe_strip"
+  }
+}
