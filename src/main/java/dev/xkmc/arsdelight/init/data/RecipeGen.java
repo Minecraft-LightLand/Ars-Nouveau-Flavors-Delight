@@ -442,7 +442,7 @@ public class RecipeGen {
 	}
 
 
-	private static void pie(RegistrateRecipeProvider pvd, ADPie pie, ADFood jam, ItemLike fruit) {
+	public static void pie(RegistrateRecipeProvider pvd, ADPie pie, ItemLike jam, ItemLike fruit) {
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, fruit.asItem())
 				.pattern("#f#").pattern("aja").pattern("xOx")
 				.define('#', Items.WHEAT)

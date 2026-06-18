@@ -40,7 +40,7 @@ public class ADJellys {
 				.register();
 	}
 
-	private static BlockEntry<JellyBlock> jelly(String name, Supplier<FoodProperties.Builder> effs) {
+	public static BlockEntry<JellyBlock> jelly(String name, Supplier<FoodProperties.Builder> effs) {
 		return ArsDelight.REGISTRATE.block(name, JellyBlock::new)
 				.properties((p) -> p.instabreak().pushReaction(PushReaction.DESTROY).mapColor(DyeColor.BROWN).sound(SoundType.WOOL)
 						.noOcclusion())
@@ -49,15 +49,15 @@ public class ADJellys {
 						.texture("particle", "item/jelly/" + ctx.getName())))
 				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, effs.get()))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/jelly/" + ctx.getName())))
-				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY).build()
+				.asOptional().tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY).build()
 				.lang(ADItems.toEnglishName(name)).register();
 	}
 
-	private static FoodProperties.Builder resolve(FoodProperties effs, double dur, int amp) {
+	public static FoodProperties.Builder resolve(FoodProperties effs, double dur, int amp) {
 		var builder = new FoodProperties.Builder();
 		builder.nutrition(4).saturationModifier(0.6f);
 		for (var e : effs.effects()) {
-			builder.effect(() -> amplify(e.effect(), dur, amp), e.probability());
+			builder.effect(() -> amplify(e.effect(), dur * e.probability(), amp), 1);
 		}
 		return builder;
 	}

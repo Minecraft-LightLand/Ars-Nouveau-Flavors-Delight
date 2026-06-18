@@ -13,5 +13,7 @@
 	"effect.arsdelight.synchronized_shield.description": "玩家收到治愈时获得伤害吸收",
 	"effect.arsdelight.wilden": "野化",
 	"effect.arsdelight.wilden.desc": "提升最大魔力，魔力恢复速度，以及法术伤害",
-	"effect.arsdelight.wilden.description": "提升最大魔力，魔力恢复速度，以及法术伤害"
+	"effect.arsdelight.wilden.description": "提升最大魔力，魔力恢复速度，以及法术伤害",
+	"effect.arsdelight.lightning_curse": "闪耀诅咒",
+	"effect.arsdelight.lightning_curse.description": "闪电打击你的法术攻击目标"
 }

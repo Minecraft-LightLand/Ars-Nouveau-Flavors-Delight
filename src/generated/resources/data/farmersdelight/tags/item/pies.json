@@ -1,8 +1,20 @@
 {
   "values": [
-    "arsdelight:mendosteen_pie_slice",
-    "arsdelight:bastion_pie_slice",
-    "arsdelight:bombegrante_pie_slice",
-    "arsdelight:frostaya_pie_slice"
+    {
+      "id": "arsdelight:mendosteen_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:bastion_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:bombegrante_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:frostaya_pie_slice",
+      "required": false
+    }
   ]
 }

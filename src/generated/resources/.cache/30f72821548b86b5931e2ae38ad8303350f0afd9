@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-06T14:20:14.199961	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
+// 1.21.1	2026-06-18T19:01:04.733656	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -116,7 +116,7 @@ e25646ca052f9327f10276053e690ed6306fa011 assets/arsdelight/models/item/wilden_sa
 7886c78cb09c0349347d9dee173342466605aca6 assets/arsdelight/models/item/wilden_skewer.json
 1dae78a8b38da7d4cfd4337e8ca84796869f271e assets/arsdelight/models/item/wilden_spike_powder.json
 4c6f46c2170a88502b9dd1862cf183147540f9ad assets/arsdelight/models/item/wilden_stew.json
-1e67dba09bd74311dfed4822c9967b19adf34dd0 data/ars_nouveau/tags/item/magic_food.json
+adacf4d474b3a863c3f54a53225b257b88ea9f92 data/ars_nouveau/tags/item/magic_food.json
 761ecde7997571343a3ace186283539151506d49 data/arsdelight/advancement/recipes/building_blocks/organic_compost_from_tree_bark.json
 1255cfce6a4d37cf4952468f7f7723634dbe1401 data/arsdelight/advancement/recipes/cooking/activated_bastion_jam.json
 1c7100a93dff9402439fcb65c488cab8e79a0911 data/arsdelight/advancement/recipes/cooking/activated_mendosteen_jam.json
@@ -292,12 +292,12 @@ af674915db16c6fb58048abeee7eb45a98f49232 data/arsdelight/recipe/wilden_skewer.js
 a86977d435067bf3dab9aac61a03da50a07efb2b data/arsdelight/tags/item/barks.json
 1e4fd257fa5070ffd7c3387bb324bc0019a599e3 data/arsdelight/tags/item/cooked_chimera.json
 b203752c057f6cbd5834c1c4407dbb12b5894fbc data/arsdelight/tags/item/cooked_wilden_meat.json
-5581eefc8f085b91dd82198f256d5e6d5536c3c8 data/arsdelight/tags/item/jelly.json
+22b7979f3323d7efe04114470a85681cf2eaa0e6 data/arsdelight/tags/item/jelly.json
 fb9f6c0fe586fb8866417512696b4031ed3eccc6 data/arsdelight/tags/item/leaves.json
 6c81b787ad4c456ce0e8d892fa3f0ec94ee4d514 data/arsdelight/tags/item/raw_chimera.json
 b1267529d7f92edea753e45422b45080006057f2 data/arsdelight/tags/item/raw_wilden_meat.json
-bbf20a0c31d3b502714d24903597db0ba4fa26be data/c/tags/block/storage_blocks.json
-bbf20a0c31d3b502714d24903597db0ba4fa26be data/c/tags/item/storage_blocks.json
+3dc630141a316c82c293518e11d76a638c8a78e8 data/c/tags/block/storage_blocks.json
+3dc630141a316c82c293518e11d76a638c8a78e8 data/c/tags/item/storage_blocks.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/c/tags/item/tools/knife.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/blue_archwood_log.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/blue_archwood_wood.json
@@ -307,9 +307,9 @@ ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/purple_archwood_wood.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/red_archwood_log.json
 ca61bec1a26e7b6436c93816f9eabd232fed423f data/delightful/recipe/integration/ars_nouveau/cutting/red_archwood_wood.json
-4a5b834735ddf6bcd75dca7f0a8f63fa10d8d0dd data/diet/tags/item/fruits.json
+e78db44a91c983355c3878ead02d66d0b9afe915 data/diet/tags/item/fruits.json
 7779ba2a044b0aabb37a033f29c8784d8682faba data/diet/tags/item/proteins.json
-b469a60bb1f54cf4ea65565e933a2a751254b8ec data/diet/tags/item/sugars.json
+4607ceecb563bd1ef34395f9b2a45208495a2549 data/diet/tags/item/sugars.json
 a7748b44f61829e05bdbc33b1d61c43885857452 data/diet/tags/item/vegetables.json
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/block/cabinets.json
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/block/cabinets/wooden.json
@@ -319,8 +319,8 @@ e10155e20898edb152560a0aee383c8dee6db185 data/farmersdelight/tags/block/pies.jso
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/item/cabinets.json
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/item/cabinets/wooden.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/item/flat_on_cutting_board.json
-089c5ec77b5b1536c0cbe5c2af0b571b938954b0 data/farmersdelight/tags/item/pies.json
+94ca8b4419fd4066851e5d8e14ab73be3af34000 data/farmersdelight/tags/item/pies.json
 4b2cd449c3c0a452a28bcbb306832cc7deb381b7 data/farmersdelight/tags/item/tools/knives.json
-5e1cd21656b66ab5b088cb16583bef322825796a data/minecraft/tags/block/mineable/axe.json
+53070057b1ac558397f6cf8dff49613dc8d4a1fc data/minecraft/tags/block/mineable/axe.json
 2955aea61867d999fef2962f396f9ac84d9ccee2 data/neoforge/data_maps/item/compostables.json
 d53c21c69c7d77dcf2cf780fbc170d1c11bf6104 data/neoforge/data_maps/item/furnace_fuels.json

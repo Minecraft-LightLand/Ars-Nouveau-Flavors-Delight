@@ -1,9 +1,24 @@
 {
   "values": [
-    "arsdelight:mendosteen_crate",
-    "arsdelight:bastion_crate",
-    "arsdelight:bombegrante_crate",
-    "arsdelight:frostaya_crate",
-    "arsdelight:source_berry_crate"
+    {
+      "id": "arsdelight:mendosteen_crate",
+      "required": false
+    },
+    {
+      "id": "arsdelight:bastion_crate",
+      "required": false
+    },
+    {
+      "id": "arsdelight:bombegrante_crate",
+      "required": false
+    },
+    {
+      "id": "arsdelight:frostaya_crate",
+      "required": false
+    },
+    {
+      "id": "arsdelight:source_berry_crate",
+      "required": false
+    }
   ]
 }

@@ -82,15 +82,15 @@ public class ADBlocks {
 						.hasProperty(block.getServingsProperty(), block.getMaxServings()));
 	}
 
-	private static BlockEntry<Block> crate(String name) {
+	public static BlockEntry<Block> crate(String name) {
 		return ArsDelight.REGISTRATE.block(name, p -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
 						.strength(2.0F, 3.0F).sound(SoundType.WOOD)))
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().cubeBottomTop(ctx.getName(),
 						pvd.modLoc("block/crate/" + name + "_side"),
 						pvd.modLoc("block/crate/crate_bottom"),
 						pvd.modLoc("block/crate/" + name + "_top"))))
-				.tag(BlockTags.MINEABLE_WITH_AXE, Tags.Blocks.STORAGE_BLOCKS)
-				.item().tag(Tags.Items.STORAGE_BLOCKS).build()
+				.asOptional().tag(BlockTags.MINEABLE_WITH_AXE, Tags.Blocks.STORAGE_BLOCKS)
+				.item().asOptional().tag(Tags.Items.STORAGE_BLOCKS).build()
 				.lang(ADItems.toEnglishName(name))
 				.register();
 	}
