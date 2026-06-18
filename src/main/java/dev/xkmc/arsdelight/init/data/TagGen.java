@@ -4,9 +4,10 @@ import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import com.hollingsworth.arsnouveau.setup.registry.BlockRegistry;
 import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
-import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +19,10 @@ import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class TagGen {
 
@@ -32,14 +37,16 @@ public class TagGen {
 	public static final TagKey<Item> LEAVES = item("leaves");
 	public static final TagKey<Item> FDBARKS = fdItem("barks");
 
-	public static void onBlockTagGen(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
-		var pie = pvd.addTag(ModTags.Blocks.PIES);
-		for (var e : ADPie.values()) pie.add(e.block.get());
+	private static final List<Consumer<RegistrateItemTagsProvider>> ITEM_TAGS = new ArrayList<>();
+	private static final List<Consumer<RegistrateTagsProvider.IntrinsicImpl<Block>>> BLOCK_TAGS = new ArrayList<>();
 
+	public static void onBlockTagGen(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
 		pvd.addTag(ModTags.Blocks.FEASTS)
 				.add(ADBlocks.CHIMERA.get(), ADBlocks.SALAD.get());
 		pvd.addTag(ModTags.Blocks.CABINETS_WOODEN).add(ADBlocks.ARCHWOOD_CABINET.get());
 		pvd.addTag(ModTags.Blocks.CABINETS).add(ADBlocks.ARCHWOOD_CABINET.get());
+
+		for (var e : BLOCK_TAGS) e.accept(pvd);
 	}
 
 	public static void onItemTagGen(RegistrateItemTagsProvider pvd) {
@@ -59,11 +66,10 @@ public class TagGen {
 		pvd.addTag(ModTags.Items.KNIVES).add(ADItems.KNIFE.get());
 		pvd.addTag(ModTags.Items.FLAT_ON_CUTTING_BOARD).add(ADItems.KNIFE.get());
 
-		var pie = pvd.addTag(ModTags.Items.PIES);
-		for (var e : ADPie.values()) pie.add(e.slice.asItem());
-
 		pvd.addTag(ModTags.Items.CABINETS_WOODEN).add(ADBlocks.ARCHWOOD_CABINET.asItem());
 		pvd.addTag(ModTags.Items.CABINETS).add(ADBlocks.ARCHWOOD_CABINET.asItem());
+
+		for (var e : ITEM_TAGS) e.accept(pvd);
 	}
 
 	private static TagKey<Item> item(String id) {
@@ -72,6 +78,24 @@ public class TagGen {
 
 	private static TagKey<Item> fdItem(String id) {
 		return ItemTags.create(new ResourceLocation(FarmersDelight.MODID, id));
+	}
+
+	@SafeVarargs
+	public static void putItem(String modid, ItemEntry<?> item, TagKey<Item>... tags) {
+		for (var tag : tags)
+			if (modid.equals(ArsDelight.MODID))
+				ITEM_TAGS.add(pvd -> pvd.addTag(tag).add(item.get()));
+			else
+				ITEM_TAGS.add(pvd -> pvd.addTag(tag).addOptional(item.getId()));
+	}
+
+	@SafeVarargs
+	public static void putBlock(String modid, BlockEntry<?> block, TagKey<Block>... tags) {
+		for (var tag : tags)
+			if (modid.equals(ArsDelight.MODID))
+				BLOCK_TAGS.add(pvd -> pvd.addTag(tag).add(block.get()));
+			else
+				BLOCK_TAGS.add(pvd -> pvd.addTag(tag).addOptional(block.getId()));
 	}
 
 }

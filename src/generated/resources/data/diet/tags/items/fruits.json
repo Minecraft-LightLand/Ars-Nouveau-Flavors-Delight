@@ -1,14 +1,5 @@
 {
   "values": [
-    "arsdelight:mendosteen_jelly",
-    "arsdelight:bastion_jelly",
-    "arsdelight:bombegrante_jelly",
-    "arsdelight:frostaya_jelly",
-    "arsdelight:source_berry_jelly",
-    "arsdelight:mendosteen_pie_slice",
-    "arsdelight:bastion_pie_slice",
-    "arsdelight:bombegrante_pie_slice",
-    "arsdelight:frostaya_pie_slice",
     "arsdelight:arch_sauce",
     "arsdelight:mendosteen_tea",
     "arsdelight:bastion_tea",
@@ -29,6 +20,35 @@
     "arsdelight:mendosteen_chicken",
     "arsdelight:bastion_pork",
     "arsdelight:bombegrante_steak",
-    "arsdelight:frostaya_mutton"
+    "arsdelight:frostaya_mutton",
+    "arsdelight:mendosteen_jelly",
+    "arsdelight:bastion_jelly",
+    "arsdelight:bombegrante_jelly",
+    "arsdelight:frostaya_jelly",
+    "arsdelight:source_berry_jelly",
+    {
+      "id": "arsdelight:flashpine_jelly",
+      "required": false
+    },
+    "arsdelight:mendosteen_pie_slice",
+    "arsdelight:bastion_pie_slice",
+    "arsdelight:bombegrante_pie_slice",
+    "arsdelight:frostaya_pie_slice",
+    {
+      "id": "arsdelight:flashpine_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:flashpine_tea",
+      "required": false
+    },
+    {
+      "id": "arsdelight:flashpine_hornbeer",
+      "required": false
+    },
+    {
+      "id": "arsdelight:neutralized_flashpine_jam",
+      "required": false
+    }
   ]
 }

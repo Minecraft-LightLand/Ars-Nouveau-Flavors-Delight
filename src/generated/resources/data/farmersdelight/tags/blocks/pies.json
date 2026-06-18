@@ -3,6 +3,10 @@
     "arsdelight:mendosteen_pie",
     "arsdelight:bastion_pie",
     "arsdelight:bombegrante_pie",
-    "arsdelight:frostaya_pie"
+    "arsdelight:frostaya_pie",
+    {
+      "id": "arsdelight:flashpine_pie",
+      "required": false
+    }
   ]
 }

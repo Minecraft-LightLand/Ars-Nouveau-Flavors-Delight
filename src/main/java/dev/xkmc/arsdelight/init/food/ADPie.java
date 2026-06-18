@@ -7,6 +7,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.compat.diet.DietTagGen;
 import dev.xkmc.arsdelight.content.item.ADFoodItem;
 import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.registrate.ADEffects;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import net.minecraft.world.level.block.Blocks;
@@ -14,15 +15,13 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile;
 import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
-import java.util.Locale;
-
-public enum ADPie {
-	MENDOSTEEN_PIE(true, new EffectEntry(ADEffects.FLOURISH::get, 600)),
-	BASTION_PIE(false, new EffectEntry(ADEffects.SHIELDING::get, 600)),
-	BOMBEGRANTE_PIE(false, new EffectEntry(ADEffects.BLAST_RES::get, 1200, 1)),
-	FROSTAYA_PIE(true, new EffectEntry(ADEffects.FREEZE::get, 2400)),
-	;
+public class ADPie {
+	public static final ADPie MENDOSTEEN_PIE = new ADPie("mendosteen_pie", true, new EffectEntry(ADEffects.FLOURISH::get, 600));
+	public static final ADPie BASTION_PIE = new ADPie("bastion_pie", false, new EffectEntry(ADEffects.SHIELDING::get, 600));
+	public static final ADPie BOMBEGRANTE_PIE = new ADPie("bombegrante_pie", false, new EffectEntry(ADEffects.BLAST_RES::get, 1200, 1));
+	public static final ADPie FROSTAYA_PIE = new ADPie("frostaya_pie", true, new EffectEntry(ADEffects.FREEZE::get, 2400));
 
 	public static void register() {
 
@@ -33,11 +32,13 @@ public enum ADPie {
 
 	private final boolean deco;
 
-	ADPie(boolean deco, EffectEntry... effects) {
+	public ADPie(String name, boolean deco, EffectEntry... effects) {
+		this(ArsDelight.MODID, name, deco, effects);
+	}
+
+	public ADPie(String modid, String name, boolean deco, EffectEntry... effects) {
 		this.deco = deco;
-		String name = name().toLowerCase(Locale.ROOT);
 		slice = ArsDelight.REGISTRATE.item(name + "_slice", p -> FoodType.FAST.build(p, 3, 0.3f, effects))
-				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD)
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/pie/" + ctx.getName())))
 				.lang(ADItems.toEnglishName(name + "_slice")).register();
 		block = ArsDelight.REGISTRATE.block(name,
@@ -51,22 +52,24 @@ public enum ADPie {
 				}).loot((a, b) -> a.dropOther(b, slice)).item()
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/pie/" + ctx.getName()))).build()
 				.lang(ADItems.toEnglishName(name)).register();
+
+		TagGen.putItem(modid, slice, DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, ModTags.Items.PIES);
+		TagGen.putBlock(modid, block, ModTags.Blocks.PIES);
 	}
 
 	private BlockModelBuilder genCakeModel(String name, RegistrateBlockstateProvider pvd, String model) {
-		String base = name().toLowerCase(Locale.ROOT);
 		var id = pvd.modLoc("custom/pie" + model);
 		if (deco) {
 			id = pvd.modLoc("custom/" + name + model);
 		}
-		var ans = pvd.models().getBuilder(base + model).parent(new ModelFile.UncheckedModelFile(id))
-				.texture("particle", pvd.modLoc("block/pie/" + base + "_top"))
-				.texture("top", pvd.modLoc("block/pie/" + base + "_top"))
+		var ans = pvd.models().getBuilder(name + model).parent(new ModelFile.UncheckedModelFile(id))
+				.texture("particle", pvd.modLoc("block/pie/" + name + "_top"))
+				.texture("top", pvd.modLoc("block/pie/" + name + "_top"))
 				.texture("bottom", pvd.modLoc("block/pie/pie_bottom"))
 				.texture("side", pvd.modLoc("block/pie/pie_side"))
-				.texture("inner", pvd.modLoc("block/pie/" + base + "_inner"));
+				.texture("inner", pvd.modLoc("block/pie/" + name + "_inner"));
 		if (deco) {
-			ans.texture("deco", pvd.modLoc("block/pie/" + base + "_deco"));
+			ans.texture("deco", pvd.modLoc("block/pie/" + name + "_deco"));
 			ans.renderType("cutout");
 		}
 		return ans;

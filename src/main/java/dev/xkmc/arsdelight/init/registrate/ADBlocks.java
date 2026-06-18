@@ -1,9 +1,12 @@
 package dev.xkmc.arsdelight.init.registrate;
 
+import alexthw.ars_elemental.ArsElemental;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import dev.xkmc.arsdelight.compat.elemental.ElementalCompat;
 import dev.xkmc.arsdelight.content.block.ChimeraFeast;
 import dev.xkmc.arsdelight.content.block.SaladFeast;
 import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.tags.BlockTags;
@@ -20,6 +23,7 @@ import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemConditi
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.fml.ModList;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 
@@ -74,6 +78,9 @@ public class ADBlocks {
 								.when(InvertedLootItemCondition.invert(getServe(block))))
 				)).register();
 
+		if (ModList.get().isLoaded(ArsElemental.MODID))
+			ElementalCompat.register();
+
 	}
 
 	private static <T extends FeastBlock> LootItemBlockStatePropertyCondition.Builder getServe(T block) {
@@ -82,17 +89,22 @@ public class ADBlocks {
 						.hasProperty(block.getServingsProperty(), block.getMaxServings()));
 	}
 
-	private static BlockEntry<Block> crate(String name) {
-		return ArsDelight.REGISTRATE.block(name, p -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+	public static BlockEntry<Block> crate(String name) {
+		return crate(ArsDelight.MODID, name);
+	}
+
+	public static BlockEntry<Block> crate(String modid, String name) {
+		var builder = ArsDelight.REGISTRATE.block(name, p -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
 						.strength(2.0F, 3.0F).sound(SoundType.WOOD)))
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().cubeBottomTop(ctx.getName(),
 						pvd.modLoc("block/crate/" + name + "_side"),
 						pvd.modLoc("block/crate/crate_bottom"),
-						pvd.modLoc("block/crate/" + name + "_top"))))
-				.tag(BlockTags.MINEABLE_WITH_AXE, Tags.Blocks.STORAGE_BLOCKS)
-				.item().tag(Tags.Items.STORAGE_BLOCKS).build()
-				.lang(ADItems.toEnglishName(name))
-				.register();
+						pvd.modLoc("block/crate/" + name + "_top"))));
+		var item = builder.item().register();
+		TagGen.putItem(modid, item, Tags.Items.STORAGE_BLOCKS);
+		var ans = builder.lang(ADItems.toEnglishName(name)).register();
+		TagGen.putBlock(modid, ans, BlockTags.MINEABLE_WITH_AXE, Tags.Blocks.STORAGE_BLOCKS);
+		return ans;
 	}
 
 	private static BlockEntry<CabinetBlock> cabinet(String wood) {

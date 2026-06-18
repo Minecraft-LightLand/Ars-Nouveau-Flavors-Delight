@@ -40,7 +40,7 @@ public enum FoodType {
 		this.factory = factory;
 	}
 
-	ADFoodItem build(Item.Properties prop, FoodProperties.Builder builder) {
+	public ADFoodItem build(Item.Properties prop, FoodProperties.Builder builder) {
 		if (fast) builder.fast();
 		if (always) builder.alwaysEat();
 		if (meat) builder.meat();

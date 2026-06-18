@@ -40,24 +40,31 @@ public class ADJellys {
 				.register();
 	}
 
-	private static BlockEntry<JellyBlock> jelly(String name, Supplier<FoodProperties.Builder> effs) {
-		return ArsDelight.REGISTRATE.block(name, JellyBlock::new)
+	public static BlockEntry<JellyBlock> jelly(String name, Supplier<FoodProperties.Builder> effs) {
+		return jelly(ArsDelight.MODID, name, effs);
+	}
+
+	public static BlockEntry<JellyBlock> jelly(String modid, String name, Supplier<FoodProperties.Builder> effs) {
+		var ans = ArsDelight.REGISTRATE.block(name, JellyBlock::new)
 				.properties((p) -> p.instabreak().pushReaction(PushReaction.DESTROY).mapColor(DyeColor.BROWN).sound(SoundType.WOOL)
 						.noOcclusion())
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().getBuilder(ctx.getName())
 						.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
-						.texture("particle", "item/jelly/" + ctx.getName())))
-				.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, effs.get()))
+						.texture("particle", "item/jelly/" + ctx.getName())));
+
+		var item = ans.item((t, p) -> BlockFoodType.FAST_BOWL.build(t, p, effs.get()))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/jelly/" + ctx.getName())))
-				.tag(DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY).build()
-				.lang(ADItems.toEnglishName(name)).register();
+				.register();
+
+		TagGen.putItem(modid, item, DietTagGen.FRUITS.tag, DietTagGen.SUGARS.tag, ItemTagProvider.MAGIC_FOOD, TagGen.JELLY);
+		return ans.lang(ADItems.toEnglishName(name)).register();
 	}
 
-	private static FoodProperties.Builder resolve(FoodProperties effs, double dur, int amp) {
+	public static FoodProperties.Builder resolve(FoodProperties effs, double dur, int amp) {
 		var builder = new FoodProperties.Builder();
 		builder.nutrition(4).saturationMod(0.6f);
 		for (var e : effs.getEffects()) {
-			builder.effect(() -> amplify(e.getFirst(), dur, amp), e.getSecond());
+			builder.effect(() -> amplify(e.getFirst(), dur * e.getSecond(), amp), 1);
 		}
 		return builder;
 	}

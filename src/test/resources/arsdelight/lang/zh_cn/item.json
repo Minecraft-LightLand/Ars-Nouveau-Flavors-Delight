@@ -4,6 +4,7 @@
 		"cascading_bark": "奔流至高树皮",
 		"vexing_bark": "恼人至高树皮",
 		"flourishing_bark": "繁茂至高树皮",
+		"flashing_bark": "闪耀至高树皮",
 		"wilden_horn_powder": "荒野角粉",
 		"wilden_spike_powder": "荒野刺粉",
 		"chimera_horn": "奇美拉角",
@@ -11,6 +12,7 @@
 		"activated_mendosteen_jam": "魔化山竹果酱",
 		"neutralized_bombegrante_jam": "硬化石榴果酱",
 		"neutralized_frostaya_jam": "冰焰木瓜果酱",
+		"neutralized_flashpine_jam": "闪耀菠萝果酱",
 		"bastion_pork": "活化堡垒果炖猪排",
 		"frostaya_mutton": "冰焰木瓜炖羊排",
 		"bombegrante_steak": "硬化石榴炖牛排",
@@ -60,7 +62,8 @@
 					"bastion": "活化堡垒",
 					"bombegrante": "硬化石榴",
 					"mendosteen": "魔化山竹",
-					"frostaya": "冰焰木瓜"
+					"frostaya": "冰焰木瓜",
+					"flashpine": "闪耀菠萝"
 				},
 				{
 					"item.arsdelight.*_hornbeer": "*果酒",
@@ -78,7 +81,8 @@
 					"bombegrante": "炸弹石榴",
 					"mendosteen": "门多山竹",
 					"frostaya": "霜木瓜",
-					"source_berry": "魔源浆果"
+					"source_berry": "魔源浆果",
+					"flashpine": "闪耀菠萝"
 				},
 				{
 					"block.arsdelight.*_crate": "箱装*",

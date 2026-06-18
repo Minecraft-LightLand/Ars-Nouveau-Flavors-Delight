@@ -1,14 +1,5 @@
 {
   "values": [
-    "arsdelight:mendosteen_jelly",
-    "arsdelight:bastion_jelly",
-    "arsdelight:bombegrante_jelly",
-    "arsdelight:frostaya_jelly",
-    "arsdelight:source_berry_jelly",
-    "arsdelight:mendosteen_pie_slice",
-    "arsdelight:bastion_pie_slice",
-    "arsdelight:bombegrante_pie_slice",
-    "arsdelight:frostaya_pie_slice",
     "arsdelight:source_berry_cookie",
     "arsdelight:source_berry_pie_slice",
     "arsdelight:source_berry_cupcake",
@@ -16,6 +7,27 @@
     "arsdelight:activated_bastion_jam",
     "arsdelight:neutralized_bombegrante_jam",
     "arsdelight:neutralized_frostaya_jam",
-    "arsdelight:source_berry_jam"
+    "arsdelight:source_berry_jam",
+    "arsdelight:mendosteen_jelly",
+    "arsdelight:bastion_jelly",
+    "arsdelight:bombegrante_jelly",
+    "arsdelight:frostaya_jelly",
+    "arsdelight:source_berry_jelly",
+    {
+      "id": "arsdelight:flashpine_jelly",
+      "required": false
+    },
+    "arsdelight:mendosteen_pie_slice",
+    "arsdelight:bastion_pie_slice",
+    "arsdelight:bombegrante_pie_slice",
+    "arsdelight:frostaya_pie_slice",
+    {
+      "id": "arsdelight:flashpine_pie_slice",
+      "required": false
+    },
+    {
+      "id": "arsdelight:neutralized_flashpine_jam",
+      "required": false
+    }
   ]
 }

@@ -1,11 +1,13 @@
 package dev.xkmc.arsdelight.init.data;
 
+import alexthw.ars_elemental.ArsElemental;
 import com.hollingsworth.arsnouveau.common.util.RegistryWrapper;
 import com.hollingsworth.arsnouveau.setup.registry.BlockRegistry;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.xkmc.arsdelight.compat.elemental.AERecipeGen;
 import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.food.ADFood;
 import dev.xkmc.arsdelight.init.food.ADPie;
@@ -24,6 +26,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ToolActions;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -114,7 +117,7 @@ public class RecipeGen {
 							Ingredient.of(ItemsRegistry.SOURCE_BERRY_PIE),
 							Ingredient.of(CommonTags.Items.TOOLS_KNIVES),
 							ADFood.SOURCE_BERRY_PIE_SLICE, 4)
-					.setNamespace(ArsDelight.MODID)	.save(pvd);
+					.setNamespace(ArsDelight.MODID).save(pvd);
 
 			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,
 					ItemsRegistry.SOURCE_BERRY_PIE, 1)::unlockedBy, ADFood.SOURCE_BERRY_PIE_SLICE.get())
@@ -405,10 +408,12 @@ public class RecipeGen {
 
 		}
 
+		if (ModList.get().isLoaded(ArsElemental.MODID))
+			AERecipeGen.genRecipes(pvd);
+
 	}
 
-
-	private static void pie(RegistrateRecipeProvider pvd, ADPie pie, ADFood jam, ItemLike fruit) {
+	public static void pie(RegistrateRecipeProvider pvd, ADPie pie, ItemLike jam, ItemLike fruit) {
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, fruit.asItem())
 				.pattern("#f#").pattern("aja").pattern("xOx")
 				.define('#', Items.WHEAT)
@@ -432,10 +437,10 @@ public class RecipeGen {
 	}
 
 	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,
-							  RegistryWrapper<? extends Block> log,
-							  RegistryWrapper<? extends Block> stripped,
-							  RegistryWrapper<? extends Block> wood,
-							  RegistryWrapper<? extends Block> stwood
+	                          RegistryWrapper<? extends Block> log,
+	                          RegistryWrapper<? extends Block> stripped,
+	                          RegistryWrapper<? extends Block> wood,
+	                          RegistryWrapper<? extends Block> stwood
 	) {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped)
 				.addResult(bark).addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
