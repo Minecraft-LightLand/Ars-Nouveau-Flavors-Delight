@@ -1,0 +1,6 @@
+{
+  "parent": "farmersdelight:item/mug",
+  "textures": {
+    "layer0": "arsdelight:item/drink/lightchee_tea"
+  }
+}

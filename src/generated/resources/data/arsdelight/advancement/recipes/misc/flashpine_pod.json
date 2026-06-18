@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flashpine_crate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "arsdelight:flashpine_crate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "arsdelight:flashpine_pod"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flashpine_crate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "arsdelight:flashpine_pod"
+    ]
+  }
+}

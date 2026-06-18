@@ -1,0 +1,10 @@
+{
+  "parent": "arsdelight:custom/pie_slice1",
+  "textures": {
+    "bottom": "arsdelight:block/pie/pie_bottom",
+    "inner": "arsdelight:block/pie/dawnberry_pie_inner",
+    "particle": "arsdelight:block/pie/dawnberry_pie_top",
+    "side": "arsdelight:block/pie/pie_side",
+    "top": "arsdelight:block/pie/dawnberry_pie_top"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "archwood_good"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "archwood_good:lightchee_pod"
+    },
+    {
+      "item": "archwood_good:lightchee_pod"
+    },
+    {
+      "item": "arsdelight:dawn_bark"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "arsdelight:neutralized_lightchee_jam"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "ars_elemental:flashpine_pod"
+    },
+    {
+      "item": "ars_elemental:flashpine_pod"
+    },
+    {
+      "item": "arsdelight:blazing_bark"
+    },
+    {
+      "item": "ars_nouveau:sourceberry_bush"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "arsdelight:flashpine_jelly"
+  }
+}

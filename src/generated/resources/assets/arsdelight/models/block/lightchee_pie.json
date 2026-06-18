@@ -1,0 +1,10 @@
+{
+  "parent": "arsdelight:custom/pie",
+  "textures": {
+    "bottom": "arsdelight:block/pie/pie_bottom",
+    "inner": "arsdelight:block/pie/lightchee_pie_inner",
+    "particle": "arsdelight:block/pie/lightchee_pie_top",
+    "side": "arsdelight:block/pie/pie_side",
+    "top": "arsdelight:block/pie/lightchee_pie_top"
+  }
+}

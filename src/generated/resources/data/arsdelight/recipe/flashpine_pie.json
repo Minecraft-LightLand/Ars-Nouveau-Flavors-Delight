@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "O": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "a": {
+      "item": "ars_nouveau:sourceberry_bush"
+    },
+    "f": {
+      "item": "ars_elemental:flashpine_pod"
+    },
+    "j": {
+      "item": "arsdelight:neutralized_flashpine_jam"
+    },
+    "x": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "#f#",
+    "aja",
+    "xOx"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arsdelight:flashpine_pie"
+  }
+}
