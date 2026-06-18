@@ -1,15 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
   "key": {
-    "X": {
+    "A": {
       "item": "ars_elemental:flashpine_pod"
     }
   },
   "pattern": [
-    "XXX",
-    "XXX",
-    "XXX"
+    "AAA",
+    "AAA",
+    "AAA"
   ],
   "result": {
     "item": "arsdelight:flashpine_crate"

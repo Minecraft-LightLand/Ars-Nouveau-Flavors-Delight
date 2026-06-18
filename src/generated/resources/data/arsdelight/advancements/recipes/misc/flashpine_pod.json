@@ -1,5 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
   "criteria": {
     "has_flashpine_crate": {
       "conditions": {
@@ -15,7 +21,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "arsdelight:flashpine_pod_from_flashpine_crate"
+        "recipe": "arsdelight:flashpine_pod"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +34,7 @@
   ],
   "rewards": {
     "recipes": [
-      "arsdelight:flashpine_pod_from_flashpine_crate"
+      "arsdelight:flashpine_pod"
     ]
   },
   "sends_telemetry_event": false

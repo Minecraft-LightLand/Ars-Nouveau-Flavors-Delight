@@ -16,6 +16,7 @@ import dev.xkmc.arsdelight.init.registrate.ADEmptyRecipe;
 import dev.xkmc.arsdelight.init.registrate.ADItems;
 import dev.xkmc.arsdelight.init.registrate.ADJellys;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
@@ -35,6 +36,7 @@ import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 
 public class RecipeGen {
 
@@ -414,6 +416,10 @@ public class RecipeGen {
 	}
 
 	public static void pie(RegistrateRecipeProvider pvd, ADPie pie, ItemLike jam, ItemLike fruit) {
+		pie(pvd, pvd, pie, jam, fruit);
+	}
+
+	public static void pie(RegistrateRecipeProvider pvd, Consumer<FinishedRecipe> out, ADPie pie, ItemLike jam, ItemLike fruit) {
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, fruit.asItem())
 				.pattern("#f#").pattern("aja").pattern("xOx")
 				.define('#', Items.WHEAT)
@@ -422,18 +428,18 @@ public class RecipeGen {
 				.define('a', BlockRegistry.SOURCEBERRY_BUSH)
 				.define('x', Items.SUGAR)
 				.define('O', ModItems.PIE_CRUST.get())
-				.save(pvd);
+				.save(out);
 
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, pie.slice.get())
 				.pattern("##").pattern("##")
 				.define('#', pie.slice.get())
-				.save(pvd, pie.block.getId().withSuffix("_from_slices"));
+				.save(out, pie.block.getId().withSuffix("_from_slices"));
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(
 						Ingredient.of(pie.block.get()),
 						Ingredient.of(CommonTags.Items.TOOLS_KNIVES),
 						pie.slice.get(), 4)
-				.save(pvd);
+				.save(out);
 	}
 
 	private static void strip(RegistrateRecipeProvider pvd, ItemEntry<?> bark,

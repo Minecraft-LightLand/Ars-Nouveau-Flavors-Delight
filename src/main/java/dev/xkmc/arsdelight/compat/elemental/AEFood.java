@@ -23,10 +23,10 @@ import java.util.Locale;
 
 public enum AEFood implements ItemLike {
 	FLASHPINE_TEA(FoodType.DRINK, 0, 0, List.of(
-			new EffectEntry(ElementalCompat.LIGHTNING_CURSE::get, 600)
+			new EffectEntry(ElementalCompat.LIGHTNING_CURSE::get, 1200)
 	), DietTagGen.FRUITS.tag),
 	FLASHPINE_HORNBEER(FoodType.HORNED_DRINK, 0, 0, List.of(
-			new EffectEntry(ElementalCompat.LIGHTNING_CURSE::get, 1200)
+			new EffectEntry(ElementalCompat.LIGHTNING_CURSE::get, 2400)
 	), DietTagGen.FRUITS.tag),
 	NEUTRALIZED_FLASHPINE_JAM(FoodType.JELLY, 0, 0, List.of(
 			new EffectEntry(ElementalCompat.LIGHTNING_CURSE::get, 600)

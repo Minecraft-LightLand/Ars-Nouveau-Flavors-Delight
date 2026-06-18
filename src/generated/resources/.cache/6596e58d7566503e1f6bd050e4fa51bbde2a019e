@@ -1,4 +1,4 @@
-// 1.20.1	2026-06-18T15:39:57.795105	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
+// 1.20.1	2026-06-19T00:32:15.865522	Registrate Provider for arsdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Tags (enchantments), Tags (mob_effects)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -141,8 +141,8 @@ e5382d25f4c422b9204f893586d0a6b9168cba3f data/arsdelight/advancements/recipes/fo
 1421b0193fa8c2b19754438fd6135e2300764ebf data/arsdelight/advancements/recipes/food/bombegrante_pie.json
 71845088c58bc7aa3feed42028dbc11a78b23917 data/arsdelight/advancements/recipes/food/bombegrante_pie_from_slices.json
 8950c83aea349d5b4380175d40ad758632de9e9d data/arsdelight/advancements/recipes/food/chimera_skewer.json
-ae4d9493b76512a0ed8b10108c010a5a5c906a6f data/arsdelight/advancements/recipes/food/flashpine_pie.json
-8e35649f6a384dde7d2851734eeeabb13bcc4374 data/arsdelight/advancements/recipes/food/flashpine_pie_from_slices.json
+ff57d0b3039d9cfb5fc588a1dd8f73be90744c95 data/arsdelight/advancements/recipes/food/flashpine_pie.json
+a1f6962c6bbd1cdd9b0f34f67ff08fc7f632644f data/arsdelight/advancements/recipes/food/flashpine_pie_from_slices.json
 e202a6bcc9fe31d48cf51790ccc652a6edcf545e data/arsdelight/advancements/recipes/food/frostaya_pie.json
 785a7d6bf5393f32e76b1179799d86f93292fa37 data/arsdelight/advancements/recipes/food/frostaya_pie_from_slices.json
 a536c64a80a78c1b0d9b0cedbe90328c921b1f5e data/arsdelight/advancements/recipes/food/grilled_chimera_meat_from_chimera_meat_campfire.json
@@ -167,8 +167,8 @@ e7825b97b794c26d098ee95070b07648fb1da6a0 data/arsdelight/advancements/recipes/fo
 b7f52b614bee8999cb8b6214e5ec239b0278344d data/arsdelight/advancements/recipes/misc/bastion_pod_from_bastion_crate.json
 a403c7ced1366fb711c4c29ec0e4b0b4d6bb6f14 data/arsdelight/advancements/recipes/misc/bombegranate_pod_from_bombegrante_crate.json
 47cf2a5c5103428ab6503f5bb732aa52a0bb5885 data/arsdelight/advancements/recipes/misc/bombegrante_crate.json
-05fff1dcf7b4f2794430f9bf5a6a6876a82b1838 data/arsdelight/advancements/recipes/misc/flashpine_crate.json
-d85f3f21d6db014cadacaf12d54dea0759757f21 data/arsdelight/advancements/recipes/misc/flashpine_pod_from_flashpine_crate.json
+52af6ebfcbd93aae2f3fdd245a20d599ed960dfa data/arsdelight/advancements/recipes/misc/flashpine_crate.json
+512f295278ed77d72566aab07b6b4cafb9b6919e data/arsdelight/advancements/recipes/misc/flashpine_pod.json
 7ec3d481950a22f8909bc47916a5ae09aa855711 data/arsdelight/advancements/recipes/misc/frostaya_crate.json
 67784641fb4beadbdf71a1289a22a710ca141f00 data/arsdelight/advancements/recipes/misc/frostaya_pod_from_frostaya_crate.json
 f18fc2d4b500348ba44bf74a616a94ee7bf138b3 data/arsdelight/advancements/recipes/misc/mendosteen_crate.json
@@ -218,9 +218,9 @@ ff529fc4ddda44a24883d89a91998c6da995dd41 data/arsdelight/recipes/cooking/bombegr
 b722741f2767f7702f70a30fbcf2860fea5b18d9 data/arsdelight/recipes/cooking/bombegrante_jelly.json
 536b429c6f4ea8dbdd0cb5b5aaceb85af4e656b6 data/arsdelight/recipes/cooking/bombegrante_steak.json
 ea5441b529285eddcf4ea1a7e3b45472649c00dd data/arsdelight/recipes/cooking/bombegrante_tea.json
-d6e6557876328ebbc6868ad9fbdaa991bc97d964 data/arsdelight/recipes/cooking/flashpine_hornbeer.json
-fcec2d0fd148908e2c92cba9e06cdd7da30b59e0 data/arsdelight/recipes/cooking/flashpine_jelly.json
-7cd52777bf52ffdc761b039e99ad9a873ca80c52 data/arsdelight/recipes/cooking/flashpine_tea.json
+4433c6e230632143249eb4099086aab217187347 data/arsdelight/recipes/cooking/flashpine_hornbeer.json
+32f55c5b62e46b6b2e1f7377ce28c01ef73bce9a data/arsdelight/recipes/cooking/flashpine_jelly.json
+38af337a1d38e150395af301860f60c3515945aa data/arsdelight/recipes/cooking/flashpine_tea.json
 275ac4283775c84341326300eac6b0c65f8ddbba data/arsdelight/recipes/cooking/frostaya_hornbeer.json
 4e990cf396e053e4562684fd2c2518b2ef5dced3 data/arsdelight/recipes/cooking/frostaya_jelly.json
 11aab8dcc3b0b9bb40f27cd24b22d782df1b2321 data/arsdelight/recipes/cooking/frostaya_mutton.json
@@ -231,7 +231,7 @@ f7077d53edf098048bbbbd9edb6199ef7f46daaf data/arsdelight/recipes/cooking/mendost
 ba30446dee48dcd85a325ac7a5524cb286956824 data/arsdelight/recipes/cooking/mendosteen_jelly.json
 71caa5c7bf6ad0407256c9195c291f669331a63e data/arsdelight/recipes/cooking/mendosteen_tea.json
 89fbf9473b90d5d8c9925bff47a3d2868e0ddb70 data/arsdelight/recipes/cooking/neutralized_bombegrante_jam.json
-dea3208289f717a8598a8805a4b45d7f996bedca data/arsdelight/recipes/cooking/neutralized_flashpine_jam.json
+03ce86bc2c57656da84724ac32f895c8bc5f44a3 data/arsdelight/recipes/cooking/neutralized_flashpine_jam.json
 f079ce1d043991261161b1a9366028a6651c8b26 data/arsdelight/recipes/cooking/neutralized_frostaya_jam.json
 20c5147c6eb5d4a6a278e7ec6b24ba62a0bac0d4 data/arsdelight/recipes/cooking/source_berry_cupcake.json
 1992bebe3cd574e1e60d080b9d8bb461f289bf36 data/arsdelight/recipes/cooking/source_berry_hornbeer.json
@@ -246,7 +246,7 @@ ea8233051650c75f4c85a0dcd8419ee1c5da5fc9 data/arsdelight/recipes/cutting/bastion
 b833977f793102129438e89da9e2324d6e898d6a data/arsdelight/recipes/cutting/blue_archwood_wood.json
 ee8a5fc19243245d89ad6fcee68419a4cc200b79 data/arsdelight/recipes/cutting/bombegrante_pie.json
 3c1d35747f51304bc4f919b80e22167c67ae898a data/arsdelight/recipes/cutting/chimera_meat.json
-7ebb3532ad483b1299b70d66068b547777a38a6b data/arsdelight/recipes/cutting/flashpine_pie.json
+c20f16fc27d14983ba8c726b819ee30523c40dd8 data/arsdelight/recipes/cutting/flashpine_pie.json
 299f64189840142ebdfe56c03afcb973b7d3cb00 data/arsdelight/recipes/cutting/frostaya_pie.json
 3d73711c7769e1aaa94f9444e4fec580bebda94c data/arsdelight/recipes/cutting/green_archwood_log.json
 047d53c13a8e7607787024ae2d82153844201156 data/arsdelight/recipes/cutting/green_archwood_wood.json
@@ -259,10 +259,10 @@ e9881d7d0f8e8c43b8c567905e872209059f1000 data/arsdelight/recipes/cutting/red_arc
 70d19c800e845a2c4d2c1e79ab1d8b37f0c54257 data/arsdelight/recipes/cutting/wilden_horn.json
 e7c85b286a12e07db66a8179365d8c575867ec00 data/arsdelight/recipes/cutting/wilden_meat.json
 49f31416192368fcafac987bf01e442a9a842bd5 data/arsdelight/recipes/cutting/wilden_spike.json
-20e4b0eda1d088c86447f72e169a04bea4e3ed87 data/arsdelight/recipes/flashpine_crate.json
-dfb6425ddd3fc277c2868e93117bbafce4cde2bd data/arsdelight/recipes/flashpine_pie.json
-be44a723025987abb018c5dbbf6a2079cafe619c data/arsdelight/recipes/flashpine_pie_from_slices.json
-d14d7a2960fb64a83612ba7d9335e9a689215aae data/arsdelight/recipes/flashpine_pod_from_flashpine_crate.json
+627bdfa710058c855b8bb983cfeb5a5f754e1c9f data/arsdelight/recipes/flashpine_crate.json
+5e3afcf70ac849aaab1850c172d24e4b027ce9e9 data/arsdelight/recipes/flashpine_pie.json
+8f375715bb24e44fb6fdcb10dc4bef35cc89cf38 data/arsdelight/recipes/flashpine_pie_from_slices.json
+03c9eb4c16974425b833660dce01d8542d90101f data/arsdelight/recipes/flashpine_pod.json
 9bfe5a2ae1c03b32b17716f830a353c9b5acc548 data/arsdelight/recipes/frostaya_crate.json
 817e2ec6cd3f1dd9966cc289f9df26a99981483b data/arsdelight/recipes/frostaya_pie.json
 0ca6f0e774728ef5d3b6f3bb618f516b7c382dd1 data/arsdelight/recipes/frostaya_pie_from_slices.json

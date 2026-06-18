@@ -1,13 +1,18 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
   "ingredients": [
     {
       "item": "arsdelight:flashpine_crate"
     }
   ],
   "result": {
-    "count": 9,
     "item": "ars_elemental:flashpine_pod"
   }
 }
