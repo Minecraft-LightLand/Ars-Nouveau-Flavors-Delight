@@ -177,6 +177,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
     mainFile.addModLoader("NeoForge")
     mainFile.addRequirement("farmers-delight","ars-nouveau")
     mainFile.addOptional(
+            "ars-elemental",
             "cuisine-delight",
             "diet",
             "thirst-was-taken")
