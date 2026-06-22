@@ -2,12 +2,15 @@ package dev.xkmc.arsdelight.events;
 
 import com.hollingsworth.arsnouveau.api.ANFakePlayer;
 import com.hollingsworth.arsnouveau.common.block.tile.ArcanePedestalTile;
+import dev.xkmc.arsdelight.init.ArsDelight;
 import dev.xkmc.arsdelight.init.data.ADModConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ArsDelightMixinHandler {
 
@@ -32,6 +35,17 @@ public class ArsDelightMixinHandler {
 
 	public static void removeFakePlayerItems(ANFakePlayer player) {
 		player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+	}
+
+	public static boolean skipLootTable(ResourceLocation name) {
+		if (name.getNamespace().equals(ArsDelight.MODID)) {
+			if (name.getPath().startsWith("blocks/")) {
+				if (!ForgeRegistries.BLOCKS.containsKey(name.withPath(e -> e.substring(7)))) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }

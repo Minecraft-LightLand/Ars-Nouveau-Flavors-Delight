@@ -8,6 +8,7 @@
 		"AddItemModifierAccessor",
 		"DrygmyTileMixin",
 		"EffectInfuseMixin",
+		"ForgeHooksMixin",
 		"MultiPackResourceManagerMixin"
 	],
 	"client": [

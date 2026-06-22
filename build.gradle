@@ -175,7 +175,7 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:diet-443570:4634780")
 
-    implementation fg.deobf("curse.maven:ars-elemental-561470:7696902")
+    compileOnly fg.deobf("curse.maven:ars-elemental-561470:7696902")
 
 }
 
