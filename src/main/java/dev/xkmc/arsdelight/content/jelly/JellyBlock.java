@@ -29,9 +29,16 @@ public class JellyBlock extends DelegateEntityBlockImpl implements IPrismaticBlo
 		super(p, INS, TE);
 	}
 
-	public void onHit(ServerLevel world, BlockPos pos, EntityProjectileSpell spell) {
+    @SuppressWarnings("removal")
+    @Override
+    public void onHit(ServerLevel world, BlockPos pos, EntityProjectileSpell spell) {
+        this.onHit(world, world.getBlockState(pos), pos, spell);
+    }
+
+    @Override
+    public void onHit(Level world, BlockState state, BlockPos pos, EntityProjectileSpell spell) {
 		if (world.getBlockEntity(pos) instanceof JellyBlockEntity be) {
-			spell.spellResolver.spellContext.attachments.put(JellyAttachment.ID, new JellyAttachment(be.getId().toString()));
+			spell.resolver().spellContext.attachments.put(JellyAttachment.ID, new JellyAttachment(be.getId().toString()));
 			var v = spell.getDeltaMovement().normalize();
 			be.makeWiggle(Direction.getNearest(v.x, v.y, v.z));
 		}
