@@ -1,11 +1,32 @@
 {
   "values": [
-    "arsdelight:mendosteen_pie",
-    "arsdelight:bastion_pie",
-    "arsdelight:bombegrante_pie",
-    "arsdelight:frostaya_pie",
-    "arsdelight:flashpine_pie",
-    "arsdelight:dawnberry_pie",
-    "arsdelight:lightchee_pie"
+    {
+      "id": "arsdelight:mendosteen_pie",
+      "required": false
+    },
+    {
+      "id": "arsdelight:bastion_pie",
+      "required": false
+    },
+    {
+      "id": "arsdelight:bombegrante_pie",
+      "required": false
+    },
+    {
+      "id": "arsdelight:frostaya_pie",
+      "required": false
+    },
+    {
+      "id": "arsdelight:flashpine_pie",
+      "required": false
+    },
+    {
+      "id": "arsdelight:dawnberry_pie",
+      "required": false
+    },
+    {
+      "id": "arsdelight:lightchee_pie",
+      "required": false
+    }
   ]
 }

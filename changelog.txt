@@ -1,3 +1,9 @@
+2.2.4
+- Fix logspam when compats are not installed
+
+2.2.3
+- Fix compatibility with Ars Nouveau 5.13
+
 2.2.2
 - Ars Elemental Integration
 - Archwood Good Integration

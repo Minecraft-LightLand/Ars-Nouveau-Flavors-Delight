@@ -1,5 +1,6 @@
 package dev.xkmc.arsdelight.compat.elemental;
 
+import alexthw.ars_elemental.ArsElemental;
 import alexthw.ars_elemental.registry.ModItems;
 import alexthw.ars_elemental.registry.ModPotions;
 import com.hollingsworth.arsnouveau.api.event.SpellDamageEvent;
@@ -9,6 +10,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.content.jelly.JellyBlock;
 import dev.xkmc.arsdelight.content.jelly.JellyBlockEntity;
 import dev.xkmc.arsdelight.init.ArsDelight;
+import dev.xkmc.arsdelight.init.data.ADLootConditions;
 import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.arsdelight.init.food.EffectEntry;
@@ -44,6 +46,12 @@ public class ElementalCompat {
 				.asOptional().tag(TagGen.BARKS).register();
 		FLASHPINE_JELLY = ADJellys.jelly("flashpine_jelly", () -> ADJellys.resolve(ModItems.FLASHPINE_FOOD, 1, 1));
 		FLASHPINE_PIE = new ADPie("flashpine_pie", false, new EffectEntry(LIGHTNING_CURSE, 200));
+
+		// Nothing above registers unless this mod is loaded, so every loot table created here ends
+		// up referencing an item that will not resolve without it.
+		ADLootConditions.requireMods(ArsElemental.MODID,
+				"flashpine_crate", "flashpine_jelly", "flashpine_pie");
+
 		AEFood.register();
 		NeoForge.EVENT_BUS.register(ElementalCompat.class);
 	}

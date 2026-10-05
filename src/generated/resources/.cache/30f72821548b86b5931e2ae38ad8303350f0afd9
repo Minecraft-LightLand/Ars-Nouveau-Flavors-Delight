@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-19T00:49:11.312184	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
+// 1.21.1	2026-10-06T01:36:51.160992	Registrate Provider for arsdelight [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (mob_effect), Tags (attribute)]
 ebd64ebc359e0946add0c59fcdc20fdd18cb0aeb assets/arsdelight/blockstates/archwood_cabinet.json
 3d4f953cec6d7089108b23a383d90580e199201c assets/arsdelight/blockstates/bastion_crate.json
 e820dfcb544a9a6cd996f3ed2a272bc84a232ac7 assets/arsdelight/blockstates/bastion_jelly.json
@@ -271,19 +271,19 @@ f10b4d3cf9764358cb4d91638787d6f9dab3f0f4 data/arsdelight/loot_table/blocks/basti
 94a8cf05811620e0b1d7af6112e1092d87deed59 data/arsdelight/loot_table/blocks/bombegrante_crate.json
 2f0c8f3efd36f807bb1af1a10b44e8598de721f2 data/arsdelight/loot_table/blocks/bombegrante_jelly.json
 b228e58bac957d78673f6c35be647c27f30acbd7 data/arsdelight/loot_table/blocks/bombegrante_pie.json
-a9af4b284404db3b1ce4acce910485263363cc96 data/arsdelight/loot_table/blocks/dawnberry_crate.json
-26c14916e3649067a9b39485489a5336adc9e309 data/arsdelight/loot_table/blocks/dawnberry_jelly.json
-eb006437acc1c8ae16263922cb4dfd47b78e1087 data/arsdelight/loot_table/blocks/dawnberry_pie.json
-c5d42453a981dc02228ae86d3d1333a17e73616a data/arsdelight/loot_table/blocks/flashpine_crate.json
-9a4024c356e54f583b96e8a73cc57cecfd4091b8 data/arsdelight/loot_table/blocks/flashpine_jelly.json
-5be7517ecbdab4a4ad94e99f61f4f8178ac2c195 data/arsdelight/loot_table/blocks/flashpine_pie.json
+ae662a7ff80dc0629e2afedb84d5dad9035d97c0 data/arsdelight/loot_table/blocks/dawnberry_crate.json
+20e2a346f6cce4eb7b81dacabcb96469c88e448e data/arsdelight/loot_table/blocks/dawnberry_jelly.json
+6554ec8698a8c330dab60d68c7896252835abeee data/arsdelight/loot_table/blocks/dawnberry_pie.json
+f866ed018b0a891292710ad362e54ac01265204b data/arsdelight/loot_table/blocks/flashpine_crate.json
+c4c6e759848182244e9fffcf5a920714be0d4ef6 data/arsdelight/loot_table/blocks/flashpine_jelly.json
+25fb31e881140e1404500a73394c3dce5beb1c04 data/arsdelight/loot_table/blocks/flashpine_pie.json
 8df7e57cf2bd6861def6d1a1c7ff1d116fc52f96 data/arsdelight/loot_table/blocks/frostaya_crate.json
 581908d3b4bfd499acad024db19aafc64f432af6 data/arsdelight/loot_table/blocks/frostaya_jelly.json
 4c1cdecfd18db8e66dfe192ef5709ea1b5cfc164 data/arsdelight/loot_table/blocks/frostaya_pie.json
 264092d83b889f55f02be1dcf7939eb52642e344 data/arsdelight/loot_table/blocks/honey_glazed_chimera.json
-793f3871aa2b08ec2e9fe0d83a0e71cb452996e4 data/arsdelight/loot_table/blocks/lightchee_crate.json
-3801055a9d3657d0f64383ceb5ed144eb11b12a4 data/arsdelight/loot_table/blocks/lightchee_jelly.json
-1bf2f46f9cceff75abe85a987054f407bbc7648b data/arsdelight/loot_table/blocks/lightchee_pie.json
+eef9aea4244708b728ba541a3d25aca21e158828 data/arsdelight/loot_table/blocks/lightchee_crate.json
+b0e13167cd456ccc09c5149522e7662dccefb47c data/arsdelight/loot_table/blocks/lightchee_jelly.json
+e99b673d908cb23d0d0cd78b18410707e688d5d1 data/arsdelight/loot_table/blocks/lightchee_pie.json
 bb4b83c75c3796e17e718cd06b1cc658ec844474 data/arsdelight/loot_table/blocks/mendosteen_crate.json
 95f1abdabf44f8db8b87c5f9dd016df08c431c2e data/arsdelight/loot_table/blocks/mendosteen_jelly.json
 afb54a0f36fceba899d4ec5c73ad988af8453b4c data/arsdelight/loot_table/blocks/mendosteen_pie.json
@@ -445,7 +445,7 @@ a7748b44f61829e05bdbc33b1d61c43885857452 data/diet/tags/item/vegetables.json
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/block/cabinets.json
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/block/cabinets/wooden.json
 c06ace169315cac2393f9010c6899d17685e009e data/farmersdelight/tags/block/feasts.json
-615c5a93066b58eb6543800254f2a08133a1f4d6 data/farmersdelight/tags/block/pies.json
+e97eca77bc1f3fcbd74b86a0b41e329d96d63331 data/farmersdelight/tags/block/pies.json
 60e743f42a854a1ed1bb3eced1a72a90f4a5ea15 data/farmersdelight/tags/item/barks.json
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/item/cabinets.json
 c627d9324a2db05e71576d425715827888bceb4b data/farmersdelight/tags/item/cabinets/wooden.json

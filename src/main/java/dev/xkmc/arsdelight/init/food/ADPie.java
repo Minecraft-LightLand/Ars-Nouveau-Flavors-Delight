@@ -48,7 +48,7 @@ public class ADPie {
 					pvd.horizontalBlock(ctx.getEntry(), state -> models[state.getValue(PieBlock.BITES)]);
 				}).loot((a, b) -> a.dropOther(b, slice)).item()
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/pie/" + ctx.getName()))).build()
-				.tag(ModTags.Blocks.PIES)
+				.asOptional().tag(ModTags.Blocks.PIES)
 				.lang(ADItems.toEnglishName(name)).register();
 	}
 

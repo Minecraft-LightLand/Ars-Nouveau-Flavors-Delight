@@ -6,7 +6,9 @@
 	"mixins": [
 		"AddItemModifierAccessor",
 		"DrygmyTileMixin",
-		"EffectInfuseMixin"
+		"EffectInfuseMixin",
+		"LootTableAccessor",
+		"LootTableProviderMixin"
 	],
 	"client": [
 	],

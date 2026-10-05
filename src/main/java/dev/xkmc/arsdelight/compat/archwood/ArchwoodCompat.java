@@ -1,5 +1,6 @@
 package dev.xkmc.arsdelight.compat.archwood;
 
+import com.alexthw.archwood_good.ArchwoodGood;
 import com.alexthw.archwood_good.registry.AWGItemRegistry;
 import com.hollingsworth.arsnouveau.api.event.SpellDamageEvent;
 import com.tterrag.registrate.builders.BlockEntityBuilder;
@@ -7,6 +8,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.arsdelight.content.jelly.JellyBlock;
 import dev.xkmc.arsdelight.content.jelly.JellyBlockEntity;
+import dev.xkmc.arsdelight.init.data.ADLootConditions;
 import dev.xkmc.arsdelight.init.data.TagGen;
 import dev.xkmc.arsdelight.init.food.ADPie;
 import dev.xkmc.arsdelight.init.registrate.ADBlocks;
@@ -38,6 +40,13 @@ public class ArchwoodCompat {
 		DAWN_BARK = ADItems.ingredient("dawn_bark", p -> new FuelItem(p, 200)).asOptional().tag(TagGen.BARKS).register();
 		BLEAK_BARK = ADItems.ingredient("bleak_bark", p -> new FuelItem(p, 200)).asOptional().tag(TagGen.BARKS).register();
 		FADING_BARK = ADItems.ingredient("fading_bark", p -> new FuelItem(p, 200)).asOptional().tag(TagGen.BARKS).register();
+
+		// Nothing above registers unless this mod is loaded, so every loot table created here ends
+		// up referencing an item that will not resolve without it.
+		ADLootConditions.requireMods(ArchwoodGood.MODID,
+				"dawnberry_crate", "lightchee_crate",
+				"dawnberry_jelly", "lightchee_jelly",
+				"dawnberry_pie", "lightchee_pie");
 
 		AWFood.register();
 		NeoForge.EVENT_BUS.register(ArchwoodCompat.class);
